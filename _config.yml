@@ -6,7 +6,7 @@ remote_theme: pmarsceill/stately@master
 # IMPORTANT: Set the URL of your site.
 # Set to https://<username>.github.io when hosting on GitHub Pages
 # (unless you are using a custom domain).
-url:                   https://joinmatrix.org
+url:                   https://hrkokw.github.io
 
 # IMPORTANT: Set The "base URL" of your site.
 # When your site sits in a subdirectory, set to /<name of directory>
@@ -14,7 +14,7 @@ url:                   https://joinmatrix.org
 # Use the empty string '' otherwise.
 # For GitHub project sites, this is usually the name of the project,
 # e.g. `/hydejack`.
-baseurl:               ''
+baseurl:               '/joinmatrix-ja'
 
 title: Join Matrix!
 
@@ -37,7 +37,7 @@ exclude:
 
 # https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 tagline: Chat Freely. Join Matrix.
-google_site_verification: 23WPTykMMe_jOZBOuCWqAcIhpw9LuHecXo8nKqDYYXk
+#google_site_verification: 23WPTykMMe_jOZBOuCWqAcIhpw9LuHecXo8nKqDYYXk
 logo: /assets/favicons/android-chrome-512x512.png
 
 plugins:

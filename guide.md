@@ -29,7 +29,7 @@ description: あなたを大切にする分散チャットプラットフォー�
     * 新しいアプリを作ったり提案を[出したりレビューしたり](https://spec.matrix.org/unstable/proposals/)することで、Matrixの改善に関わることができます。あなた自身の手で、プラットフォームをより良い方向へ導くことができます。
     * Matrixは公共機関、特にドイツ（[ヘルスケア](https://matrix.org/blog/2021/07/21/germanys-national-healthcare-system-adopts-matrix)、[軍](https://element.io/case-studies/bundeswehr)、[大学](https://doc.matrix.tu-dresden.de/en/why/)）や[フランス](https://element.io/case-studies/tchap)の機関から支持されています。
 
-そしてもちろんMatrixは、クロスプラットフォーム、リアルタイム性、使いやすさなど、現代のメッセージプラットフォームが持つすべての機能を備えています。ただこれは重要ではありません。Matrixは、**あなたを大切にする**良識あるチャットプラットフォームが**存在しうる**ことを体現しているのです。
+そしてもちろんMatrixは、クロスプラットフォーム、リアルタイム性、使いやすさなど、現代のメッセージプラットフォームが持つすべての機能を備えています。ただそれよりも重要なのは、**あなたを大切にする**良識あるチャットプラットフォームが**存在しうる**ことをMatrixが体現していることなのです。
 
 ここまでの説明で納得できなければ、[Discord](./matrix-vs-discord)や[Telegram](./matrix-vs-telegram)といった他のプラットフォームと[Matrixを比較](./matrix-vs-al)してみてはいかがでしょう？
 

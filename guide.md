@@ -34,12 +34,12 @@ description: あなたを大切にする分散チャットプラットフォー�
 ここまでの説明で納得できなければ、[Discord](./matrix-vs-discord)や[Telegram](./matrix-vs-telegram)といった他のプラットフォームと[Matrixを比較](./matrix-vs-al)してみてはいかがでしょう？
 
 <div class="flash">
-  Matrixは完璧ではありませんが、日に日に改善されています。<a href="https://matrix.org/blog/posts">the Matrix.org blog（英語）</a>をフォローして、Matrixに関するニュースを追いかけましょう。
+  Matrixは完璧ではありませんが、日に日に改善されています。<a href="https://matrix.org/blog/posts">The Matrix.org blog（英語）</a>をフォローして、Matrixに関するニュースにアクセスしましょう。
 </div>
 
 ## はじめてみる
 
-Ready to try Matrix? Here we go:
+Matrixを試す準備ができましたか？それでは、行ってみましょう。
 
 ### Is it Matrix or Element?
 

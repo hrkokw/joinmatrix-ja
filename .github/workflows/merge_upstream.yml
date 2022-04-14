@@ -1,4 +1,4 @@
-name: Scheduled merge action
+name: Scheduled Merge
 on: 
   schedule:
     - cron: '30 3 * * *'

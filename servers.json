@@ -477,7 +477,7 @@
         "reg_method": null,
         "reg_link": null,
         "software": "Synapse",
-        "version": "1.55.0"
+        "version": "1.56.0"
     },
     {
         "name": "flieger.chat",
@@ -643,6 +643,21 @@
         "reg_link": "https://element.hingst.net/",
         "software": "Synapse",
         "version": "1.56.0"
+    },
+    {
+        "name": "houtworm.im",
+        "domain": "houtworm.im",
+        "info": "https://houtworm.im",
+        "jurisdiction": "Netherlands",
+        "tos": null,
+        "privacy": null,
+        "open": true,
+        "remarks": "Personal",
+        "antifeature": "Residential",
+        "reg_method": "In-house Element",
+        "reg_link": "https://houtworm.im/",
+        "software": "Synapse",
+        "version": "1.55.2"
     },
     {
         "name": "inetd.xyz",
@@ -1126,7 +1141,7 @@
     },
     {
         "name": "sibnsk.net",
-        "domain": "matrix.sibnsk.net",
+        "domain": "sibnsk.net",
         "info": "https://lugnsk.org/page/blog/matrix",
         "jurisdiction": "Russia",
         "tos": "https://matrix.sibnsk.net/_matrix/consent",
@@ -1167,7 +1182,7 @@
         "reg_method": "In-house Element",
         "reg_link": "https://chat.studichat.de/",
         "software": "Synapse",
-        "version": "1.55.2"
+        "version": "1.56.0"
     },
     {
         "name": "sykorp.com",

@@ -1,43 +1,43 @@
 ---
-title: The "Join Matrix!" Guide
-ntitle: The Guide
+title: "Join Matrix!" ガイド
+ntitle: ガイド
 layout: page-two-col
 nav: true
 parent: guide
 permalink: guide/
-description: A beginner-friendly guide for Matrix, the federated chat platform that actually respects you.
+description: あなたを大切にする分散チャットプラットフォーム、Matrixの初心者向けガイド
 ---
 
-## The "Join Matrix!" Guide: Basics
+## "Join Matrix!" ガイド: はじめに
 
-Welcome! This website aims to be a beginner-friendly guide to Matrix (sometimes [mistakenly known](#is-it-matrix-or-element) as Element). Matrix is an open federated communication protocol that strives to be a viable alternative to various centralized proprietary platforms. But those are very big words, and unfortunately, they do confuse people sometimes, so this guide aims to introduce you to the chatting aspect of it in somewhat simpler terms. We'll start by the "why" and then the "how." This part is for people who have never used Matrix before, so if you're looking for more advanced material, check out the sidebar.
+ようこそ！このWebサイトはMatrix（たまにElementと[間違われます](#is-it-matrix-or-element)が）の初心者向けのガイドとなることを目指しています。Matrixは、既存の集権的な商用プラットフォームの代替となることを目指す、オープンな分散コミュニケーションプロトコルです。ただこの説明はちょっと大仰で、逆に人々を混乱させがちです。なのでこのガイドでは、チャットという観点でより簡単な言葉を使った説明を心がけています。まず「なぜ？」から始めて「どうやって？」に話を進めていきます。このパートはまだMatrixを使ったことがない人に向けた内容です。より深い情報をお探しの場合はサイドバーを見てみてください。
 
-## Why Matrix?
+## なぜMatrixなの？
 
-Matrix is the long-awaited middleground between one-to-one messaging platforms (Facebook Messenger, WhatsApp, iMessages, SMS...) and social/collaborative messaging platforms (Discord, Slack, Telegram...): it offers an appropriate degree of privacy while allowing you to socialize/collaborate with others. Generally, the merits that make Matrix stand out from others can be boiled down to two categories:
+1対1のメッセージプラットフォーム（Facebookメッセンジャー、WhatsApp、iMessage、SMS…）と、協調的なメッセージプラットフォーム（Discord、Slack、Telegram…）の間で長らく待ち望まれていたのが、このMatrixです。あなたのプライバシーを適切に守りながら、同時に人々と交友を深めることができます。他のプラットフォームと比較したときにMatrixが秀でるメリットは、大まかに2つ挙げることができます。
 
-* **Freedom.** You get to choose how to use the platform and how your data is treated.
-  * Conversations can be end-to-end encrypted[^1]. This is enabled by default for direct and group messages[^2].
-  * Automatic collection of data is minimized: no address book syncing[^3], no "are you human?" checks beyond registration, phone numbers are optional, even email addresses are optional (on select homeservers)!
-  * You can host your own server, or you can join [an existing public homeserver](../servers) that suits you. Either way, your access to the Matrix federation is the same[^4]!
-  * [Bridges](./features/#all-about-bridges) allow you to chat with users on other platforms, minimizing the social cost of moving to Matrix!
-  * Since Matrix is an open protocol, it is extensible and can be used for purposes beyond just chatting. For example: [help desk](https://www.safesupport.chat/), [social media](https://minestrix.henri2h.fr/), real-time collaboration...
-* **Trust.** You get to actually trust the software you use.
-  * Matrix is an open protocol, and most of its [apps](#what-app-should-i-use) and servers[^5] [^6] are both open source, which you may contribute to!
-  * Matrix is federated, just like email: Unlike conventional platforms which are [centralized](./matrix-vs-al/#centralized-platforms), no single specific entity can control the entirety of the Matrix federation, where homeservers, operated independently from each other, communicate with each other using an agreed-upon protocol.
-    * Furthermore, while individual homeservers may experience outage, the entire federation *cannot* go offline.
-  * You are welcomed to improve Matrix by creating new apps around it, or by [reviewing or submitting](https://spec.matrix.org/unstable/proposals/) proposals. You can shape your platform towards a better direction!
-  * Matrix is backed by the public sector, most notably by the Germans ([healthcare](https://matrix.org/blog/2021/07/21/germanys-national-healthcare-system-adopts-matrix), [army](https://element.io/case-studies/bundeswehr), [universities](https://doc.matrix.tu-dresden.de/en/why/)) as well as [the French](https://element.io/case-studies/tchap).
+* **自由。** どのようにプラットフォームを使い、あなたのデータがどのように扱われるかは、あなた自身が決められるべきです。
+    * 会話はエンドツーエンドで暗号化できます[^1]。これはダイレクトメッセージ・グループメッセージの両方でデフォルトで有効化されます。
+    * 収集される情報は最低限です。アドレス帳の同期はされません[^3]し、登録のときに「あなたは人間ですか？」のチェックもありません。電話番号の提供は任意ですし、Eメールアドレスの提供すら任意です（選んだホームサーバによります）。
+    * あなた自身がサーバを運用できます。もしくは、あなたが選んだ[パブリックなホームサーバ](../servers)に参加することもできます。どちらの方法でも、Matrixネットワーク上でのあなたの立場は変わりません。[^4]
+    * [ブリッジ](./features/#all-about-bridges)を使って、他のプラットフォーム上のユーザとチャットすることができます。Matrixに移るための手間は最小限ですみます。
+    * Matrixはオープンなプロトコルであるため、チャット以外の目的にも拡張することができます。たとえば[ヘルプデスク](https://www.safesupport.chat/)、[ソーシャルメディア](https://minestrix.henri2h.fr/), リアルタイムな共同作業など…
+* **信頼。** あなたは使うソフトウェアを心から信頼できるべきです。
+    * Matrixはオープンなプロトコルであり、その[アプリ](#what-app-should-i-use)やサーバ[^5] [^6]のほとんどもオープンソースです。あなたが貢献することもできます。
+    * MatrixはEメールと同じく分散型です。従来の[集権的](./matrix-vs-al/#centralized-platforms)なプラットフォームと異なり、何らかの単一の存在がMatrixネットワークをコントロールしているわけではありません。それぞれ独立して稼働するホームサーバが、定められたプロトコルに従って互いにコミュニケートしています。
+    * さらに、個々のホームサーバはダウンする可能性がありますが、Matrixネットワーク全体がオフラインになることは**ありえません**。
+    * 新しいアプリを作ったり提案を[出したりレビューしたり](https://spec.matrix.org/unstable/proposals/)することで、Matrixの改善に関わることができます。あなた自身の手で、プラットフォームをより良い方向へ導くことができます。
+    * Matrixは公共機関、特にドイツ（[ヘルスケア](https://matrix.org/blog/2021/07/21/germanys-national-healthcare-system-adopts-matrix)、[軍](https://element.io/case-studies/bundeswehr)、[大学](https://doc.matrix.tu-dresden.de/en/why/)）や[フランス](https://element.io/case-studies/tchap)の機関から支持されています。
 
-And of course, Matrix has everything that a modern messaging platform offers: cross-platform, real-time, usefulness, etc. But that's not the point. Matrix shows that it is **possible** to have a decent chat platform that actually **respects you**.
+そしてもちろんMatrixは、クロスプラットフォーム、リアルタイム性、使いやすさなど、現代のメッセージプラットフォームが持つすべての機能を備えています。ただこれは重要ではありません。Matrixは、**あなたを大切にする**良識あるチャットプラットフォームが**存在しうる**ことを体現しているのです。
 
-If these reasons did not convince you, how about comparing Matrix [with other platforms](./matrix-vs-al) like [Discord](./matrix-vs-discord) and [Telegram](./matrix-vs-telegram)?
+ここまでの説明で納得できなければ、[Discord](./matrix-vs-discord)や[Telegram](./matrix-vs-telegram)といった他のプラットフォームと[Matrixを比較](./matrix-vs-al)してみてはいかがでしょう？
 
 <div class="flash">
-  Matrix is not spotless, but it is constantly improving! You can also follow <a href="https://matrix.org/blog/posts">the Matrix.org blog</a> for all the news around Matrix!
+  Matrixは完璧ではありませんが、日に日に改善されています。<a href="https://matrix.org/blog/posts">the Matrix.org blog（英語）</a>をフォローして、Matrixに関するニュースを追いかけましょう。
 </div>
 
-## Get Started
+## はじめてみる
 
 Ready to try Matrix? Here we go:
 

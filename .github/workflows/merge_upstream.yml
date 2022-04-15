@@ -1,8 +1,7 @@
 name: Scheduled Merge
 on: 
   schedule:
-    - cron: '30 3 * * *'
-    # scheduled for 03:30 everyday
+    - cron: '0 */4 * * *'
 
 jobs:
   merge-from-upstream-repo:

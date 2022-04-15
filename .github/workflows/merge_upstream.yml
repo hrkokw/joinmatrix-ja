@@ -1,7 +1,7 @@
 name: Scheduled Upstream Merge
 on: 
   schedule:
-    - cron: '38 * * * *'
+    - cron: '38 */6 * * *'
   workflow_dispatch:
 
 jobs:

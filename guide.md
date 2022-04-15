@@ -37,38 +37,38 @@ description: あなたを大切にする分散チャットプラットフォー�
   Matrixは完璧ではありませんが、日に日に改善されています。<a href="https://matrix.org/blog/posts">The Matrix.org blog（英語）</a>をフォローして、Matrixに関するニュースにアクセスしましょう。
 </div>
 
-## はじめてみる
+## はじめる
 
-Matrixを試す準備ができましたか？それでは、行ってみましょう。
+Matrixを試す準備ができましたか？それでは、先へ進みましょう。
 
-### Is it Matrix or Element?
+### Matrixなの？Elementなの？
 
-* Matrix is the protocol, developed by the UK-registered non-profit [The Matrix.org Foundation C.I.C.](https://matrix.org/foundation/). It can also refer to the entire Matrix federation that contains all the users and rooms.
-* Element (previously known as Riot.im) is the flagship app of Matrix, developed by the UK-registered for-profit [New Vector Ltd](https://element.io/about). It can also refer to commercial services that the company offers, such as [Element Matrix Services](https://element.io/matrix-services).
+* Matrixとは、イギリスを本拠地とする非営利団体、[The Matrix.org Foundation C.I.C.](https://matrix.org/foundation/)が開発しているプロトコルです。同時に、すべてのユーザやルームを含むMatrixネットワーク全体を指すこともあります。
+* Element（過去にはRiot.imという名前でした）とは、イギリスを本拠地とする営利団体、[New Vector Ltd](https://element.io/about)が開発するMatrixの代表的なアプリです。同時に、同企業が提供する[Element Matrix Services](https://element.io/matrix-services)のような商用サービスを指すこともあります。
 
-[As touched upon later](#what-app-should-i-use), Element is just one of the apps that accesses Matrix. It is therefore correct to refer to the platform as just "Matrix." Though, nobody is stopping you from calling it *[The Matrix](https://en.wikipedia.org/wiki/The_Matrix)*.
+[この後にも触れます](#what-app-should-i-use)が、ElementはMatrixにアクセスするアプリの一つにすぎません。ですから、このプラットフォームを単に「Matrix」と呼ぶのが正しいです。しかしあなたがそれを*[マトリックス](https://en.wikipedia.org/wiki/The_Matrix)*と呼んでも誰も止めません。
 
-### Set up your own homeserver, or join an existing homeserver?
+### 自分でホームサーバを作るか、すでにあるホームサーバに参加するか
 
-If you have the infrastructure and the technical skills required to host an internet-facing program, then you can try setting up your own homeserver[^6]. The dominant homeserver implementation is [Synapse](https://github.com/matrix-org/synapse/). See [installation instructions](https://matrix.org/docs/guides/installing-synapse). It may be possible to run a homeserver for free [with Oracle Cloud](https://matrix.org/docs/guides/free-small-matrix-server).
+もしもあなたが満足なインフラと、インターネット上にサービスを公開する技術スキルをお持ちなのであれば、自分のホームサーバを作ることにチャレンジできます[^6]。現在、もっとも普及しているホームサーバは[Synapse](https://github.com/matrix-org/synapse/)です。[インストール方法](https://matrix.org/docs/guides/installing-synapse)をご覧ください。[Oracle Cloud](https://matrix.org/docs/guides/free-small-matrix-server)を使って無料でホームサーバを作ることもできるかもしれません。
 
-However, hosting is still undesirable for many. In that case, you can...
+しかし、多くの人にとって必ずしも望ましい選択ではないかもしれません。その場合は次の選択肢があります。
 
-* Join an existing homeserver by picking one from [our public homeserver list](../servers), or
-* Reaching out to a friend who hosts a homeserver, or
-* Purchase [managed homeserver hosting](https://matrix.org/hosting/).
-
-<div class="flash">
-  The "default" Matrix homeserver is <code>matrix.org</code>, which is used by 35% of all Matrix users <a href="https://matrix.org/blog/2020/01/02/on-privacy-versus-freedom">as estimated in 2020</a>. Although it is okay to use it (and you can try out Matrix quickly with it), it is highly encouraged to choose a different homeserver (including running your own) for long-term usage, as it serves the spirit of decentralization promoted by the Matrix protocol, and also because <code>matrix.org</code> is occasionally overloaded (though performance has improved in recent times) and behind Cloudflare (which is a security risk).
-</div>
-
-### Register an account
+* [公開ホームサーバ一覧](../servers)から選んだ既存のホームサーバに参加する
+* ホームサーバを運営している友人に連絡してみる
+* 有償の[ホスティングサービス](https://matrix.org/hosting/)を契約する
 
 <div class="flash">
-  This part does not cover cases where a homeserver uses its own authentication tools. In such cases, please consult your homeserver's instructions.
+  いわゆる「標準」のMatrixホームサーバは<code>matrix.org</code>で、<a href="https://matrix.org/blog/2020/01/02/on-privacy-versus-freedom">2020年の推計</a>では全Matrixユーザの35%が利用しています。それを利用するのも悪くはありません（Matrixをすぐに試すことができますし）。しかし将来に渡ってMatrixを利用するつもりであれば、他のホームサーバの利用（自分で運営することも含めて）を強くお勧めします。Matrixプロトコルが提唱する非集中の精神に資することになりますし、<code>matrix.org</code>はときどき過負荷の状態に陥ります（最近では改善してきていますが）。またCloudflareを利用しているためセキュリティ上の懸念もあります。
 </div>
 
-For simplicity, the guide is prepared in such a way that recommends registration on a PC browser, even though many servers allow you to do so from native PC/mobile apps. Regardless, once registered, you can use the account everywhere!
+### アカウントを登録する
+
+<div class="flash">
+  このパートは、ホームサーバが独自の認証ツールを利用しているケースを想定していません。そのようなケースでは各ホームサーバの解説をチェックしてください。
+</div>
+
+話を簡単にするため、このガイドではPC上のWebブラウザで登録を行なう前提としています。ただし多くのサーバではPCやモバイルのネイティブアプリからも登録することができます。いずれにせよ一度アカウントを登録すれば、そのアカウントはどこでも使うことができます。
 
 1. If you're using our homeserver list which has provided you with a link to the homeserver's in-house Element client, then you may use that. Otherwise, use the official [Element Web client](https://app.element.io) to register.
 2. Click "Create Account".

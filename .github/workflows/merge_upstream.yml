@@ -1,7 +1,8 @@
-name: Scheduled Merge
+name: Scheduled Upstream Merge
 on: 
   schedule:
     - cron: '38 * * * *'
+  workflow_dispatch:
 
 jobs:
   merge-from-upstream-repo:

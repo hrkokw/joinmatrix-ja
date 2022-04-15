@@ -23,7 +23,7 @@ description: あなたを大切にする分散チャットプラットフォー�
     * [ブリッジ](./features/#all-about-bridges)を使って、他のプラットフォーム上のユーザとチャットすることができます。Matrixに移るための手間は最小限ですみます。
     * Matrixはオープンなプロトコルであるため、チャット以外の目的にも拡張することができます。たとえば[ヘルプデスク](https://www.safesupport.chat/)、[ソーシャルメディア](https://minestrix.henri2h.fr/), リアルタイムな共同作業など…
 * **信頼。** あなたは使うソフトウェアを心から信頼できるべきです。
-    * Matrixはオープンなプロトコルであり、その[アプリ](#what-app-should-i-use)やサーバ[^5] [^6]のほとんどもオープンソースです。あなたが貢献することもできます。
+    * Matrixはオープンなプロトコルであり、その[アプリ](#what-app-should-i-use)やサーバ[^6]のほとんど[^5]がオープンソースです。あなたが貢献することもできます。
     * MatrixはEメールと同じく分散型です。従来の[集権的](./matrix-vs-al/#centralized-platforms)なプラットフォームと異なり、何らかの単一の存在がMatrixネットワークをコントロールしているわけではありません。それぞれ独立して稼働するホームサーバが、定められたプロトコルに従って互いにコミュニケートしています。
     * さらに、個々のホームサーバはダウンする可能性がありますが、Matrixネットワーク全体がオフラインになることは**ありえません**。
     * 新しいアプリを作ったり提案を[出したりレビューしたり](https://spec.matrix.org/unstable/proposals/)することで、Matrixの改善に関わることができます。あなた自身の手で、プラットフォームをより良い方向へ導くことができます。
@@ -76,7 +76,7 @@ For simplicity, the guide is prepared in such a way that recommends registration
 4. Fill out the required information.
 5. If you did not enter an email address, then you're in. Otherwise, verify your email, after which you will be prompted to [login](#log-into-an-existing-account).
 
-Users are uniquely identified by their MXID. Your MXID is your username plus your server name (not necessarily domain). For example, `@austin:tchncs.de` is my MXID, where `austin` is my username and `tchncs.de` is the name of the server I'm on. **You cannot change it later!** Furthermore, if you deactivate the account, no one else can have this MXID again! You can, however, change the display name, as well as your avatar.
+Users are uniquely identified by their MXID. Your MXID is your username plus your server name (not necessarily domain). For example, `@austin:tchncs.de` is my MXID, where `austin` is my username and `tchncs.de` is the name of the server I'm on. **You cannot change it later**, as using a new username or a different homeserver requires registering a new account (you may [migrate data](https://ems.element.io/tools/matrix-migration), however). Furthermore, if you deactivate the account, no one else can have this MXID again! You can, however, change the display name, as well as your avatar.
 
 Remember to [set up key backup](#set-up-key-backup)!
 
@@ -138,8 +138,7 @@ For those living on the edge: [Commune](https://commune.chat/), [Nheko](https://
 Each Matrix homeserver has a public room directory, which is accessible to the users of that homeserver or, if enabled, users of other homeservers as well.
 
 * On PC, for Element and SchildiChat, click the "Explore Rooms" button below your username on the top-left.
-* On phone, for Element and SchildiChat, click the "Explore Rooms" floating button on the bottom-right.
-* For FluffyChat, click the search button.
+* For FluffyChat, and for Element and SchildiChat on phone, click the search button.
 
 In any case mentioned above, you can enter the room address to directly join a room, or you can enter keywords to search for rooms[^8]. However, the directory may be unintuitive to use as it orders rooms by member count[^9]. The author of this guide recommends joining [this Space](https://matrix.to/#/#offtopic-space:envs.net) (`#offtopic-space:envs.net`), which contains a list of active off-topic or no-topic discussion rooms.
 
@@ -159,6 +158,8 @@ On Element and SchildiChat, Spaces show up on the left of your room list. Select
   </ul>
 </div>
 
+If you're using Element or SchildiChat, then keep the [Element User Guide](https://element.io/user-guide) handy for a quick reference to the interface!
+
 * [More Features of Matrix](./features): An introduction to more of Matrix's features!
 * [Public homeserver list](../servers)
 * [Questions & Answers](./qna)
@@ -173,7 +174,7 @@ On Element and SchildiChat, Spaces show up on the left of your room list. Select
 
 [^4]: Note that public rooms may block certain servers - just like banning individual users - due to prevalence of unacceptable content (spam, hate speech, etc.). If you're not running your own homeserver, don't join homeservers that are known to harbour such content. This does not apply to homeservers listed on [our public list](../servers) as they are vetted against any presence of bad reputation. In any case, behave yourselves, remember the human.
 
-[^5]: This covers all the ones that an average user sees.
+[^5]: This includes all clients and servers that an average user uses.
 
 [^6]: [Synapse](https://github.com/matrix-org/synapse/) is the only stable homeserver implementation as of now. If you are living on the edge, you can try out [Dendrite](https://github.com/matrix-org/dendrite/) and [Conduit](https://conduit.rs/), both of which aim to support p2p eventually (see footnote 1).
 

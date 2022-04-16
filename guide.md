@@ -78,12 +78,11 @@ Matrixを試す準備ができましたか？それでは、先へ進みまし�
 
 すべてのユーザはそれぞれ固有のMXIDを持ちます。あなたのMXIDはユーザ名とサーバ名（必ずしもドメイン名とは一致しません）を組み合わせたものです。たとえば`@austin:tchncs.de`が筆者のMXIDですが、`austin`がユーザ名で`tchncs.de`がサーバ名です。別のユーザ名やホームサーバを使うには新しいアカウントを登録する必要があるので、*MXIDを後から変更することはできません*（[データの移行](https://ems.element.io/tools/matrix-migration)はできるかもしれません）。さらに、あなたがアカウントを無効化した場合、他の誰もそのMXIDを再利用することはできません。ただし、表示名やアバターの変更はいつでも行なうことができます。
 
-[キーバックアップの設定](#set-up-key-backup)を忘れないでください。
+[キーバックアップの設定](#キーバックアップを設定する)を忘れないでください。
 
 ### すでにあるアカウントにログインする
 
 ほとんどのアプリで、
-For most apps:
 
 1. ログインダイアログを開いてください。
 2. あなたが正しいサーバにログインしようとしていることを確認してください。大抵はダイアログの上のほうに表示されています。必要であれば「編集」をクリックして適切なドメインを入力してください（登録方法のステップ3と同じです）。
@@ -91,44 +90,45 @@ For most apps:
 
 ### キーバックアップを設定する
 
-When you log into a new device, you will be prompted to verify it using your existing device (by scanning a QR code or by comparing emojis). Your new device will then retrieve the room keys from your existing device, thereby enabling it to read your encrypted messages. This prevents anyone else - including your homeserver operator - to read encrypted content[^1].
+新しいデバイスにログインすると、すでに使用中のデバイスで検証（QRコードをスキャンするか絵文字を比較する）を求められます。検証を完了すると、新しいデバイスは使用中のデバイスからルームキーを受け取り、これまでの暗号化されたメッセージを読めるようになります。この仕組みによって、ホームサーバの運営者も含めて他の誰も、暗号化されたメッセージを読むことはできません[^1]。
 
+しかし次の場合には、暗号化されたメッセージにアクセスするためにセキュリティキーが必要になります。
 However, a Security Key is required to access encrypted messages if:
 
-* You have logged out of *all* your sessions prior to this login, or
-* You are unable to verify interactively from another session.
+* 以前にログインした*すべての*セッションからログアウトしている場合
+* 他のセッションでリアルタイムに検証することができない場合
 
-You can set up a Security Key with the following steps:
+セキュリティキーのバックアップを設定するには、
 
-1. On your first login, a bubble on the top-left will ask you to "set up secure backup". Click "Continue". If that is not the case, click your avatar, then "Settings" -> "Security & Privacy" -> "Secure Backup" -> click "Set up".
-2. "Generate a Security Key" is enough.
-3. Save the generated security key in a safe place (like in a password manager).
+1. 最初にログインすると、左上に「安全なバックアップ」を案内するバブルが出てきますので、「続ける」をクリックします。出てこない場合は、アバターをクリックして「設定」>「セキュリティとプライバシー」>「安全なバックアップ」>「セットアップ」の順で選びます。
+2. 「セキュリティキーを生成」を選びます。
+3. 生成されたセキュリティキーを安全な場所（パスワードマネージャなど）に保管します。
 
 <div class="flash flash-warn">
-  It is <b>strongly recommended</b> to do this step to prevent accidentally losing all of your encrypted messages.
+  あなたの暗号化されたすべてのメッセージを失うことがないよう、この手順は<b>強く推奨されます</b>。
 </div>
 
-## Get Familiar
+## より深く知る
 
-### What app should I use?
+### どのアプリを使えば？
 
-There exists [many different apps](https://matrix.org/clients/) that can access Matrix. Because Matrix is an open protocol, you can even implement Matrix in your own app, if you got the skills. But for most people, here are some recommendations:
+Matrixにアクセスできるアプリは[たくさんあります](https://matrix.org/clients/)。Matrixはオープンなプロトコルですので、スキルがあればあなた自身のアプリにMatrixを組み込むこともできます。ただ、多くの人に向けたおすすめがあります。
 
-#### Browser
+#### Webアプリ
 
-* [Element](https://app.element.io): The flagship app.
-  * [Element development version](https://develop.element.io): Element with lab features enabled, but potentially unstable.
-  * [SchildiChat](https://app.schildi.chat/): Element with lab features enabled, plus an optional speech bubble layout.
-* [Cinny](https://cinny.in/): Matrix in Slack style.
-* [Hydrogen](https://hydrogen.element.io/): Fast and adaptable to mobile browsers, at the cost of missing some optional features.
+* [Element](https://app.element.io): 代表的なアプリ
+  * [Element開発版](https://develop.element.io): Elementに先進的な機能が組み込まれたバージョン（ただし不安定な場合があります）
+  * [SchildiChat](https://app.schildi.chat/): Elementに先進的な機能と、オプションのバブルレイアウトが組み込まれたバージョン
+* [Cinny](https://cinny.in/): SlackスタイルのMatrixアプリ
+* [Hydrogen](https://hydrogen.element.io/): モバイルブラウザに適した軽量アプリ（ただ引き換えにいくつかのオプション機能がありません）
 
-#### PC and Mobile
+#### PC・モバイルアプリ
 
-* [Element](https://element.io): The flagship app.
-  * [SchildiChat](https://schildi.chat/): Element with lab features enabled, plus an optional speech bubble layout. Recommended to be used on PC for the full feature set.
-* [FluffyChat](https://fluffychat.im/): "Cute" Matrix. Recommended to be used on mobile for performance.
+* [Element](https://element.io): 代表的なアプリ
+  * [SchildiChat](https://schildi.chat/): Elementに先進的な機能と、オプションのバブルレイアウトが組み込まれたバージョン。フル機能を使うためにはPCでの使用をおすすめします
+* [FluffyChat](https://fluffychat.im/): 「かわいい」Matrixアプリ。パフォーマンス面でモバイルでの使用をおすすめします
 
-For those living on the edge: [Commune](https://commune.chat/), [Nheko](https://github.com/Nheko-Reborn/nheko), [Spectral](https://spectral.im), and [Syphon](https://syphon.org/).
+新しもの好きな方向けには他にも、[Commune](https://commune.chat/)、[Nheko](https://github.com/Nheko-Reborn/nheko)、[Spectral](https://spectral.im)、[Syphon](https://syphon.org/)があります。
 
 <div class="flash">
   For PC users, if you want a better experience when using Element or SchildiChat, place <a href="../assets/config.json">this config file</a> in your <a href="https://github.com/vector-im/element-desktop#user-specified-configjson">configuration folder</a>, where <code>$NAME</code> is either "Element" or "SchildiChat". The config file enables the "Labs" tab in settings, enables custom themes, preloads <a href="https://github.com/aaronraimist/element-themes">a few custom themes</a>, uses <a href="https://dimension.t2bot.io/">Dimension</a> instead of Scalar for integration manager, and preloads a few homeservers for room directory searches.

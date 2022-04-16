@@ -3,7 +3,7 @@ layout: page-two-col
 nav: true
 parent: guide
 permalink: guide/
-title: The "Join Matrix!" Guide
+title: Join Matrix! ガイド
 ntitle: ガイド
 description: あなたを大切にする分散チャットプラットフォーム、Matrixの初心者向けガイド
 ---

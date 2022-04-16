@@ -1,5 +1,5 @@
 ---
-title: "Join Matrix!" ガイド
+title: The "Join Matrix!" Guide
 ntitle: The Guide
 layout: page-two-col
 nav: true

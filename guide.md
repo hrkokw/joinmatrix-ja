@@ -1,14 +1,14 @@
 ---
+title: Join Matrix! ガイド
+ntitle: ガイド
 layout: page-two-col
 nav: true
 parent: guide
 permalink: guide/
-title: Join Matrix! ガイド
-ntitle: ガイド
 description: あなたを大切にする分散チャットプラットフォーム、Matrixの初心者向けガイド
 ---
 
-## "Join Matrix!" ガイド: はじめに
+## Join Matrix! ガイド: はじめに
 
 ようこそ！このWebサイトはMatrix（たまにElementと[間違われます](#is-it-matrix-or-element)が）の初心者向けのガイドとなることを目指しています。Matrixは、既存の集権的な商用プラットフォームの代替となることを目指す、オープンな分散コミュニケーションプロトコルです。ただこの説明はちょっと大仰で、逆に人々を混乱させがちです。なのでこのガイドでは、チャットという観点でより簡単な言葉を使った説明を心がけています。まず「なぜ？」から始めて「どうやって？」に話を進めていきます。このパートはまだMatrixを使ったことがない人に向けた内容です。より深い情報をお探しの場合はサイドバーを見てみてください。
 

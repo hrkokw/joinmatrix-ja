@@ -70,25 +70,26 @@ Matrixを試す準備ができましたか？それでは、先へ進みまし�
 
 話を簡単にするため、このガイドではPC上のWebブラウザで登録を行なう前提としています。ただし多くのサーバではPCやモバイルのネイティブアプリからも登録することができます。いずれにせよ一度アカウントを登録すれば、そのアカウントはどこでも使うことができます。
 
-1. If you're using our homeserver list which has provided you with a link to the homeserver's in-house Element client, then you may use that. Otherwise, use the official [Element Web client](https://app.element.io) to register.
-2. Click "Create Account".
-3. On the top of the registration dialog, verify that you are registering on the correct server. If necessary, click "edit" and enter the appropriate domain (consult your public/private/managed homeserver's instructions, or the "Registration method" column of the [homeserver list](../servers)). Once verified, **note the domain down.** You will need it to login[^7].
-4. Fill out the required information.
-5. If you did not enter an email address, then you're in. Otherwise, verify your email, after which you will be prompted to [login](#log-into-an-existing-account).
+1. このWebサイトのホームサーバ一覧には「In-house Element」のリンクがあるものがあります。あなたが登録しようとしているホームサーバにリンクがあれば、そこから登録してください。そうでなければ[Elementの公式Webクライアント](https://app.element.io)を利用してください。
+2. 「アカウントを登録」をクリックしてください。
+3. 登録ダイアログで、あなたが意図したホームサーバに登録しようとしているかを確認してください。必要であれば「編集」をクリックして適切なドメインを入力してください（あなたのホームサーバの説明か、[ホームサーバ一覧](../servers)の「Registration method」の項目を確認してください）。確認したら**ドメインをメモしておいてください**。ログインするときに必要になります[^7]。
+4. 必要な情報を入力してください。
+5. Eメールアドレスの入力を求められなければ、これで終わりです。そうでなければ、[ログイン](#log-into-an-existing-account)の前にアドレスの確認が必要になります。
 
-Users are uniquely identified by their MXID. Your MXID is your username plus your server name (not necessarily domain). For example, `@austin:tchncs.de` is my MXID, where `austin` is my username and `tchncs.de` is the name of the server I'm on. **You cannot change it later**, as using a new username or a different homeserver requires registering a new account (you may [migrate data](https://ems.element.io/tools/matrix-migration), however). Furthermore, if you deactivate the account, no one else can have this MXID again! You can, however, change the display name, as well as your avatar.
+すべてのユーザはそれぞれ固有のMXIDを持ちます。あなたのMXIDはユーザ名とサーバ名（必ずしもドメイン名とは一致しません）を組み合わせたものです。たとえば`@austin:tchncs.de`が筆者のMXIDですが、`austin`がユーザ名で`tchncs.de`がサーバ名です。別のユーザ名やホームサーバを使うには新しいアカウントを登録する必要があるので、*MXIDを後から変更することはできません*（[データの移行](https://ems.element.io/tools/matrix-migration)はできるかもしれません）。さらに、あなたがアカウントを無効化した場合、他の誰もそのMXIDを再利用することはできません。ただし、表示名やアバターの変更はいつでも行なうことができます。
 
-Remember to [set up key backup](#set-up-key-backup)!
+[キーバックアップの設定](#set-up-key-backup)を忘れないでください。
 
-### Log into an existing account
+### すでにあるアカウントにログインする
 
+ほとんどのアプリで、
 For most apps:
 
-1. Enter the login dialog, if necessary.
-2. Verify that you are logging onto the correct server. This is usually shown on top of the dialog. If necessary, click "edit" and enter the appropriate domain (see Step 3 of registration).
-3. Enter your login details.
+1. ログインダイアログを開いてください。
+2. あなたが正しいサーバにログインしようとしていることを確認してください。大抵はダイアログの上のほうに表示されています。必要であれば「編集」をクリックして適切なドメインを入力してください（登録方法のステップ3と同じです）。
+3. 詳しいログイン情報を入力してください。
 
-### Set up key backup
+### キーバックアップを設定する
 
 When you log into a new device, you will be prompted to verify it using your existing device (by scanning a QR code or by comparing emojis). Your new device will then retrieve the room keys from your existing device, thereby enabling it to read your encrypted messages. This prevents anyone else - including your homeserver operator - to read encrypted content[^1].
 

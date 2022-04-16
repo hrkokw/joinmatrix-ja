@@ -23,7 +23,7 @@ description: あなたを大切にする分散チャットプラットフォー�
     * [ブリッジ](./features/#all-about-bridges)を使って、他のプラットフォーム上のユーザとチャットすることができます。Matrixに移るための手間は最小限ですみます。
     * Matrixはオープンなプロトコルであるため、チャット以外の目的にも拡張することができます。たとえば[ヘルプデスク](https://www.safesupport.chat/)、[ソーシャルメディア](https://minestrix.henri2h.fr/), リアルタイムな共同作業など…
 * **信頼。** あなたは使うソフトウェアを心から信頼できるべきです。
-    * Matrixはオープンなプロトコルであり、その[アプリ](#what-app-should-i-use)やサーバ[^6]のほとんど[^5]がオープンソースです。あなたが貢献することもできます。
+    * Matrixはオープンなプロトコルであり、その[アプリ](#どのアプリを使えば)やサーバ[^6]のほとんど[^5]がオープンソースです。あなたが貢献することもできます。
     * MatrixはEメールと同じく分散型です。従来の[集権的](./matrix-vs-al/#centralized-platforms)なプラットフォームと異なり、何らかの単一の存在がMatrixネットワークをコントロールしているわけではありません。それぞれ独立して稼働するホームサーバが、定められたプロトコルに従って互いにコミュニケートしています。
     * さらに、個々のホームサーバはダウンする可能性がありますが、Matrixネットワーク全体がオフラインになることは**ありえません**。
     * 新しいアプリを作ったり提案を[出したりレビューしたり](https://spec.matrix.org/unstable/proposals/)することで、Matrixの改善に関わることができます。あなた自身の手で、プラットフォームをより良い方向へ導くことができます。
@@ -46,7 +46,7 @@ Matrixを試す準備ができましたか？それでは、先へ進みまし�
 * Matrixとは、イギリスを本拠地とする非営利団体、[The Matrix.org Foundation C.I.C.](https://matrix.org/foundation/)が開発しているプロトコルです。同時に、すべてのユーザやルームを含むMatrixネットワーク全体を指すこともあります。
 * Element（過去にはRiot.imという名前でした）とは、イギリスを本拠地とする営利団体、[New Vector Ltd](https://element.io/about)が開発するMatrixの代表的なアプリです。同時に、同企業が提供する[Element Matrix Services](https://element.io/matrix-services)のような商用サービスを指すこともあります。
 
-[この後にも触れます](#what-app-should-i-use)が、ElementはMatrixにアクセスするアプリの一つにすぎません。ですから、このプラットフォームを単に「Matrix」と呼ぶのが正しいです。しかしあなたがそれを*[マトリックス](https://en.wikipedia.org/wiki/The_Matrix)*と呼んでも誰も止めません。
+[この後にも触れます](#どのアプリを使えば)が、ElementはMatrixにアクセスするアプリの一つにすぎません。ですから、このプラットフォームを単に「Matrix」と呼ぶのが正しいです。しかしあなたがそれを*[マトリックス](https://en.wikipedia.org/wiki/The_Matrix)*と呼んでも誰も止めません。
 
 ### 自分でホームサーバを作るか、すでにあるホームサーバに参加するか
 
@@ -74,7 +74,7 @@ Matrixを試す準備ができましたか？それでは、先へ進みまし�
 2. 「アカウントを登録」をクリックしてください。
 3. 登録ダイアログで、あなたが意図したホームサーバに登録しようとしているかを確認してください。必要であれば「編集」をクリックして適切なドメインを入力してください（あなたのホームサーバの説明か、[ホームサーバ一覧](../servers)の「Registration method」の項目を確認してください）。確認したら**ドメインをメモしておいてください**。ログインするときに必要になります[^7]。
 4. 必要な情報を入力してください。
-5. Eメールアドレスの入力を求められなければ、これで終わりです。そうでなければ、[ログイン](#log-into-an-existing-account)の前にアドレスの確認が必要になります。
+5. Eメールアドレスの入力を求められなければ、これで終わりです。そうでなければ、[ログイン](#すでにあるアカウントにログインする)の前にアドレスの確認が必要になります。
 
 すべてのユーザはそれぞれ固有のMXIDを持ちます。あなたのMXIDはユーザ名とサーバ名（必ずしもドメイン名とは一致しません）を組み合わせたものです。たとえば`@austin:tchncs.de`が筆者のMXIDですが、`austin`がユーザ名で`tchncs.de`がサーバ名です。別のユーザ名やホームサーバを使うには新しいアカウントを登録する必要があるので、*MXIDを後から変更することはできません*（[データの移行](https://ems.element.io/tools/matrix-migration)はできるかもしれません）。さらに、あなたがアカウントを無効化した場合、他の誰もそのMXIDを再利用することはできません。ただし、表示名やアバターの変更はいつでも行なうことができます。
 
@@ -131,58 +131,58 @@ Matrixにアクセスできるアプリは[たくさんあります](https://mat
 新しもの好きな方向けには他にも、[Commune](https://commune.chat/)、[Nheko](https://github.com/Nheko-Reborn/nheko)、[Spectral](https://spectral.im)、[Syphon](https://syphon.org/)があります。
 
 <div class="flash">
-  For PC users, if you want a better experience when using Element or SchildiChat, place <a href="../assets/config.json">this config file</a> in your <a href="https://github.com/vector-im/element-desktop#user-specified-configjson">configuration folder</a>, where <code>$NAME</code> is either "Element" or "SchildiChat". The config file enables the "Labs" tab in settings, enables custom themes, preloads <a href="https://github.com/aaronraimist/element-themes">a few custom themes</a>, uses <a href="https://dimension.t2bot.io/">Dimension</a> instead of Scalar for integration manager, and preloads a few homeservers for room directory searches.
+  PCをお使いの場合にElementかSchildiChatでより良い体験をえるには、<a href="https://github.com/vector-im/element-desktop#user-specified-configjson">設定フォルダ</a>に<a href="../assets/config.json">この設定ファイル</a>を配置してください。その際、<code>$NAME</code>には「Element」か「SchildiChat」を設定してください。この設定ファイルによって「Labs」タブが表示され、<a href="https://github.com/aaronraimist/element-themes">いくつかの</a>カスタムテーマや、Scalarの代わって<a href="https://dimension.t2bot.io/">Dimension</a>をインテグレーション管理への利用、またいくつかのホームサーバのルームディレクトリの検索が可能になります。
 </div>
 
-### What rooms can I join?
+### どんなルームに参加できるの？
 
-Each Matrix homeserver has a public room directory, which is accessible to the users of that homeserver or, if enabled, users of other homeservers as well.
+それぞれのMatrixホームサーバは公開ルームディレクトリを持っています。同じホームサーバのユーザか、有効に設定されていれば他のホームサーバのユーザもそのディレクトリにアクセスできます。
 
-* On PC, for Element and SchildiChat, click the "Explore Rooms" button below your username on the top-left.
-* For FluffyChat, and for Element and SchildiChat on phone, click the search button.
+* PCではElementかSchildiChatで、左上のユーザ名の下にある「ルームを探索」ボタンをクリックします
+* FuluffyChat、またはモバイルのElementかSchildiCatでは、検索ボタンをクリックします。
 
-In any case mentioned above, you can enter the room address to directly join a room, or you can enter keywords to search for rooms[^8]. However, the directory may be unintuitive to use as it orders rooms by member count[^9]. The author of this guide recommends joining [this Space](https://matrix.to/#/#offtopic-space:envs.net) (`#offtopic-space:envs.net`), which contains a list of active off-topic or no-topic discussion rooms.
+どの場合でも、ルームアドレスを直接入力して参加することもできますし、ルームをキーワードで検索することもできます[^8]。しかし、ルームディレクトリはメンバー数順に並ぶ[^9]ため直感的ではないかもしれません。筆者のおすすめは[このスペース](https://matrix.to/#/#offtopic-space:envs.net)（`#offtopic-space:envs.net`）に参加することです。このスペースにはアクティブな雑談用ルームの一覧があります。
 
-#### Hold on, what's a Space?
+#### ちょっと待って、スペースって？
 
-Discord users may be familiar with this format, but Spaces are not exactly the same as a Discord "server." A Space[^10] is a list that can include other rooms and Spaces. It can be used to organize your own rooms, or for a community to organize all its rooms. Joining a Space does not imply joining all of its rooms (however, rooms can choose to require users to join a Space first), nor does leaving a Space imply leaving all of its rooms (by default).
+Discordのユーザにはなじみがあるかもしれませんが、スペースはDiscordの「サーバ」と同じではありません。スペース[^10]は他のルームやスペースを含むことができるリストです。あなたのルームをまとめたり、コミュニティが関連するすべてのルームをまとめたりするのに使うことができます。スペースに参加してもその中のルームにまとめて参加することにはなりませんし（ただしルームには、まずスペースへの参加を求める設定もできます）、またスペースから離脱してもその中のルームからまとめて離脱することには（デフォルト設定では）なりません。
 
-On Element and SchildiChat, Spaces show up on the left of your room list. Selecting one will filter your room list to DMs with members of the Space and joined rooms within the Space. To see rooms that you have not yet joined, click the Explore button (see above).
+ElementとSchildiChatでは、スペースはあなたのルーム一覧の左に表示されます。スペースのどれかを選択するとルームの一覧が、スペースのルームと、スペースのメンバーとのダイレクトメッセージに絞り込まれます。まだ参加していないルームを表示するには、探索ボタン（前述）をクリックしてください。
 
-## Go Deeper
+## もっともっと深く
 
 <div class="flash flash-warn">
-  The names of your sessions are public, which enable others to know what OS you're using (it used to be accurate to devices but that is no longer the case). You can rename them, however (as long as you know which is which):
+  あなたのセッションの名前は公開されています。このセッション名から、他のユーザはあなたが使っているOSを知ることができます（最近ではそうとも限らなくなっていますが）。ただしセッション名は（あなたにセッションの区別がついている限り）変更することができます。
   <ul>
-    <li>In Element/SchildiChat, go to user settings, then "Security & Privacy." Rename the sessions as needed.</li>
-    <li>In FluffyChat, go to settings, then "devices." Click the sessions to rename them.</li>
+    <li>ElementかSchildiChatでは、ユーザ設定の「セキュリティとプライバシー」を開いてください。そこでセッション名を変更できます。</li>
+    <li>FluffyChatでは、設定の「デバイス」を開いてください。セッションをクリックして名前を変更してください。</li>
   </ul>
 </div>
 
-If you're using Element or SchildiChat, then keep the [Element User Guide](https://element.io/user-guide) handy for a quick reference to the interface!
+ElementかSchildiChatをお使いなら、[Elementのユーザガイド](https://element.io/user-guide)をいつでも見られるようにしておくと便利です。
 
-* [More Features of Matrix](./features): An introduction to more of Matrix's features!
-* [Public homeserver list](../servers)
-* [Questions & Answers](./qna)
+* [Matrixの機能をもっと詳しく](./features): Matrixの機能のより詳しい紹介です。
+* [公開ホームサーバ一覧](../servers)
+* [質問と回答](./qna)
 
-## Footnotes
+## 脚注
 
-[^1]: Only text contents and file attachments of messages are encrypted, using the Signal protocol. Currently, Matrix does not prevent metadata leakage, mainly due to its federated nature. This will change, however, when Matrix starts rolling out [Pinecone](https://archive.fosdem.org/2021/schedule/event/matrix_pinecones/), allowing p2p connections. Currently, it *can* be mitigated if all participants of an E2EE conversation are running their own homeserver (so to eliminate third parties).
+[^1]: テキストデータとメッセージに添付されたファイルだけが、Signalプロトコルで暗号化されます。現在のところ、その分散システムという特徴のため、Matrixはメタデータの漏洩を防ぐことができません。将来Matrixが[Pinecone](https://archive.fosdem.org/2021/schedule/event/matrix_pinecones/)に対応しP2P通信が可能になると、この状況は変わります。今のところ、E2EEの会話の参加者全員が独自のホームサーバを運営する（つまりサードパーティを排除する）ことで、この影響を軽減できる*可能性があります*。
 
-[^2]: Exception: Some bots do not support end-to-end encrypted messaging. Furthermore, when creating an empty private room, you will be prompted (but not by default) to enable encryption.
+[^2]: 例外として、ボットの一部はエンドツーエンド暗号化に対応していません。さらに空のプライベートルームを作成するとき、暗号化するか尋ねられますがデフォルトでは有効ではありません。
 
-[^3]: Element allows you to opt into (not enabled by default as of late 2021) using an "identity server" - think of it as a big online address book. This allows users to share their email addresses and username, which can be looked up manually by other users. However, here "address book" means that Matrix will not store the one locally on your phone; homeservers *can* see who you are talking to, as such information are not encrypted. There is [a proposal](https://github.com/matrix-org/matrix-doc/pull/3414) to address this. See also footnote 1.
+[^3]: Elementでは「IDサーバ」にオプトイン（2021年末時点ではデフォルトでは無効）することができます。これは巨大なオンライン電話帳と考えてください。これを使うと、ユーザは他のサーバのユーザとの間でメールアドレスやユーザ名を交換することができます。しかし、ここでいう「電話帳」はあなたのデバイス上に保管されるものではありません。ホームサーバはあなたが誰と会話しているかを、暗号化されていない状態で見ることができる*可能性があります*。これを解決するための[提案](https://github.com/matrix-org/matrix-doc/pull/3414)がなされています。脚注1も参照してください。
 
-[^4]: Note that public rooms may block certain servers - just like banning individual users - due to prevalence of unacceptable content (spam, hate speech, etc.). If you're not running your own homeserver, don't join homeservers that are known to harbour such content. This does not apply to homeservers listed on [our public list](../servers) as they are vetted against any presence of bad reputation. In any case, behave yourselves, remember the human.
+[^4]: 公開ルームは、特定のユーザをブロックするのと同じように、spamやヘイトスピーチなど望ましくないコンテンツを理由に特定のサーバをブロックしていることがあります。あなたが自分でホームサーバを運営しているのでなければ、そういった素行のよくないサーバに参加することは避けてください。[私たちの公開サーバの一覧](../servers)は審査の上でメンテナンスされていますので、そういったサーバは含んでいません。いずれにせよ、どのようなときも良識と敬意をもって行動してください。
 
-[^5]: This includes all clients and servers that an average user uses.
+[^5]: これには平均的なユーザが利用するすべてのクライアントとサーバが含まれます。
 
-[^6]: [Synapse](https://github.com/matrix-org/synapse/) is the only stable homeserver implementation as of now. If you are living on the edge, you can try out [Dendrite](https://github.com/matrix-org/dendrite/) and [Conduit](https://conduit.rs/), both of which aim to support p2p eventually (see footnote 1).
+[^6]: 現時点では[Synapse](https://github.com/matrix-org/synapse/)が唯一の安定したホームサーバ実装です。新しもの好きな場合は、[Dendrite](https://github.com/matrix-org/dendrite/)や[Conduit](https://conduit.rs/)を試してもよいでしょう。どちらも最終的にはP2P通信のサポートを目指しています（脚注1を参照してください）。
 
-[^7]: In most cases, it is equivalent to the server part of your MXID. The exceptions are where homeservers did not set up `.well-known` autodiscovery properly...
+[^7]: ほとんどの場合、これはあなたのMXIDのサーバ名の部分と一致するはずです。例外は、ホームサーバが`.well-known`のオートディスカバリ設定に失敗している場合です…
 
-[^8]: Title and description.
+[^8]: タイトルと概要から検索できます。
 
-[^9]: Which is not a reasonable gauge of activity. First, accounts can be inactive. Second, if a room uses [bridges](./features/#all-about-bridges), then these accounts are counted as well, even if their activity is mostly not from Matrix (you can still interact with them, however).
+[^9]: これはアクティブさの妥当な指標とはいえません。まず、アカウントがアクティブでない可能性があります。それに、ルームが[ブリッジ](./features/#all-about-bridges)を利用している場合、たとえMatrix外の活動がアクティブなだけであっても数に含まれてしまいます（彼らとコミュニケーションできることに変わりはありませんが）。
 
-[^10]: Which, to be exact, is a special type of rooms. Other than that you can list rooms (and Spaces) instead of sending messages, there are no differences between a Space and a room.
+[^10]: 厳密には、これは特殊なタイプのルームです。メッセージを送る代わりにルーム（やスペース）の一覧を作れることを除けば、スペースとルームの間に違いはありません。

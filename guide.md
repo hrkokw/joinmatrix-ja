@@ -1,6 +1,6 @@
 ---
 title: "Join Matrix!" ガイド
-ntitle: ガイド
+ntitle: The Guide
 layout: page-two-col
 nav: true
 parent: guide

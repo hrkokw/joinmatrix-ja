@@ -1,10 +1,10 @@
 ---
-title: List of Public Matrix Homeservers
-ntitle: Public Homeservers
+title: 公開されているMatrixホームサーバの一覧
+ntitle: 公開ホームサーバ一覧
 layout: page
 nav: true
 permalink: servers/
-description: Support the decentralization of Matrix by getting your account on an alternative homeserver!
+description: さまざまなホームサーバに参加することでMatrixの分散化をサポートしましょう。
 ---
 
 <script>
@@ -35,22 +35,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
 })
 </script>
 
-## List of Public Matrix Homeservers
+## 公開されているMatrixホームサーバの一覧
 
-This is a list of public Matrix homeservers as compiled by the author of this guide. Support for this list is provided at [`#public_servers:tchncs.de`](https://matrix.to/#/#public_servers:tchncs.de). Remember:
+これは公開されているMatrixホームサーバの一覧で、このガイドの筆者によってまとめられています。この一覧に関するサポートは[`#public_servers:tchncs.de`](https://matrix.to/#/#public_servers:tchncs.de)で提供されます。
 
-* For long-term usage, choose a homeserver that you trust, [is properly federated](https://federationtester.matrix.org/), has a high version number, has an environment suitable to your use, and is designed to last.
-* Any homeserver you choose gets to access all the unencrypted data about your account!
-* **It bears reminding** that all participants of public discourse should foster a respectful environment, and that homeserver operators should discourage disruptive behaviour. As such, this list excludes homeservers that are known to harbour bad actors. Refer to [Criteria](#criteria).
-* For homeserver owners: You should implement [MSC1929](https://github.com/matrix-org/matrix-doc/blob/hs/proposal-admin-contact-1/proposals/1929-admin-contact.md).
-* This list is also available [as a JSON](../servers.json). Clients are welcomed to implement it as long as sufficient credit is given.
+* あなたのアカウントを継続して利用できるよう、あなたが信頼でき、[連携設定が適切](https://federationtester.matrix.org/)で、より新しいバージョンの、あなたの用途に適した、長期の運用が想定されたホームサーバを選ぶようにしてください。
+* どのホームサーバも、ユーザ（つまり、あなた）のアカウントの暗号化されていない情報すべてにアクセスできることに注意してください。
+* **これは大切なことです**が、公開された対話へのすべての参加者は互いを尊重できる環境を育むべきですし、ホームサーバの運営者は妨害行為などに適切に対処をすべきです。このため、素行の悪い参加者がいるとされるホームサーバはこの一覧から除外されています。[規範](#criteria)を参照してください。
+* ホームサーバを運営する皆さんへ。[MSC1929](https://github.com/matrix-org/matrix-doc/blob/hs/proposal-admin-contact-1/proposals/1929-admin-contact.md)に対応すべきです。
+* この一覧は[JSONフォーマット](../servers.json)でも提供されています。適切にクレジット表示さえしていただければ、クライアントへの組み込みも歓迎します。
 
-**Disclaimer:**
+**免責事項：**
 
-* Inclusion does **NOT** imply any opinion (affiliation, endorsement, etc.) on individual homeservers, nor any guarantee regarding their availability.
-* This list is provided "as is." Any dispute regarding your account on one of the homeservers should be resolved between you and the operator(s) of the homeserver.
+* この一覧に含まれているという事実をもって、各ホームサーバに対する何らかの見解（提携、支持など）や有用性に関する何らかの保証を、暗に表明するものでは**ありません**。
+* この一覧は「現状のまま」で提供されます。あるホームサーバにおけるあなたのアカウントに関する問題は、あなたと運営者の間で解決されるべきです。
 
-See [Legends](#legends) for column explanations.
+**日本語版訳註：**
+
+* 原著者の意向により、一覧の内容は原文ママです。
+* オリジナル（英語版）の一覧は自動処理によって定期的に更新されていますが、日本語版へのマージは（今のところ）手動のためタイムラグが避けられません。厳密に最新の一覧が必要な場合は[英語版](https://joinmatrix.org/servers/)を参照してください。
+
+一覧の各項目についての説明は[凡例](#legends)を参照してください。
 
 {% capture my_include %}{% include matrix_prod.md %}{% endcapture %}
 {{ my_include | markdownify }}

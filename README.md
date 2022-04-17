@@ -1,9 +1,13 @@
-# Join Matrix!
+# Join Matrix! 日本語版
 
-https://joinmatrix.org
+"Join Matrix!" <https://joinmatrix.org> の日本語訳です。
 
-Japanese: https://hrkokw.github.io/joinmatrix-ja/ (subject to change)
+<https://hrkokw.github.io/joinmatrix-ja/> （URLは将来変更になる可能性があります。）
 
-See [here](https://joinmatrix.org/guide/qna/#about-this-guide) for information regarding this repository.
+# Join Matrix! Japanese translation
 
-We accept contributions as long as it's good and you're willing to license it in CC BY-SA 4.0.
+Japanese translation of "Join Matrix!" <https://joinmatrix.org>.
+
+<https://hrkokw.github.io/joinmatrix-ja/> (The URL is subject to change in the future.)
+
+CC BY-SA 4.0

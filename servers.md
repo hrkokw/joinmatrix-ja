@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 一部のホームサーバはそのコンテンツを理由として一覧から除外されています。上記以外の評価の高いバンリストに掲載されることも、この一覧からの除外理由になることがあります。
 
-## 凡例 {legends}
+## 凡例 {#legends}
 
 左から順に記載します。
 

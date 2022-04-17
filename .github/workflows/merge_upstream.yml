@@ -16,8 +16,8 @@ jobs:
       - name: Merge from upstream repo
         uses: discdiver/merge-from-upstream-repo@v0.0.9
         with:
-          username: GitHub Actions              # set the user name for git commits
-          useremail: actions@github.com         # set the user email for git commits
+          username: github-actions[bot]         # set the user name for git commits
+          useremail: github-actions[bot]@users.noreply.github.com  # set the user email for git commits
           upstream: austinhuang0131/joinmatrix  # set the upstream repo
           upstream-branch: main                 # set the upstream branch to merge from
           branch: upstream                      # set the branch to merge to

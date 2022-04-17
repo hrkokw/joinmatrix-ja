@@ -360,6 +360,21 @@
         "version": "1.56.0"
     },
     {
+        "name": "data.haus",
+        "domain": "data.haus",
+        "info": "https://data.haus",
+        "jurisdiction": "Germany",
+        "tos": null,
+        "privacy": null,
+        "open": true,
+        "remarks": "General host",
+        "antifeature": null,
+        "reg_method": "In-house Element",
+        "reg_link": "https://chat.data.haus/",
+        "software": "Synapse",
+        "version": "1.55.2"
+    },
+    {
         "name": "devass.su",
         "domain": "matrix.devass.su",
         "info": "https://devass.su",
@@ -837,7 +852,7 @@
         "reg_method": "In-house Element",
         "reg_link": "https://chat.mux.re/",
         "software": "Synapse",
-        "version": "1.54.0"
+        "version": "1.55.2"
     },
     {
         "name": "nitro.chat",
@@ -1151,6 +1166,21 @@
         "antifeature": null,
         "reg_method": "In-house Element",
         "reg_link": "https://chat.studichat.de/",
+        "software": "Synapse",
+        "version": "1.56.0"
+    },
+    {
+        "name": "sykorp.com",
+        "domain": "sykorp.com",
+        "info": "https://sykorp.com",
+        "jurisdiction": "Saudi Arabia",
+        "tos": null,
+        "privacy": null,
+        "open": true,
+        "remarks": "",
+        "antifeature": "Residential",
+        "reg_method": null,
+        "reg_link": null,
         "software": "Synapse",
         "version": "1.56.0"
     },

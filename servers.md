@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 * ホームサーバが運営されているドメイン上に、意味あるWebページ（Elementを含む）が少なくとも一つは存在すること。
 * ホームサーバが`matrix.org`でなく、またElement Matrix Services（以前はModularという名前でした）を利用していないこと。
 * ホームサーバが以下のMjolnirバン（`m.room.rule.server`）の対象でないこと。
-* The homeserver does not have an ongoing Mjolnir server ban (`m.room.rule.server`) on:
   * `#matrix-org-coc-bl:matrix.org`: [matrix.org行動規範](https://matrix.org/legal/code-of-conduct/)に基づくバンリスト。人気のある公開ルームの多くで利用されています。
   * `#matrix-org-hs-tos-bl:matrix.org`: [matrix.orgホームサーバ利用規約](https://matrix.org/legal/terms-and-conditions/)に基づくバンリスト。
 
@@ -95,16 +94,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 左から順に記載します。
 
 * **Homeserver name**（ホームサーバ名）：この名前があなたのユーザ名の後ろにつきます。たとえば、私のIDは`@austin:tchncs.de`ですが、このうち`austin`がユーザ名で`tchncs.de`がホームサーバの表示名です。技術的な解説は[ここ](https://spec.matrix.org/v1.1/server-server-api/#resolving-server-names)を参照してください。
-* **Jurisdiction (and Server location)**（司法権とサーバ所在地）：ホームサーバが属する司法権の管轄範囲です。司法権の範囲と異なる場合は、サーバの所在地を括弧書きで追記します。一般的に、ドイツに所在するホームサーバでは[法的もしくは社会的文脈で](https://en.wikipedia.org/wiki/Censorship_in_Germany#Re-unified_Germany_(1990%E2%80%93present))より積極的にもでレーションが行なわれる傾向にあります。
-* **Rules?**（規約が存在するか？）：すべてのユーザ向けに文書化された利用規約が存在するか否かです。利用規約がユーザのすべての活動（特定のルーム内だけでない）に適用され、Webページとして公開されている（`/_matrix/consent`を含みますがこれに限りません）場合に限り、この項目の考慮対象になります。unclear（不明確）やsort of（ある種の；黄色で表示）は、利用規約の適用範囲や内容が不明確なことを示します。
-* **Privacy Policy?**（プライバシーポリシーが存在するか？）：すべてのユーザ向けに文書化されたプライバシーポリシーが存在するか否かです。一般に、[「あなたのデータがどう扱われるか」に関する告知](https://matrix-client.matrix.org/_matrix/consent?v=1.0)のほとんどが、ネットワーク全体に適用されます。プライバシーポリシーがMatrixホームサーバに適用されることが明確であり、Webページとして公開されていて（`/_matrix/consent`を含みますがこれに限りません）、内容が前述の告知のコピーでない場合に限り、この項目の考慮対象になります。unclear（不明確）やsort of（ある種の；黄色で表示）は、プライバシーポリシーの適用範囲や内容が不明確なことを示します。
+* **Jurisdiction (and Server location)**（司法権とサーバ所在地）：ホームサーバが属する司法権の管轄範囲です。司法権の範囲と異なる場合は、サーバの所在地を括弧書きで追記します。一般的に、ドイツに所在するホームサーバでは[法的もしくは社会的文脈で](https://en.wikipedia.org/wiki/Censorship_in_Germany#Re-unified_Germany_(1990%E2%80%93present))より積極的にモデレーションが行なわれる傾向にあります。
+* **Rules?**（規約が存在するか？）：すべてのユーザ向けに文書化された利用規約が存在するか否かです。利用規約がユーザのすべての活動（特定のルーム内だけでない）に適用され、Webページとして公開されている（`/_matrix/consent`を含みますがこれに限りません）場合に限り、この項目の検討対象になります。unclear（不明確）やsort of（ある種の；黄色で表示）は、利用規約の適用範囲や内容が不明確なことを示します。
+* **Privacy Policy?**（プライバシーポリシーが存在するか？）：すべてのユーザ向けに文書化されたプライバシーポリシーが存在するか否かです。一般に、[「あなたのデータがどう扱われるか」に関する告知](https://matrix-client.matrix.org/_matrix/consent?v=1.0)のほとんどが、ネットワーク全体に適用されます。プライバシーポリシーがMatrixホームサーバに適用されることが明確であり、Webページとして公開されていて（`/_matrix/consent`を含みますがこれに限りません）、内容が前述の告知のコピーでない場合に限り、この項目の検討対象になります。unclear（不明確）やsort of（ある種の；黄色で表示）は、プライバシーポリシーの適用範囲や内容が不明確なことを示します。
 * **Note**（備考）：その他の特記事項です。ホームサーバのドメイン名からその主題や方針が読み取れることがありますので、その場合はこの項目には記載しません。懸念事項は*斜体*で表示されます。
     * Age restriction（年齢制限）：Matrixは16歳以上向けですが、より高い年齢向けのホームサーバであることを示します。
     * Accessory（付属的）：運営者（たいていは何らかのプロジェクト）に関連するルームに特化したホームサーバであることを示します。そのため公開ルームディレクトリに掲載する際は十分に配慮してください。しかし、アカウントは外部のルームにアクセスするのに使うこともできます。
     * Residential（家庭用）：ホームサーバが一般家庭向けのインターネット接続で運用されている可能性があることを示します（訳註：いわゆる「自宅サーバ」）。
   * ...-oriented（〜向け）：ホームサーバが特定の目的で運営されていることを示します。
   * ...-inclined（〜傾向）：ホームサーバ自身は特定の目的で運営されているわけではないにもかかわらず、特定の目的で利用される傾向にあることを示します。
-* **Registration method**（登録方法）：アカウント登録の手続きに関する情報です。[Elementの公式Webクライアント](https://app.element.io)で（常に完全ではありませんが）テストを行なっています。またほとんどの場合、他のクライアントでも登録が行なえるはずです。
+* **Registration method**（登録方法）：アカウント登録の手続きに関する情報です。[Elementの公式Webクライアント](https://app.element.io)で（必ずしも完全ではありませんが）テストを行なっています。またほとんどの場合、他のクライアントでも登録が行なえるはずです。
     * In-house Element（インハウスElement）：リンク先の、ホームサーバ自身がホストするElementクライアントを使って[登録](../guide/#アカウントを登録する)ができます。これは大抵の場合、reCaptchaのドメイン制限に対応するためです。
     * Form（フォーム）：リンク先のフォームから登録ができます。
     * See info page（情報ページを参照）：サーバ名の欄からリンクされたページを参照してください。

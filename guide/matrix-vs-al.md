@@ -1,36 +1,37 @@
 ---
-title: Comparison to other platforms
+title: 他のプラットフォームとの比較
 layout: page-two-col
 nav: false
 parent: guide
 permalink: guide/matrix-vs-al/
-description: It's time to ditch whatever messaging platform you're using. Join Matrix, the federated chat platform that actually respects you.
+description: あなたが利用しているメッセージプラットフォームに別れを告げる時がきました。あなたを大切にする分散チャットプラットフォーム、Matrixに参加しましょう。
 ---
 
-## How does Matrix compare to other platforms?
+## Matrixは他のプラットフォームと比較してどうなの？ {#how-does-matrix-compare-to-other-platforms}
 
-If the [reasons](../#why-matrix) did not convince you, then this page will show you how your existing platform compares with Matrix. Note that the guide only judges the de/merits of the platform itself, not its population (as network effect is used to keep users in [walled gardens](https://en.wikipedia.org/wiki/Closed_platform)). This comparison is also somewhat general, and improvements are welcomed. However, remember that an advantage that Matrix has is that with adequate setup, you can [bridge](../features/#all-about-bridges) other platforms!
+[これらの理由](../#why-matrix)を読んでもまだ納得できない方に向けて、このページではMatrixと既存のプラットフォームを比較していきます。ここではプラットフォームそのもののメリット・デメリットを判断するにとどめ、それらの利用人口の大小（ユーザを[箱庭](https://en.wikipedia.org/wiki/Closed_platform)に閉じ込めておくためのネットワーク効果の賜物です）については考慮しないことに注意してください。また、この比較は一般論に近いものですし、改善の提案があれば歓迎します。しかし覚えておいてほしいのは、適切にセットアップすれば他のプラットフォームとの[ブリッジ](../features/#all-about-bridges)を構築できるのがMatrixの大きな利点ということです。
 
-Before we begin, it should be reminded that Matrix is a mix of security and socialization. Recall what we've wrote:
+話をはじめる前に、Matrixはセキュリティと社会性を併せ持っているということを思い出しましょう。他のページにこう書きました。
 
-> Matrix is the long-awaited middleground between one-to-one messaging platforms (Facebook Messenger, WhatsApp, iMessages, SMS...) and social/collaborative messaging platforms (Discord, Slack, Telegram...): It offers an appropriate degree of privacy while allowing you to socialize/collaborate with others.
+> 1対1のメッセージプラットフォーム（Facebookメッセンジャー、WhatsApp、iMessage、SMS…）と、協調的なメッセージプラットフォーム（Discord、Slack、Telegram…）の間で長らく待ち望まれていたのが、このMatrixです。あなたのプライバシーを適切に守りながら、同時に人々と交友を
+深めることができます。
 
-This means that Matrix *on its own*[^1] provides a certain degree of flexibility, allowing you to have more private conversations and open group collaborations at the same time, rather that providing absolute security for everything. If you insist on the latter, this guide suggests you to look elsewhere.
+これは、プライベートな会話とオープンなグループコラボレーションを同時に実現するために、Matrix*それ自身*[^1]が一定の柔軟性を持っていることを意味します。言い換えれば、すべてに関して完璧なセキュリティを提供することを意図していないということになりますので、それをお求めなのであれば他にあたることをおすすめします。
 
-The comparisons for [Discord](../matrix-vs-discord) and [Telegram](../matrix-vs-telegram) are written on separate pages.
+[Discord](../matrix-vs-discord)や[Telegram](../matrix-vs-telegram)との比較は、それぞれ個別のページがあります。
 
-### Centralized platforms
+### 集権化されたプラットフォーム {#centralized-platforms}
 
-Most platforms you see on the market fall into this category.
+あなたがメッセージング業界で目にするほとんどのプラットフォームは、このカテゴリに属します。
 
-The most important advantage of Matrix over these platforms is that Matrix is decentralized. This means that:
+これらのプラットフォームに対するMatrixの最も重要な強みは、Matrixは非集権型だということです。これは以下を意味します。
 
-* There is no one entity controlling the day-to-day operations[^2] of the entire platform.
-  * This prevents any entity from making unilateral decisions, particularly those that may hurt users.
-  * While incidents (such as outage, acquisitions, and shutdowns) may affect one instance, they do not affect the entire platform, ensuring its longetivity and stability. (For example, incidents like [the Facebook outage on Oct 4, 2021](https://en.wikipedia.org/wiki/2021_Facebook_outage), where a configuration error on one server brought several Facebook-owned platforms to a complete halt, cannot happen to a federated platform.)
-* You can either trust one of the several entities (an instance) that holds your data, or hold the data yourself (by running an instance), whereas using centralized platforms requires you to trust the sole owner of the platform, who exclusively receives your private data and can do anything with it in any fashion it wants.
+* プラットフォーム全体の運用状況を一元的に管理する主体[^2]は存在しません。
+    * これにより管理主体が一方的な決定、特にユーザに痛みを強いる決定を行なうことがありません。
+    * 何らかの問題（サーバダウン、買収、サービス停止）が特定のインスタンスに影響することはありますが、プラットフォーム全体の継続や安定性に影響することはありません。（一例として、[2021年10月4日のFacebookのサービス停止](https://en.wikipedia.org/wiki/2021_Facebook_outage)では一つのサーバの設定ミスによりFacebookが運営するいくつかのプラットフォームが完全にダウンしましたが、分散システムでは同様の障害は発生しません。）
+* あなたは複数の主体（インスタンス）の中から信頼できるものに自分のデータを託すか、もしくは（自分のインスタンスを運営することで）あなた自身がデータを管理するかを選ぶことができます。一方で集権化されたプラットフォームではその所有者を信用する以外の選択肢は存在しません。あなたのプライベートなデータはプラットフォームに独占的に収集され、望むままの目的に利用される可能性があります。
 
-Matrix allows users to encrypt their message contents, whereas:
+Matrixはユーザのメッセージ内容を暗号化することができます。その一方で、
 
 * Centralized unencrypted platforms (such as Discord, Facebook Messenger, Instagram Direct, Revolt[^3], Slack, Snapchat, Telegram cloud chats[^4], QQ and WeChat) allow unobscured access to messages by the sole owner of each platform.
 * Centralized platforms that do not fully disclose details about their encryption algorithm (such as iMessage, [Line](https://citizenlab.ca/2017/08/linesecurity/), Telegram secure chats[^4], Viber[^5] and WhatsApp[^6]) cannot have their security independently verified.
@@ -61,9 +62,9 @@ Platforms like Briar, Cwtch and Jami offer much more security, but at a huge cos
 
 ## Footnotes
 
-[^1]: Specifically, using the public Matrix federation. Some Matrix implementations (like the French government's *Tchap*) may have utilized closed federations and extended features for specific purposes, thereby providing more communication security.
+[^1]: これは特に、公開されたMatrixネットワークを利用する場合において成り立ちます。一部のMatrix実装（たとえばフランス政府の*Tchap*）はより強固なセキュリティを実現するために、クローズドなネットワークの利用や特定の目的のための機能拡張が行なわれていることがあります。
 
-[^2]: i.e. Excluding development. But even so, Matrix allows its users to participate in the decision-making process.
+[^2]: ただし開発主体は除きます。しかしながら、Matrixは意思決定プロセスへのユーザの参加を拒みません。
 
 [^3]: However, they [plan](https://github.com/orgs/revoltchat/projects/3/views/1?filterQuery=encr) to offer encryption in the undetermined future.
 

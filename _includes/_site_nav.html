@@ -5,7 +5,7 @@
         <a class="heading-beta no-underline" href="{{ "/" | relative_url }}">{% unless site.nav_logo_file == nil %}<img src="{{ site.nav_logo_file | absolute_url }}" alt="" class="site-logo mr-2">{% endunless %}{{ site.title }}</a>
       </div>
       <button type="button" name="Open nav" class="site-nav-trigger js-site-nav-trigger">
-        Menu
+        メニュー
       </button>
       <ol class="site-nav-items list-style-none js-site-nav-list">
         {% assign pages_list = site.pages | sort:"url" %}

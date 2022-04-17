@@ -35,13 +35,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 })
 </script>
 
-## 公開されているMatrixホームサーバの一覧
+## 公開されているMatrixホームサーバの一覧 {#list-of-public-matrix-homeservers}
 
 これは公開されているMatrixホームサーバの一覧で、このガイドの筆者によってまとめられています。この一覧に関するサポートは[`#public_servers:tchncs.de`](https://matrix.to/#/#public_servers:tchncs.de)で提供されます。
 
 * あなたのアカウントを継続して利用できるよう、あなたが信頼でき、[連携設定が適切](https://federationtester.matrix.org/)で、より新しいバージョンの、あなたの用途に適した、長期の運用が想定されたホームサーバを選ぶようにしてください。
 * どのホームサーバも、ユーザ（つまり、あなた）のアカウントの暗号化されていない情報すべてにアクセスできることに注意してください。
-* **これは大切なことです**が、公開された対話へのすべての参加者は互いを尊重できる環境を育むべきですし、ホームサーバの運営者は妨害行為などに適切に対処をすべきです。このため、素行の悪い参加者がいるとされるホームサーバはこの一覧から除外されています。[規範](#規範)を参照してください。
+* **これは大切なことです**が、公開された対話へのすべての参加者は互いを尊重できる環境を育むべきですし、ホームサーバの運営者は妨害行為などに適切に対処をすべきです。このため、素行の悪い参加者がいるとされるホームサーバはこの一覧から除外されています。[規範](#criteria)を参照してください。
 * ホームサーバを運営する皆さんへ。[MSC1929](https://github.com/matrix-org/matrix-doc/blob/hs/proposal-admin-contact-1/proposals/1929-admin-contact.md)に対応してください。
 * この一覧は[JSONフォーマット](../servers.json)でも提供されています。適切にクレジット表示さえしていただければ、クライアントへの組み込みも歓迎します。
 
@@ -57,12 +57,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     * 「Conditional registration」：登録に条件（独自の規定による制約、運営者による個別承認や課金の必要性）があるサーバの一覧
 * オリジナル（英語版）の一覧は自動処理によって定期的に更新されていますが、日本語版へのマージは（今のところ）手動のためタイムラグが避けられません。厳密に最新の一覧が必要な場合は[英語版](https://joinmatrix.org/servers/)を参照してください。
 
-一覧の各項目についての説明は[凡例](#凡例)を参照してください。
+一覧の各項目についての説明は[凡例](#legends)を参照してください。
 
 {% capture my_include %}{% include matrix_prod.md %}{% endcapture %}
 {{ my_include | markdownify }}
 
-## なぜ？
+## なぜ？ {#why}
 
 独自のホームサーバを運営するのが理想ではありますが、すべての人がその手段を持っているわけではありません… いずれにせよ、`matrix.org`以外のホームサーバを利用すべき理由があります。
 
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 もしかすると、あなたのMXIDで特定のコミュニティへの所属を表明したいこともあるでしょう。
 
-## 規範
+## 規範 {#criteria}
 
 この一覧は以下の規範に則ってメンテナンスされています。
 
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 一部のホームサーバはそのコンテンツを理由として一覧から除外されています。上記以外の評価の高いバンリストに掲載されることも、この一覧からの除外理由になることがあります。
 
-## 凡例
+## 凡例 {legends}
 
 左から順に記載します。
 
@@ -104,17 +104,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
   * ...-oriented（〜向け）：ホームサーバが特定の目的で運営されていることを示します。
   * ...-inclined（〜傾向）：ホームサーバ自身は特定の目的で運営されているわけではないにもかかわらず、特定の目的で利用される傾向にあることを示します。
 * **Registration method**（登録方法）：アカウント登録の手続きに関する情報です。[Elementの公式Webクライアント](https://app.element.io)で（必ずしも完全ではありませんが）テストを行なっています。またほとんどの場合、他のクライアントでも登録が行なえるはずです。
-    * In-house Element（インハウスElement）：リンク先の、ホームサーバ自身がホストするElementクライアントを使って[登録](../guide/#アカウントを登録する)ができます。これは大抵の場合、reCaptchaのドメイン制限に対応するためです。
+    * In-house Element（インハウスElement）：リンク先の、ホームサーバ自身がホストするElementクライアントを使って[登録](../guide/#register-an-account)ができます。これは大抵の場合、reCaptchaのドメイン制限に対応するためです。
     * Form（フォーム）：リンク先のフォームから登録ができます。
     * See info page（情報ページを参照）：サーバ名の欄からリンクされたページを参照してください。
-    * ドメイン名：このホームサーバにアカウントを[登録](../guide/#アカウントを登録する)する際、「アカウントを作成」と「編集」をクリックした後、この欄に記載されたドメイン名（`https://`は含まない）を入力する必要があります。この不一致は大抵の場合、`.well-known`の設定ミスに起因します。
+    * ドメイン名：このホームサーバにアカウントを[登録](../guide/#register-an-account)する際、「アカウントを作成」と「編集」をクリックした後、この欄に記載されたドメイン名（`https://`は含まない）を入力する必要があります。この不一致は大抵の場合、`.well-known`の設定ミスに起因します。
     * SSO（シングルサインオン）：ホームサーバはユーザ認証に[シングルサインオン](https://en.wikipedia.org/wiki/Single_sign-on)を要求します。Matrixアカウントの前に、リンク先からアカウントの作成を行なう必要があります。大抵の場合、そのアカウントはホームサーバの運営者が提供する他のサービスへのアクセスにも利用できます。
 * **Version**（バージョン）：ホームサーバのソフトウェアバージョンです。[GitHub Actionで6時間ごとに自動更新されます](https://github.com/austinhuang0131/joinmatrix/blob/main/.github/workflows/matrix_ver.yml#L4)。
     * 他に明記されていない場合、ホームサーバはSynapseで稼働しています。Synapseはセキュリティ上の問題のため`1.47.1`以降（緑色で表示）の利用が[推奨されています](https://matrix.org/blog/2021/11/23/synapse-1-47-1-released)。非推奨のバージョン、つまり`1.47.1`以前と`1.49.0`（[リグレッション](https://github.com/matrix-org/synapse/pull/11583)のため）は黄色で表示されます。
     * Dendriteで稼働しているホームサーバは無色で表示されます。
     * Error!!（赤色で）：チェックの際にホームサーバに接続ができなかったことを示します。これは大抵一時的なものですが、頻繁に発生する場合は一覧からの除外理由となります。
 
-## 他のMatrixホームサーバ一覧
+## 他のMatrixホームサーバ一覧 {#other-matrix-homeserver-lists}
 
 * [asra.gr's list](https://wiki.asra.gr/en:public_servers)：一般からの登録を（一部は意図的ではないにしろ）受け付けているホームサーバのデータセット
 * [CHATONS list](https://www.chatons.org/search/by-service?service_type_target_id=All&field_alternatives_aux_services_target_id=All&field_software_target_id=274&field_is_shared_value=All&title=): 一定の倫理基準を満たしたフランスのホームサーバの一覧。一部はメンバーシップが必要な可能性があります

@@ -33,19 +33,19 @@ description: あなたが利用しているメッセージプラットフォー�
 
 Matrixはユーザのメッセージ内容を暗号化することができます。その一方で、
 
-* Centralized unencrypted platforms (such as Discord, Facebook Messenger, Instagram Direct, Revolt[^3], Slack, Snapchat, Telegram cloud chats[^4], QQ and WeChat) allow unobscured access to messages by the sole owner of each platform.
-* Centralized platforms that do not fully disclose details about their encryption algorithm (such as iMessage, [Line](https://citizenlab.ca/2017/08/linesecurity/), Telegram secure chats[^4], Viber[^5] and WhatsApp[^6]) cannot have their security independently verified.
+* 集権化された暗号化非対応のプラットフォーム（Discord、Facebookメッセンジャー、Instagram Direct、Revolt[^3]、Slack、Snapchat、Telegramクラウドチャット、QQ、WeChat）は、プラットフォーム所有者からのメッセージへのアクセスに対して無防備です。
+* 暗号化アルゴリズムについて詳細を公表していない集権化されたプラットフォーム（iMessage、[LINE](https://citizenlab.ca/2017/08/linesecurity/）、Telegramセキュアチャット[^4]、Viber[^5]、WhatsApp[^6]）は、独立した第三者からのセキュリティ監査を受けることができません。
 
-Furthermore,
+さらに、
 
-* Some "secure" platforms (such as Signal and WhatsApp) require you to provide a phone number or email address. Most Matrix homeservers do not require phone numbers. Depending on setup (either selfhost or with certain public homeservers), it may be possible to use Matrix without an email address as well.
-* Although Signal receives widespread approval (and is probably the best centralized messaging platform in existence[^7]), its credibility continues to be subjected to ongoing debate: Its US jurisdiction, its dependence on AWS, its hostile stance towards forked clients, its delay in publishing source code, its controversial implementation of the spam detection mechanism... Whereas Matrix is [open](https://matrix.org/blog/2020/01/02/on-privacy-versus-freedom): freedom to choose jurisdiction, freedom from depending on specific third parties, freedom to choose clients, and transparency for everyone.
+* 一部の「安全な」プラットフォーム（SignalやWhatsApp）はユーザに電話番号かEメールアドレスの提供を求めます。ほとんどのMatrixホームサーバは電話番号の提供を求めません。設定によっては（ユーザ自身が運営しているか、もしくは一部の公開ホームサーバでは）Eメールアドレスすら提供せずにMatrixを利用することができます。
+* Signalは広く一般に受け入れられています（そして現存する中ではおそらく最良の集権型メッセージングプラットフォーム[^7]です）が、その信頼性は常に議論の対象となっています。アメリカ合衆国の司法権の範囲にあること、AWSに依存していること、フォークされたクライアントに対して非友好的であること、ソースコードの公開に遅延があること、spam検知メカニズムの実装に議論の余地があること… その一方で、Matrixは[オープン](https://matrix.org/blog/2020/01/02/on-privacy-versus-freedom)です。司法権の管轄範囲を選ぶことができ、特定のサードパーティへの依存はなく、クライアントの選択の自由があり、万人に対して透明性があります。
 
-### Session
+### Session {#session}
 
 Session claims to be decentralized, but since the platform requires an ever-increasing amount[^8] of cryptocurrency stake for each node, running one is unreachable for most people (whereas for Matrix, there exists no such requirement from the platform), so the amount of nodes will eventually reach a finite ceiling, making it only marginally better than Signal.
 
-### Another federated platform: XMPP
+### Another federated platform: XMPP {#another-federated-platform-xmpp}
 
 XMPP and Matrix are very similar: most of [these](../#why-matrix) also apply to XMPP. The difference is that Matrix is much *much* more intuitive for an ordinary user, whereas XMPP is far from it.
 
@@ -56,24 +56,24 @@ Furthermore, XMPP is not encrypted by default, but use of OMEMO is also quite wi
 
 For reference, the official comment from matrix.org is [here](https://matrix.org/faq/#what-is-the-difference-between-matrix-and-xmpp%3F).
 
-### Peer-to-peer platforms
+### Peer-to-peer platforms {#peer-to-peer-platforms}
 
 Platforms like Briar, Cwtch and Jami offer much more security, but at a huge cost in terms of utility due to their peer-to-peer nature, requiring participants to be online to receive messages.
 
-## Footnotes
+## Footnotes {#footnotes}
 
 [^1]: これは特に、公開されたMatrixネットワークを利用する場合において成り立ちます。一部のMatrix実装（たとえばフランス政府の*Tchap*）はより強固なセキュリティを実現するために、クローズドなネットワークの利用や特定の目的のための機能拡張が行なわれていることがあります。
 
-[^2]: ただし開発主体は除きます。しかしながら、Matrixは意思決定プロセスへのユーザの参加を拒みません。
+[^2]: 厳密にいえば、開発主体がこれにあたる可能性はあります。しかしながら、Matrixは意思決定プロセスにユーザが参加することを拒みません。
 
-[^3]: However, they [plan](https://github.com/orgs/revoltchat/projects/3/views/1?filterQuery=encr) to offer encryption in the undetermined future.
+[^3]: 時期は未定ですが、暗号化に対応する[計画](https://github.com/orgs/revoltchat/projects/3/views/1?filterQuery=encr)はあります。
 
-[^4]: Cloud chat is not encrypted in transit and is thus considered unencrypted. Secure chat uses Telegram's own MTProto protocol, comes with serious limitations on features, and is not widely used.
+[^4]: クラウドチャットは通信経路が暗号化されていないため、暗号化非対応と見なすことができます。セキュアチャットはTelegram独自のMTProtoプロトコルを利用していますが、機能面で深刻な制約があるためあまり利用されていません。
 
-[^5]: Viber claims to use an encryption mechanism that is similar - but not identical - to the Signal protocol.
+[^5]: Viberは、Signalプロトコルと似た（ただし同一ではない）暗号化メカニズムを使用していると主張しています。
 
-[^6]: Although Signal [claims](https://signal.org/blog/whatsapp-complete/) that WhatsApp is using the Signal protocol, WhatsApp's closed-source nature prevents independent verification.
+[^6]: SignalはWhatsAppがSignalプロトコルを利用していると[主張しています](https://signal.org/blog/whatsapp-complete/)が、WhatsAppのソースは非公開であるため、主張の真偽を立証することは不可能です。
 
-[^7]: In terms of both tech and reach (hence excluding Threema).
+[^7]: 技術的観点と同時に、参加しやすさの観点も含んだ意見です（このため、Threemaは除外しました）。
 
 [^8]: Relative to fiat currencies.

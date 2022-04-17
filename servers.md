@@ -41,81 +41,84 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 * あなたのアカウントを継続して利用できるよう、あなたが信頼でき、[連携設定が適切](https://federationtester.matrix.org/)で、より新しいバージョンの、あなたの用途に適した、長期の運用が想定されたホームサーバを選ぶようにしてください。
 * どのホームサーバも、ユーザ（つまり、あなた）のアカウントの暗号化されていない情報すべてにアクセスできることに注意してください。
-* **これは大切なことです**が、公開された対話へのすべての参加者は互いを尊重できる環境を育むべきですし、ホームサーバの運営者は妨害行為などに適切に対処をすべきです。このため、素行の悪い参加者がいるとされるホームサーバはこの一覧から除外されています。[規範](#criteria)を参照してください。
-* ホームサーバを運営する皆さんへ。[MSC1929](https://github.com/matrix-org/matrix-doc/blob/hs/proposal-admin-contact-1/proposals/1929-admin-contact.md)に対応すべきです。
+* **これは大切なことです**が、公開された対話へのすべての参加者は互いを尊重できる環境を育むべきですし、ホームサーバの運営者は妨害行為などに適切に対処をすべきです。このため、素行の悪い参加者がいるとされるホームサーバはこの一覧から除外されています。[規範](#規範)を参照してください。
+* ホームサーバを運営する皆さんへ。[MSC1929](https://github.com/matrix-org/matrix-doc/blob/hs/proposal-admin-contact-1/proposals/1929-admin-contact.md)に対応してください。
 * この一覧は[JSONフォーマット](../servers.json)でも提供されています。適切にクレジット表示さえしていただければ、クライアントへの組み込みも歓迎します。
 
 **免責事項：**
 
-* この一覧に含まれているという事実をもって、各ホームサーバに対する何らかの見解（提携、支持など）や有用性に関する何らかの保証を、暗に表明するものでは**ありません**。
-* この一覧は「現状のまま」で提供されます。あるホームサーバにおけるあなたのアカウントに関する問題は、あなたと運営者の間で解決されるべきです。
+* この一覧に掲載されているという事実をもって、各ホームサーバに対する何らかの見解（提携、支持など）や有用性に関する何らかの保証を、暗に表明するものでは**ありません**。
+* この一覧は「現状のまま（as-is）」で提供されます。あるホームサーバにおけるあなたのアカウントに関する問題は、あなたと運営者の間で解決されるべきです。
 
 **日本語版訳註：**
 
 * 原著者の意向により、一覧の内容は原文ママです。
+    * 「Open registration」：登録に特に条件がないサーバの一覧
+    * 「Conditional registration」：登録に条件（独自の規定による制約、運営者による個別承認や課金の必要性）があるサーバの一覧
 * オリジナル（英語版）の一覧は自動処理によって定期的に更新されていますが、日本語版へのマージは（今のところ）手動のためタイムラグが避けられません。厳密に最新の一覧が必要な場合は[英語版](https://joinmatrix.org/servers/)を参照してください。
 
-一覧の各項目についての説明は[凡例](#legends)を参照してください。
+一覧の各項目についての説明は[凡例](#凡例)を参照してください。
 
 {% capture my_include %}{% include matrix_prod.md %}{% endcapture %}
 {{ my_include | markdownify }}
 
-## Why?
+## なぜ？
 
-Ideally you would host your own homeserver, but not everyone has the means... Anyway, you should use a homeserver other than the default `matrix.org` because...
+独自のホームサーバを運営するのが理想ではありますが、すべての人がその手段を持っているわけではありません… いずれにせよ、`matrix.org`以外のホームサーバを利用すべき理由があります。
 
-1. It is overloaded at times, and
-2. If everyone continues to register on the same homeserver, then Matrix will become less decentralized as intended.
+1. `matrix.org`はしばしば過負荷のため不安定になります。
+2. 特定のホームサーバにユーザが集中すると、Matrixが理想とする非集権化から遠のいてしまいます。
 
-In some cases you might also want your MXID to show your affiliation with a specific community.
+もしかすると、あなたのMXIDで特定のコミュニティへの所属を表明したいこともあるでしょう。
 
-## Criteria
+## 規範
 
-The absolute criteria are:
+この一覧は以下の規範に則ってメンテナンスされています。
 
-* The homeserver is intended for public registration.
-  * Generally, inclusion is based on either my interpretation of information about the homeserver, or explicit consent from the homeserver operator(s).
-  * Homeservers that grant accounts on approval must have such process accessible to the general public.
-  * Homeservers may disable registrations temporarily, in which case the list will temporarily exclude them.
-* The homeserver name must be a second-level domain (so `example.com` is acceptable, but `matrix.example.com` is not). See [Synapse documentation](https://matrix-org.github.io/synapse/latest/delegate.html).
-* The homeserver does not operate through a free TLD, specifically those offered by Freenom (due to risks of takeover by fraudulent entities).
-* The domain that the homeserver is on must have at least one meaningful web page (including Element).
-* The homeserver is neither `matrix.org` nor operated by Element Matrix Services (previously known as Modular).
+* ホームサーバが広く一般からアカウント登録を受け付けていること。
+    * 掲載の判断は原則として、ホームサーバーに関する情報の筆者による解釈、もしくはホームサーバーの運営者の明確な同意のいずれかに基づきます。
+    * 登録に承認が必要なホームサーバについては、そのプロセスが広く一般に公開されている必要があります。
+    * ホームサーバが新規登録を一時停止することがありますが、その場合は一覧からも一時的に除外されます。
+* ホームサーバ名がセカンドレベルドメインであること（つまり`example.com`は掲載対象ですが、`matrix.example.com`は対象外です）。[Synapseのドキュメント](https://matrix-org.github.io/synapse/latest/delegate.html)を参照してください。
+* ホームサーバが無料のTLD、特にFreenomから提供されているTLDを使用していないこと（第三者によって不正に奪取されるリスクがあるため）。
+* ホームサーバが運営されているドメイン上に、意味あるWebページ（Elementを含む）が少なくとも一つは存在すること。
+* ホームサーバが`matrix.org`でなく、またElement Matrix Services（以前はModularという名前でした）を利用していないこと。
+* ホームサーバが以下のMjolnirバン（`m.room.rule.server`）の対象でないこと。
 * The homeserver does not have an ongoing Mjolnir server ban (`m.room.rule.server`) on:
-  * `#matrix-org-coc-bl:matrix.org`: [matrix.org Code of Conduct](https://matrix.org/legal/code-of-conduct/) ban list. It is used on many popular public rooms.
-  * `#matrix-org-hs-tos-bl:matrix.org`: [matrix.org Homeserver Terms of Service](https://matrix.org/legal/terms-and-conditions/) ban list.
+  * `#matrix-org-coc-bl:matrix.org`: [matrix.org行動規範](https://matrix.org/legal/code-of-conduct/)に基づくバンリスト。人気のある公開ルームの多くで利用されています。
+  * `#matrix-org-hs-tos-bl:matrix.org`: [matrix.orgホームサーバ利用規約](https://matrix.org/legal/terms-and-conditions/)に基づくバンリスト。
 
-Some homeservers are excluded from this list on content grounds. Inclusion in other reputable ban lists may also be grounds for exclusion from this list.
+一部のホームサーバはそのコンテンツを理由として一覧から除外されています。上記以外の評価の高いバンリストに掲載されることも、この一覧からの除外理由になることがあります。
 
-## Legends
+## 凡例
 
-From left to right:
+左から順に記載します。
 
-* **Homeserver name**: This is the part that follows your username. For example, my ID is `@austin:tchncs.de`, where `austin` is my username and `tchncs.de` is the display name of the homeserver. See [here](https://spec.matrix.org/v1.1/server-server-api/#resolving-server-names) for a technical explanation.
-* **Jurisdiction (and Server location)**: The jurisdiction the homeserver is located within. The server location, if differs from the jurisdiction of the homeserver, is shown in the brackets. Note that generally, homeservers located in Germany are more actively moderated due to [legal and social contexts](https://en.wikipedia.org/wiki/Censorship_in_Germany#Re-unified_Germany_(1990%E2%80%93present)).
-* **Rules?**: The existence of written rules/ToS for all users on the homeserver. Note that rules can only be considered if they apply to all activities (not just those in specific rooms) of a user, and if they are published in a webpage (including but not limited to `/_matrix/consent`). An "unclear" or "sort of" (colored yellow) means that the rules' scope or wording is unclear.
-* **Privacy Policy?**: The existence of written privacy policy for all users on the homeserver. Generally, most parts of the ["Understand how your data is used" notice](https://matrix-client.matrix.org/_matrix/consent?v=1.0) apply network-wide. Note that a privacy policy can only be considered if it is explicitly applied to the Matrix homeserver, is published in a webpage (including but not limited to `/_matrix/consent`), and is not a copy of the aforementioned notice. An "unclear" or "sort of" (colored yellow) means the privacy policy's scope or wording is unclear.
-* **Note**: Miscellaneous remarks. Note that a homeserver's theme/orientation can sometimes be seen from the domain itself, in which case it will not be noted down here. Anti-features are *italicized*.
-  * Age restriction: Matrix is 16+. Homeservers that require users to be older are specified.
-  * "Accessory": The homeserver is specifically intended for rooms related to the operator (usually a project), so please be considerate in listing rooms in the public room directory. However, the accounts can be used to access other federated rooms as well.
-  * "Residential": The homeserver may be hosting on a residential internet connection.
-  * "...-oriented": The homeserver is intended to serve the mentioned purpose.
-  * "...-inclined": While the homeserver is not specifically intended to serve any purpose, it is nevertheless used for the mentioned purpose.
-* **Registration method**: Exact registration procedure. Those are tested (but not necessarily thoroughly) on [the official Element web client](https://app.element.io) and, in most cases, should work for other clients as well.
-  * "In-house Element": You may [register](../guide/#register-an-account) using the Element client hosted on the homeserver, which is linked. This is usually due to reCaptcha domain restriction.
-  * "Form": You may register using the linked form.
-  * "See info page": Refer to the page linked in the "server name" column.
-  * A domain: After clicking "Create Account" and "Edit," enter the domain as specified in this column (without `https://`) to [create an account](../guide/#register-an-account) on this homeserver. This discrepancy is usually due to the misconfiguration of `.well-known`.
-  * "SSO": The homeserver requires [single sign-on](https://en.wikipedia.org/wiki/Single_sign-on) for authentication. You must create an account through the link prior to creating an account on the Matrix homeserver itself. Usually, the account can be used to access other services offered by the homeserver operator.
-* **Version**: The software version of the homeserver, [updated every 6 hours by a GitHub Action](https://github.com/austinhuang0131/joinmatrix/blob/main/.github/workflows/matrix_ver.yml#L4).
-  * Unless indicated otherwise, the homeserver is running Synapse, where versions `1.47.1` and above (coloured green) is [recommended](https://matrix.org/blog/2021/11/23/synapse-1-47-1-released) to address a security issue. Homeservers running deprecated versions, namely those prior to `1.47.1`, as well as `1.49.0` (due to a [regression](https://github.com/matrix-org/synapse/pull/11583)), are coloured yellow.
-  * Homeservers that use Dendrite are not coloured.
-  * "Error!!" (coloured red): The homeserver cannot be reached at the time of checking. This is usually occasional, as frequent downtime are grounds for exclusion from this list.
+* **Homeserver name**（ホームサーバ名）：この名前があなたのユーザ名の後ろにつきます。たとえば、私のIDは`@austin:tchncs.de`ですが、このうち`austin`がユーザ名で`tchncs.de`がホームサーバの表示名です。技術的な解説は[ここ](https://spec.matrix.org/v1.1/server-server-api/#resolving-server-names)を参照してください。
+* **Jurisdiction (and Server location)**（司法権とサーバ所在地）：ホームサーバが属する司法権の管轄範囲です。司法権の範囲と異なる場合は、サーバの所在地を括弧書きで追記します。一般的に、ドイツに所在するホームサーバでは[法的もしくは社会的文脈で](https://en.wikipedia.org/wiki/Censorship_in_Germany#Re-unified_Germany_(1990%E2%80%93present))より積極的にもでレーションが行なわれる傾向にあります。
+* **Rules?**（規約が存在するか？）：すべてのユーザ向けに文書化された利用規約が存在するか否かです。利用規約がユーザのすべての活動（特定のルーム内だけでない）に適用され、Webページとして公開されている（`/_matrix/consent`を含みますがこれに限りません）場合に限り、この項目の考慮対象になります。unclear（不明確）やsort of（ある種の；黄色で表示）は、利用規約の適用範囲や内容が不明確なことを示します。
+* **Privacy Policy?**（プライバシーポリシーが存在するか？）：すべてのユーザ向けに文書化されたプライバシーポリシーが存在するか否かです。一般に、[「あなたのデータがどう扱われるか」に関する告知](https://matrix-client.matrix.org/_matrix/consent?v=1.0)のほとんどが、ネットワーク全体に適用されます。プライバシーポリシーがMatrixホームサーバに適用されることが明確であり、Webページとして公開されていて（`/_matrix/consent`を含みますがこれに限りません）、内容が前述の告知のコピーでない場合に限り、この項目の考慮対象になります。unclear（不明確）やsort of（ある種の；黄色で表示）は、プライバシーポリシーの適用範囲や内容が不明確なことを示します。
+* **Note**（備考）：その他の特記事項です。ホームサーバのドメイン名からその主題や方針が読み取れることがありますので、その場合はこの項目には記載しません。懸念事項は*斜体*で表示されます。
+    * Age restriction（年齢制限）：Matrixは16歳以上向けですが、より高い年齢向けのホームサーバであることを示します。
+    * Accessory（付属的）：運営者（たいていは何らかのプロジェクト）に関連するルームに特化したホームサーバであることを示します。そのため公開ルームディレクトリに掲載する際は十分に配慮してください。しかし、アカウントは外部のルームにアクセスするのに使うこともできます。
+    * Residential（家庭用）：ホームサーバが一般家庭向けのインターネット接続で運用されている可能性があることを示します（訳註：いわゆる「自宅サーバ」）。
+  * ...-oriented（〜向け）：ホームサーバが特定の目的で運営されていることを示します。
+  * ...-inclined（〜傾向）：ホームサーバ自身は特定の目的で運営されているわけではないにもかかわらず、特定の目的で利用される傾向にあることを示します。
+* **Registration method**（登録方法）：アカウント登録の手続きに関する情報です。[Elementの公式Webクライアント](https://app.element.io)で（常に完全ではありませんが）テストを行なっています。またほとんどの場合、他のクライアントでも登録が行なえるはずです。
+    * In-house Element（インハウスElement）：リンク先の、ホームサーバ自身がホストするElementクライアントを使って[登録](../guide/#アカウントを登録する)ができます。これは大抵の場合、reCaptchaのドメイン制限に対応するためです。
+    * Form（フォーム）：リンク先のフォームから登録ができます。
+    * See info page（情報ページを参照）：サーバ名の欄からリンクされたページを参照してください。
+    * ドメイン名：このホームサーバにアカウントを[登録](../guide/#アカウントを登録する)する際、「アカウントを作成」と「編集」をクリックした後、この欄に記載されたドメイン名（`https://`は含まない）を入力する必要があります。この不一致は大抵の場合、`.well-known`の設定ミスに起因します。
+    * SSO（シングルサインオン）：ホームサーバはユーザ認証に[シングルサインオン](https://en.wikipedia.org/wiki/Single_sign-on)を要求します。Matrixアカウントの前に、リンク先からアカウントの作成を行なう必要があります。大抵の場合、そのアカウントはホームサーバの運営者が提供する他のサービスへのアクセスにも利用できます。
+* **Version**（バージョン）：ホームサーバのソフトウェアバージョンです。[GitHub Actionで6時間ごとに自動更新されます](https://github.com/austinhuang0131/joinmatrix/blob/main/.github/workflows/matrix_ver.yml#L4)。
+    * 他に明記されていない場合、ホームサーバはSynapseで稼働しています。Synapseはセキュリティ上の問題のため`1.47.1`以降（緑色で表示）の利用が[推奨されています](https://matrix.org/blog/2021/11/23/synapse-1-47-1-released)。非推奨のバージョン、つまり`1.47.1`以前と`1.49.0`（[リグレッション](https://github.com/matrix-org/synapse/pull/11583)のため）は黄色で表示されます。
+    * Dendriteで稼働しているホームサーバは無色で表示されます。
+    * Error!!（赤色で）：チェックの際にホームサーバに接続ができなかったことを示します。これは大抵一時的なものですが、頻繁に発生する場合は一覧からの除外理由となります。
 
-## Other Matrix homeserver lists
+## 他のMatrixホームサーバ一覧
 
-* [asra.gr's list](https://wiki.asra.gr/en:public_servers): A raw dataset of homeservers that allows (but are not necessarily intended for) public registration.
-* [CHATONS list](https://www.chatons.org/search/by-service?service_type_target_id=All&field_alternatives_aux_services_target_id=All&field_software_target_id=274&field_is_shared_value=All&title=): A list of homeservers hosted in France that adhere to certain ethical standards. Some may require membership.
-* [German homeservers list](https://fediverse.blog/~/FossMessenger/matrix-server): A list of homeservers hosted in Germany.
+* [asra.gr's list](https://wiki.asra.gr/en:public_servers)：一般からの登録を（一部は意図的ではないにしろ）受け付けているホームサーバのデータセット
+* [CHATONS list](https://www.chatons.org/search/by-service?service_type_target_id=All&field_alternatives_aux_services_target_id=All&field_software_target_id=274&field_is_shared_value=All&title=): 一定の倫理基準を満たしたフランスのホームサーバの一覧。一部はメンバーシップが必要な可能性があります
+* [German homeservers list](https://fediverse.blog/~/FossMessenger/matrix-server): ドイツに所在するホームサーバの一覧
 
-This list was originally located at [AustinHuang.me](https://austinhuang.me/matrix-homeservers.html).
+この一覧は、以前は[AustinHuang.me](https://austinhuang.me/matrix-homeservers.html)で公開されていました。

@@ -43,22 +43,22 @@ Matrixはユーザのメッセージ内容を暗号化することができま�
 
 ### Session {#session}
 
-Session claims to be decentralized, but since the platform requires an ever-increasing amount[^8] of cryptocurrency stake for each node, running one is unreachable for most people (whereas for Matrix, there exists no such requirement from the platform), so the amount of nodes will eventually reach a finite ceiling, making it only marginally better than Signal.
+Sessionは非集権型であると主張されますが、プラットフォームが各ノードに暗号通貨による出資を求めていて、その価格は上昇し続けている[^8]ため、ノードの運営はほとんどの人にとって見合わなくなっています（一方Matrixには、プラットフォームからそのような要求はありません）。このため最終的にはノードの数が頭打ちになり、Signalよりも多少良いという程度に落ち着くでしょう。
 
-### Another federated platform: XMPP {#another-federated-platform-xmpp}
+### もう一つの非集権型プラットフォーム：XMPP {#another-federated-platform-xmpp}
 
-XMPP and Matrix are very similar: most of [these](../#why-matrix) also apply to XMPP. The difference is that Matrix is much *much* more intuitive for an ordinary user, whereas XMPP is far from it.
+XMPPとMatrixは非常に似ています。[これらの理由](../#why-matrix)のほとんどはXMPPにも当てはまります。大きな違いは、Matrixは一般的なユーザにとって*とても*直感的に理解しやすいということで、XMPPはその対局にあります。
 
-* XMPP is relatively barebone, which may not be able to serve modern communication needs.
-* Clients are spread across different platforms and may support different features differently, making no client one-size-fits-all.
+* XMPPは必要最小限のプロトコルと言えるので、現代的なコミュニケーションのニーズに対応するのは困難です。
+* クライアントが異なるプラットフォームごとに存在し、異なる機能を個別に実装しているので、「これですべてOK」というクライアントが存在しません。
 
-Furthermore, XMPP is not encrypted by default, but use of OMEMO is also quite widespread. Still, it has the same [metadata problem](https://infosec-handbook.eu/articles/xmpp-aitm/) [as Matrix](../#fn:1). However, it is true that XMPP servers are lighter than Matrix, since in XMPP, most of the heavy work is done by the clients, whereas in Matrix, the homeservers need to constantly store things.
+さらにXMPPはデフォルトでは暗号化に対応していませんが、OMEMOが広く利用されています。しかしこれには[Matrixと同じく](../#fn:1)[メタデータに関する問題](https://infosec-handbook.eu/articles/xmpp-aitm/)が存在します。しかし、XMPPのサーバはMatrixのものよりも軽量であることは事実です。XMPPは重い処理のほとんどをクライアント側で行なうのに対し、Matrixではホームサーバが常にデータのやり取りや保管を行なうためです。
 
-For reference, the official comment from matrix.org is [here](https://matrix.org/faq/#what-is-the-difference-between-matrix-and-xmpp%3F).
+参考として、matrix.orgの公式コメントが[ここにあります](https://matrix.org/faq/#what-is-the-difference-between-matrix-and-xmpp%3F)。
 
-### Peer-to-peer platforms {#peer-to-peer-platforms}
+### P2Pプラットフォーム {#peer-to-peer-platforms}
 
-Platforms like Briar, Cwtch and Jami offer much more security, but at a huge cost in terms of utility due to their peer-to-peer nature, requiring participants to be online to receive messages.
+Briar、Cwtch、Jamiといったプラットフォームはより強固なセキュリティを提供しますが、そのP2Pという性質のため、メッセージを送受信するためには参加者がオンラインである必要があるなど、実用性の観点で多大なコストを要求します。
 
 ## Footnotes {#footnotes}
 
@@ -76,4 +76,4 @@ Platforms like Briar, Cwtch and Jami offer much more security, but at a huge cos
 
 [^7]: 技術的観点と同時に、参加しやすさの観点も含んだ意見です（このため、Threemaは除外しました）。
 
-[^8]: Relative to fiat currencies.
+[^8]: 法定通貨と比例して。

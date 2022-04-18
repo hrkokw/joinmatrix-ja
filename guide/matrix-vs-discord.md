@@ -1,41 +1,45 @@
 ---
-title: Matrix vs. Discord
+title: MatrixとDiscordの比較
 layout: page-two-col
 nav: false
 parent: guide
 permalink: guide/matrix-vs-discord/
-description: It's time to ditch Discord. Imagine a place where users are actually respected. Join Matrix, the federated chat platform that does exactly that.
+description: Discordを捨てるときです。ユーザが本当に大切にされるプラットフォームを想像してください。それを実現する分散チャットプラットフォーム、Matrixに参加しましょう。
 ---
 
-## Matrix vs. Discord
+## MatrixとDiscordの比較 {#matrix-vs-discord}
 
+Matrixに興味をお持ちくださりありがとうございます。
 Thank you for considering Matrix.
 
-Matrix has been a popular alternative to Discord, but many people still don't get the why. We will start with why you should move from Discord to Matrix, followed by comparisons of specific feature and some helpful tips. But before we do that, let's start with...
+MatrixはDiscordの代わりとして人気があります。しかし多くの人がその理由をまだ理解できていません。ここではまず、なぜDiscordからMatrixに移行すべきかを解説し、詳しい機能比較と役に立つヒントをご紹介します。しかしその前に、この話からはじめましょう…
 
-## A Discussion on the Proper Definition of "Server"
+## 「サーバ」という用語の妥当な定義に関する議論 {#a-discussion-on-the-proper-definition-of-server}
 
-Recall the computing [definition](https://en.wiktionary.org/wiki/server#Noun) of the word "server":
+コンピュータ分野における「サーバ」という単語の[定義](https://en.wiktionary.org/wiki/server#Noun)を改めて見てみましょう。
 
-> 1. A program that provides services to other programs or devices, either in the same computer or over a computer network.
+> 1. A program that provides services to other programs or devices, either in the same computer or over a computer network.  
+> （同一のコンピュータ内もしくはコンピュータネットワーク経由で、他のプログラムもしくはデバイスにサービスを提供するためのプログラム。）
 >
-> 2. A computer dedicated to running such programs.
+> 2. A computer dedicated to running such programs.  
+> （そのようなプログラムを実行するための専用のコンピュータ。）
 
-The definitions can hold true for a server for a multiplayer game (eg. Minecraft), a server reserved for a group of people for communication (eg. Mumble & TeamSpeak), and a server where Discord bots are being operated from. In each case, the server software (such as the Minecraft server jar file) meets definition #1, whereas the server infrastructure (eg. VPS) meets definition #2.
+マルチプレイヤーゲーム（たとえばMinecraft）に使われるサーバ、特定のグループのメンバーがコミュニケーションするために割り当てられるサーバ（たとえばMumbleやTeamSpeak）、そしてDiscordのボットが運用されているサーバは、いずれも前述の定義に適合します。いずれの場合も、サーバプログラム（たとえばMinecraftサーバのjarファイル）は定義の1に、サーバインフラ（たとえばVPS）は定義の2に適合します。
 
-But that's not the case for a Discord "server": it's just some data, together with data of other "servers," resting on Discord's computational servers. A Discord "server" is not a program on its own, nor has any computational infrastructure been dedicated to any specific "server,"[^14] thus violating both definitions. Presumably to attract gamers who often utilizes the correct "server" concept, Discord attempts to equate it to a chat group, muddying the waters for the definition of this technical term. (Hence Discord refers to "servers" as *guilds* in API documentations.)
+しかしこれはDiscordの「サーバ」には当てはまりません。それはただのデータに過ぎず、他の「サーバ」のデータと一緒に、Discordの（コンピュータという意味での）サーバに保管されています。Discordの「サーバ」はそれ自身プログラムではなく、どの「サーバ」にも専用の計算インフラが割り当てらるわけではありません[^14]ので、前述の定義のいずれにも反します。
+おそらく、正しい意味での「サーバ」のイメージになじみのあるゲーマーたちの目をひきたいがために、Discordはこの技術用語の定義を汚してまで、単なるチャットグループを指す用語として使いはじめたのでしょう（だからこそDiscordはAPIドキュメントでは「サーバ」を*ギルド*と呼び分けているのです）。
 
-### What about Matrix?
+### Matrixではどうなの？ {#what-about-matrix}
 
-In Matrix, a *homeserver* is a server, in that it meets both definitions: Dedicated infrastructures (definition #2) running [a server software](../#set-up-your-own-homeserver-or-join-an-existing-homeserver) (definition #1). Furthermore, these homeservers, while operated independently of each other and not under the control of a single entity, communicate (transmitting messages and such) with each other using an agreed-upon protocol, thereby keeping the Matrix platform alive. Platforms that use such structure, such as Matrix, [fediverse](https://fediverse.party/en/fediverse) and email, are called federated platforms.
+Matrixでは、*ホームサーバ*はサーバです。[サーバプログラムを実行するための](../#set-up-your-own-homeserver-or-join-an-existing-homeserver)（定義1）専用のインフラ（定義2）ですので、両方の定義に適合します。さらにこれらのホームサーバは、単一の存在のコントロール下にあるわけではなく個別に運用されている一方で、あらかじめ合意されたプロトコルに基づいて互いにコミュニケーション（メッセージなどの送受信）を行なうことで、Matrixプラットフォームを形成しています。このような構造を持つMatrixや[fediverse](https://fediverse.party/en/fediverse)、Eメールのようなプラットフォームは、連合型プラットフォームと呼ばれます。
 
-## Why not Discord?
+## なぜDiscordではダメなの？ {#why-not-discord}
 
-I'm sure you can find a lot of valid criticisms of Discord, like [here](https://cadence.moe/blog/2020-06-06-why-you-shouldnt-trust-discord) or [here](https://austinhuang.me/discord-issues). Give them a read if you have time.
+Discordについての妥当な批判はたくさん見つかるはずです。たとえば[ここ](https://cadence.moe/blog/2020-06-06-why-you-shouldnt-trust-discord)や[ここ](https://austinhuang.me/discord-issues)が挙げられます。時間があればぜひこれらにも目を通してみてください。
 
-In the scope of this guide, the key reasons to move from Discord to Matrix are:
+このガイドが扱う範囲において、DiscordからMatrixに移行すべき主な理由は、
 
-* **Lack of privacy for private communications**, as private conversations are not only unencrypted, but also actively scanned (scope of which depends on your settings, but some happen even when you disable all the filtering-related toggles). [People reported](https://www.reddit.com/r/discordapp/comments/t5v3of/viruses_now_get_turned_into_recipe_links_funny/) their messages were substituted with cooking recipes when they tried to send something that is considered a virus by Discord.
+* **プライベートなコミュニケーションにおけるプライバシーの欠如** プライベートな会話は暗号化されていないだけでなく、積極的に検閲されています（あなたの設定によって範囲は変わりますが、フィルタリング関連の設定をすべてオフにしているにもかかわらずスキャンが行なわれることもあります）。Discordによってウイルスと判断されるようなメッセージを送信しようとしたところ、料理のレシピに置き換えられたという[報告もあります](https://www.reddit.com/r/discordapp/comments/t5v3of/viruses_now_get_turned_into_recipe_links_funny/)。
 * **Excessive tracking some of which cannot be opted-out in a ToS-abiding way**, such as the [science endpoint](https://luna.gitlab.io/discord-unofficial-docs/science.html) and the process logger (for activity status)[^10]. Most third party clients and some client mods do not support science endpoint, nor process detection. To this date, there is no known user banned for not sending the telemetry data.
 * **Hostile stance against unofficial clients or client modifications**, thus preventing users from opting out of certain annoyances or tracking in a compliant way.
 * **Arbitrary phone number requirements**. Some users that are deemed suspicious and users that join certain "servers" are required to verify their phone number.
@@ -49,28 +53,28 @@ In the scope of this guide, the key reasons to move from Discord to Matrix are:
  
 [Matrix addresses all of the above](../#why-matrix).
 
-### Special Note
+### Special Note {#special-note}
 
 Matrix uses free software for its server and client softwares.
 
 * Those who are using or are planning to use Discord's "Student Hub" feature should urge your institution's IT department or your student union to set up a Matrix homeserver, which allows greater flexibility for communication, while ensuring your privacy and agency are respected. [Germans are already using it.](https://doc.matrix.tu-dresden.de/en/why/)
 * Open source communities should be aware that [using Discord is antithetical and discriminatory](https://drewdevault.com/2021/12/28/Dont-use-Discord-for-FOSS.html).
 
-## Terminologies
+## Terminologies {#terminologies}
 
-### Channel & DMs vs. Room
+### Channel & DMs vs. Room {channel-dms-vs-room}
 
 In Discord, a place that allows sending text messages is called a channel (if belongs to a "server") or a DM.
 
 In Matrix, a place that allows sending text messages is called a room.
 
-### "Server" vs. Space
+### "Server" vs. Space {#server-vs-space}
 
 In Discord, text channels that are not DMs (including group DMs) must be associated with a "server." Thus a "server" can be understood as a collection of channels that share certain settings.
 
 In Matrix, rooms *can* be included in a Space. A Space can be used in similar fashion to a Discord "server" (controlled by the admins of the constituent rooms) or a "server" folder (controlled by anyone). A Space may also include another Space. Rooms do not share settings with Spaces, although rooms can require Space membership for joining.
 
-## Feature comparison
+## Feature comparison {#feature-comparison}
 
 Note that Matrix does not (and cannot, due to its decentralized nature) paywall features. Thus any exception in Discord features that require Nitro or Nitro Classic subscription is not considered.
 
@@ -110,12 +114,12 @@ Note that Matrix does not (and cannot, due to its decentralized nature) paywall 
 | **Network access** | **IPv4 only**. Users and bot developers have raised this issue repeatedly, and staff stated this is not urgent at all, despite the fact that IPv4 addresses have been exhausted worldwide: "We of course care of the future of the platform however ipv4<->ipv6 connectivity is not really going away any time soon with the availability of nat64 - and there are much more important things to work on." | **Most if not all homeservers participating in the public federation have IPv4 connectivity but IPv6 connectivity varies from homeserver to homeserver.** The biggest third party identity service, [vector.im](https://vector.im), however, is IPv4-only. |
 
 
-## Helpful Tips
+## Helpful Tips {#helpful-tips}
 
 * There is a [public bridge](https://t2bot.io/discord) that allows you to connect a Discord channel with a Matrix room. There is [another bridge that allows looking at your Discord direct messages from Matrix side](https://github.com/matrix-discord/matrix-appservice-discord), but that one requires self-hosting and more extensive setup than the public t2bot bridge.  (Although, backlinking Matrix data to Discord will reduce its privacy, so please take ethical concerns into account when using them.) 
 * Your user colour is chosen by a hash function (varies by app) that takes in your MXID.
 
-## Footnotes
+## Footnotes {#footnotes}
 
 [^1]: Element and SchildiChat has status available as a lab feature, but it is only visible to those who you have a DM with. Statuses are not encrypted.
 

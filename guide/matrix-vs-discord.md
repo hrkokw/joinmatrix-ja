@@ -52,30 +52,30 @@ Discordについての妥当な批判はたくさん見つかるはずです。�
  
 [以上のすべての問題に対して、Matrixは解決策を持っています](../#why-matrix)。
 
-### Special Note {#special-note}
+### 特記事項 {#special-note}
 
-Matrix uses free software for its server and client softwares.
+Matrixはそのサーバーとクライアントにフリーソフトウェアを利用します。
 
-* Those who are using or are planning to use Discord's "Student Hub" feature should urge your institution's IT department or your student union to set up a Matrix homeserver, which allows greater flexibility for communication, while ensuring your privacy and agency are respected. [Germans are already using it.](https://doc.matrix.tu-dresden.de/en/why/)
-* Open source communities should be aware that [using Discord is antithetical and discriminatory](https://drewdevault.com/2021/12/28/Dont-use-Discord-for-FOSS.html).
+* Discordの「スチューデントハブ」を利用しているか利用を検討している場合、組織のIT部門か学生組合にMatrixホームサーバーの設置を要求すべきです。あなたのプライバシーや組織を尊重しながら、コミュニケーションにより大きな柔軟性を得ることができます。[ドイツでは既に利用されています](https://doc.matrix.tu-dresden.de/en/why/)。
+* オープンソースコミュニティは、[Discordの使用は反審美的であり差別的である](https://drewdevault.com/2021/12/28/Dont-use-Discord-for-FOSS.html)と認識すべきです。
 
-## Terminologies {#terminologies}
+## 用語集 {#terminologies}
 
-### Channel & DMs vs. Room {channel-dms-vs-room}
+### チャンネル、DMとルーム {channel-dms-vs-room}
 
-In Discord, a place that allows sending text messages is called a channel (if belongs to a "server") or a DM.
+Discordでは、テキストメッセージがやり取りできる場のことをチャンネル（「サーバ」に属する場合）もしくはDMと呼びます。
 
-In Matrix, a place that allows sending text messages is called a room.
+Matrixでは、テキストメッセージがやり取りできる場のことをルームと呼びます。
 
-### "Server" vs. Space {#server-vs-space}
+### 「サーバ」とスペース {#server-vs-space}
 
-In Discord, text channels that are not DMs (including group DMs) must be associated with a "server." Thus a "server" can be understood as a collection of channels that share certain settings.
+Discordでは、DM以外のテキストチャンネル（グループDMを含む）は「サーバ」に属さねばなりません。このように、「サーバ」は特定の設定を共有するチャンネルの集合体であると理解できます。
 
-In Matrix, rooms *can* be included in a Space. A Space can be used in similar fashion to a Discord "server" (controlled by the admins of the constituent rooms) or a "server" folder (controlled by anyone). A Space may also include another Space. Rooms do not share settings with Spaces, although rooms can require Space membership for joining.
+Matrixでは、ルームはスペースに属する*ことができます*。スペースはDiscordにおける「サーバ」（属するルームの管理者らが管理）もしくは「サーバ」フォルダ（任意のユーザが管理）と似た用途で利用できます。スペースは別のスペースを含むこともできます。ルームはスペースと設定を共有することはありません。ただしルームは、スペースへの参加をルームへの参加条件とすることもできます。
 
-## Feature comparison {#feature-comparison}
+## 機能比較 {#feature-comparison}
 
-Note that Matrix does not (and cannot, due to its decentralized nature) paywall features. Thus any exception in Discord features that require Nitro or Nitro Classic subscription is not considered.
+Matrixは一部の機能にペイウォールを設ける（課金を要求する）ことはありません（非集権型という性質上、そもそも不可能です）。このためDiscordでNitroもしくはNitro Classicを要求する機能は考慮の対象としません。
 
 | Feature | Discord | Matrix |
 | ------- | ------- | ------ |
@@ -120,13 +120,13 @@ Note that Matrix does not (and cannot, due to its decentralized nature) paywall 
 
 ## Footnotes {#footnotes}
 
-[^1]: Element and SchildiChat has status available as a lab feature, but it is only visible to those who you have a DM with. Statuses are not encrypted.
+[^1]: ElementとSchildiChatではステータスが実験的機能として提供されていますが、DMの相手のみに表示されます。ステータスは暗号化されません。
 
-[^2]: For Discord "servers" and for Matrix rooms.
+[^2]: Discordでは「サーバ」、Matrixではルームです。
 
-[^3]: Note that Matrix has no concept of "friends" or "contacts" per se, although the DM list can serve the same purpose. However, user-based contact ignoring exists on Matrix, using two different methods. The former method prevents any and all messages from reaching the recipient, and the latter method using policy rooms hides them client-side by interpreting an ignore list. The latter method is currently only available in Element as a labs feature.
+[^3]: Matrixに「フレンド」や「連絡先」という概念は存在しないことに注意してください（DMリストを同じ目的で利用することはできます）。しかし、Matrixではユーザのブロックを2種類の方法で行なうことができます。一つはあらゆるすべてのメッセージが受信者に届くことを防ぐ方法で、もう一つはポリシールームを無視リストとして解釈し、クライアントサイドで隠す方法です。後者は現在のところElementの実験的機能としてのみ提供されています。
 
-[^4]: Enabling encryption is irreversible for security reasons. Note that it is pointless to enable encryption in a public room, with one exception: the case you want to have a persistent cryptographic trail of who read the messages. Furthermore, enabling encryption means users will not see messages before their invitation (if applicable) or their entry.
+[^4]: 暗号化の設定はセキュリティ上の理由から不可逆です。公開ルームで暗号化を設定することに意味はないことに注意してください。唯一の例外は、誰がメッセージを読んだかの記録を暗号学的に残す必要がある場合です。さらに暗号化の設定により、ルームへの招待を受けたか参加した時点より前のメッセージにユーザがアクセスできなくなります。
 
 [^5]: Matrix has no distinction between user and bot accounts (nor is there any dependency between the two). Unless specifically exempted by the homeserver (not needed in most cases), bots have the same ratelimit as other users. In Element and SchildiChat, the user token of an account is available by accessing "User Settings" then "Help & About." When running an autonomous bot, please be courteous and indicate to others (in username or display name) that the account is a bot. Bots that want to control other user accounts need to create an application service, which needs to be approved by an administrator of the homeserver that the bot is using.
 

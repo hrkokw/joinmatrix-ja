@@ -10,7 +10,6 @@ description: Discordを捨てるときです。ユーザが本当に大切にさ
 ## MatrixとDiscordの比較 {#matrix-vs-discord}
 
 Matrixに興味をお持ちくださりありがとうございます。
-Thank you for considering Matrix.
 
 MatrixはDiscordの代わりとして人気があります。しかし多くの人がその理由をまだ理解できていません。ここではまず、なぜDiscordからMatrixに移行すべきかを解説し、詳しい機能比較と役に立つヒントをご紹介します。しかしその前に、この話からはじめましょう…
 
@@ -39,19 +38,19 @@ Discordについての妥当な批判はたくさん見つかるはずです。�
 
 このガイドが扱う範囲において、DiscordからMatrixに移行すべき主な理由は、
 
-* **プライベートなコミュニケーションにおけるプライバシーの欠如** プライベートな会話は暗号化されていないだけでなく、積極的に検閲されています（あなたの設定によって範囲は変わりますが、フィルタリング関連の設定をすべてオフにしているにもかかわらずスキャンが行なわれることもあります）。Discordによってウイルスと判断されるようなメッセージを送信しようとしたところ、料理のレシピに置き換えられたという[報告もあります](https://www.reddit.com/r/discordapp/comments/t5v3of/viruses_now_get_turned_into_recipe_links_funny/)。
-* **Excessive tracking some of which cannot be opted-out in a ToS-abiding way**, such as the [science endpoint](https://luna.gitlab.io/discord-unofficial-docs/science.html) and the process logger (for activity status)[^10]. Most third party clients and some client mods do not support science endpoint, nor process detection. To this date, there is no known user banned for not sending the telemetry data.
-* **Hostile stance against unofficial clients or client modifications**, thus preventing users from opting out of certain annoyances or tracking in a compliant way.
-* **Arbitrary phone number requirements**. Some users that are deemed suspicious and users that join certain "servers" are required to verify their phone number.
-* Discord has made **decisions against the users' best interests**, with the most recent ones being:
-  * Biased consultations and unilateral proposal of [cryptocurrency integrations](https://www.reddit.com/r/discordapp/comments/qpmhs5/discord_developers_please_do_not_support_nfts/) (which were only dropped after massive backlash); and
-  * Deprecating access to read text messages in "servers" with certain exceptions[^12], effectively equating to mandatory rollout of application commands based interaction flow, as well as KYC requirements, for running bots in more than 100 "servers" (which were *not* dropped despite [backlash](https://gist.github.com/Rapptz/4a2f62751b9600a31a0d3c78100287f1)).
-* **Closed source**, thus cannot be independently inspected.
-* **Lack of control for private data and no guarantee on reliability**, as Discord is centralized, not federated. See [here](../matrix-vs-al/#centralized-platforms).
-* **Paywalling richer expression abilities**.[^11] A user with Nitro unlocks certain additional features, mainly related to what can be included in a message, and twice as more guild cap, and twice as long message length limit.
-* **Not intended for serious use**. A developer experience staff at Discord explicitly said, "We are just a casual chatting app." Marketing campaigns of Discord, such as inclusion of gaming related figures, and use of funny memes, seem to agree with that stance.
+* **プライベートなコミュニケーションにおけるプライバシーの欠如**：プライベートな会話は暗号化されていないだけでなく、積極的に検閲されています（あなたの設定によって範囲は変わりますが、フィルタリング関連の設定をすべてオフにしているにもかかわらずスキャンが行なわれることもあります）。Discordによってウイルスと判断されるようなメッセージを送信しようとしたところ、料理のレシピに置き換えられたという[報告もあります](https://www.reddit.com/r/discordapp/comments/t5v3of/viruses_now_get_turned_into_recipe_links_funny/)。
+* **利用規約を遵守する限りオプトアウトの方法がないものを含む、過剰なトラッキング**：[scienceエンドポイント](https://luna.gitlab.io/discord-unofficial-docs/science.html)や（アクティビティ統計のための）プロセスロガーなどがこれにあたります[^10]。ほとんどのサードパーティークライアントはscienceエンドポイントもプロセス検知もサポートしていません。今日まで、テレメトリーデータを送信しないことを理由にバンされたユーザは報告されていません。
+* **非公式クライアントやクライアントの改造に対する非友好的な姿勢**：そのためにユーザは、トラッキングや迷惑な挙動から合法的にオプトアウトすることができません。
+* **電話番号の恣意的な要求**：疑わしいと判断されたり、特定の「サーバ」に参加しているユーザに対して、電話番号の確認が要求されるケースがあります。
+* Discordは**ユーザのためにならない決定を行なってきました**。最近の事例では、
+    * [暗号通貨の統合](https://www.reddit.com/r/discordapp/comments/qpmhs5/discord_developers_please_do_not_support_nfts/)における、偏向した協議と一方的な提案（これは激烈な反対運動を受け取り下げられました）。
+    * 特定の例外[^12]を除いた、「サーバ」内のテキストメッセージの読み取りアクセスの非推奨化。これにより100を超える「サーバ」でボットを動かす場合、開発者の法的な身分証明に加えて、アプリケーションコマンドベースの対話フローが事実上強制されることになりました（これは[反対運動](https://gist.github.com/Rapptz/4a2f62751b9600a31a0d3c78100287f1)があったにもかかわらず*取り下げられませんでした*）。
+* **ソースが非公開**：独立した第三者による監査を行なうことができません。
+* **プライベートデータのコントロールや、信頼性の保証の欠如**：Discordは中央集権型です。[ここ](../matrix-vs-al/#centralized-platforms)も参照してください。
+* **より豊かな表現力はペイウォールの向こう側**[^11]：Nitroをアンロックしたユーザは特定の追加機能を利用できます。主なものは、メッセージに何を含められるかや、2倍のギルドキャップ、2倍のメッセージサイズ制限です。
+* **重要用途での利用が想定外**：Discordのスタッフから「うちの製品はただのカジュアルなチャットアプリだから」という明確な発言があったことを、ある開発者が認めています。ゲーム関係のフィギュアやおかしなミームを取り上げたマーケティングキャンペーンを見ると、このスタンスと矛盾はないように見えます。
  
-[Matrix addresses all of the above](../#why-matrix).
+[以上のすべての問題に対して、Matrixは解決策を持っています](../#why-matrix)。
 
 ### Special Note {#special-note}
 

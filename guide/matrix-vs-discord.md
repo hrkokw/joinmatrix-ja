@@ -61,7 +61,7 @@ Matrixはそのサーバーとクライアントにフリーソフトウェア�
 
 ## 用語集 {#terminologies}
 
-### チャンネル、DMとルーム {channel-dms-vs-room}
+### チャンネル、DMとルーム {#channel-dms-vs-room}
 
 Discordでは、テキストメッセージがやり取りできる場のことをチャンネル（「サーバ」に属する場合）もしくはDMと呼びます。
 

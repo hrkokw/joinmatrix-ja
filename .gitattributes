@@ -1,0 +1,9 @@
+#
+# Files to ignore when merging upstream, as they are
+# (or, will be) maintained independently.
+#
+# Run "git config merge.ours.driver true" to take effect.
+# Note: "true" is not a boolean value but the "true" command.
+#
+_includes/matrix_prod.md	merge=ours
+servers.json			merge=ours

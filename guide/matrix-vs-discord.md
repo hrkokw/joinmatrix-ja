@@ -77,20 +77,20 @@ Matrixでは、ルームはスペースに属する*ことができます*。ス
 
 Matrixは一部の機能にペイウォールを設ける（課金を要求する）ことはありません（非集権型という性質上、そもそも不可能です）。このためDiscordでNitroもしくはNitro Classicを要求する機能は考慮の対象としません。
 
-| Feature | Discord | Matrix |
-| ------- | ------- | ------ |
-| **Registration** | Requires email. Discord may demand your phone number if it detects "suspicious activity." | Depending on homeserver (especially if you're running your own), **email may be optional**, and phone number is usually optional. There is no *automated* human check after registration. |
-| Price | Free, with certain features paywalled. | Free for [most homeservers](../../servers) (but please consider donating to them). Hosting a private homeserver may also incur cost (could be [free](https://matrix.org/docs/guides/free-small-matrix-server)). Note that paying (not donation) only affects where your data is hosted and (to a much lesser degree) server performance; it has no effect on features. |
-| **Username** | Users are identified by display name (maximum 32 characters) + discriminator (4 randomly-assigned digits) to fellow users, and user IDs (Around 18 digits) for programming purposes. | Users are identified by their MXID (eg. `@alice:example.com`), composed of the username (must be ASCII characters, upper case letters are not allowed) and the server name (not exceeding 255 characters when combined, including the introducing at symbol and the colon separating the parts). A display name can be optionally added (up to ~65200 bytes)[^7]. |
-| Avatar | Static, maximum 8 MB. Cannot be zoomed unless using a bot or manually entering the URL to higher definition images, in which case the returned avatar has a maximum definition of 1024x1024. | **See "Attachments" for limits.** Can be zoomed (at least in Element/SchildiChat), in which case the avatar will be shown in the uploaded definition. Animated avatars are **supported**. |
-| Profile description and background | **Supported**. | Not supported currently, will be supported using profile rooms. |
-| Ability to read messages while offline | Official web and desktop clients artificially block viewing anything at all when it loses the real-time connection. No such limitation in official mobile clients. | Messages in client cache can be read without restriction. |
-| Profile status | **Supported**. | Effectively not supported[^1]. |
-| Nicknames[^2] | Supported. Maximum 32 characters. | **Supported** (`/myroomnick`). Up to ~65200 bytes. |
-| Specific avatars[^2] | Requires Nitro. | [**Supported**](../features/#attachments) (`/myroomavatar`). See "Attachments" for limits. |
-| 2FA | Email or SMS/TOTP. | Not required for login, but required (QR code, emoji verification, or Security Key) for viewing past encrypted messages. |
-| **Text messages** | Maximum 2000 characters. Supports Markdown (with some modifications). | **Up to ~65200 bytes (up to ~21270 bytes if a formatted message with plain text fallback sent).[^7] [Supports Markdown and HTML.](../features/#text)** |
-| Attachments | Maximum 8 MB (maximum 100 MB for users with Nitro, and also for all users in a "server" with boost tier 3). | **Maximum 50~100 MB** (for most homeservers; customizable if you run your own homeserver). |
+| 機能 | Discord | Matrix |
+| --- | ------- | ------ |
+| **登録** | Eメールアドレスが必要。「疑わしいアクティビティ」が検知されると電話番号を要求される可能性がある。 | ホームサーバによって異なる（特に自分で運営している場合）。**Eメールアドレスは任意の場合がある**上、電話番号は大抵の場合必須でない。登録後に*自動の*アカウント検査は行なわれない。 |
+| 利用料金 | 無料。一部機能の利用には課金が必要。 | [ほとんどのホームサーバmost homeservers](../../servers)で無料（ただし寄付をぜひ検討してください）。プライベートのホームサーバを運営するにはコストがかかる場合がある（無料で可能な[場合もある](https://matrix.org/docs/guides/free-small-matrix-server)）。料金の支払い（寄付でなく）は、あなたのデータがホストされる場所とサーバ性能だけに関係し、利用できる機能に違いはないことに注意。 |
+| **ユーザ名** | ユーザはディスプレイネーム（最大32文字）＋識別子（ランダムに割り当てられた4桁の数字）によって識別される。これとは別に、プログラミング用途としてユーザID（18桁前後の数字）が存在する。 | ユーザはMXID（たとえば`@alice:example.com`）で識別される。MXIDはユーザ名（ASCII文字で大文字は許されない）とサーバ名で構成される（先頭の記号と区切り文字のコロンを含め、全体で255文字まで）。ディスプレイネームを任意で追加可能（最大65200バイト）。[^7] |
+| アバター | 最大8MBの静止画像。ボットを使用するかURLに直接アクセスしない限り高解像度のデータは入手できず、その場合でも最大1024×1024ピクセルに制限される。 | **添付ファイルの制限に従う。**（少なくともElementとSchildiChatでは）ズームが可能で、アップロードされたときのオリジナル解像度で表示される。アニメーション付きのアバター画像も**サポートしている**。 |
+| プロフィールの説明と背景の設定 | **サポートしている**。 | 現在のところは未サポート。将来プロフィールルームとしてサポートされる予定。 |
+| オフライン時のメッセージへのアクセス | 公式のWebとデスクトップのクライアントでは、リアルタイムのコネクションがない状態では意図的に一切の閲覧がブロックされる。公式のモバイルクライアントにこのような制限はない。 | クライアントにキャッシュされているメッセージは制限なく閲覧可能。 |
+| プロフィールステータス | **サポートしている**。 | 事実上サポートされていない[^1]. |
+| ニックネーム[^2] | サポートしている。最大32文字。 | **サポートしている** (`/myroomnick`)。最大65200バイト。 |
+| 特定のアバター[^2] | Nitroが必要。 | [**サポートしている**](../features/#attachments) (`/myroomavatar`)。各種制限は添付ファイルに従う。 |
+| 2要素認証 | Eメールアドレス、SMSまたはTOTP。 | ログインには不要。ただし過去の暗号化されたメッセージを読むためには特殊な認証（QRコード、絵文字列の比較、セキュリティキー）が必要。 |
+| **テキストメッセージ** | 最大2000文字。Markdown（カスタムあり）をサポート。 | **最大65200バイト（フォーマット済みメッセージと、あわせて予備のプレーンテキストを送信する場合は、最大21270バイト）。[^7] [Markdownと HTMLをサポート](../features/#text)。** |
+| 添付ファイル | Maximum 8 MB (maximum 100 MB for users with Nitro, and also for all users in a "server" with boost tier 3). | **Maximum 50~100 MB** (for most homeservers; customizable if you run your own homeserver). |
 | Custom emotes in messages | Free users can only use static emotes defined within the "server". Using emojis from outside the "server" and using animated emojis are limited to Nitro users only. | It is possible to insert user-defined static emotes in messages, see [here](../features/#attachments). No support for animated emotes. |
 | Reactions | Only emotes (Unicode or custom ones) | Unicode emotes and [text](../features/#reactions). |
 | Stickers | Only stickers defined within the "server". | **Unlimited with setup.** See [here](../features/#stickers). |

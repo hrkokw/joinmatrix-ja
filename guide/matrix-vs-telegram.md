@@ -1,33 +1,33 @@
 ---
-title: Matrix vs. Telegram
+title: MatrixとTelegramの比較
 layout: page-two-col
 nav: false
 parent: guide
 permalink: guide/matrix-vs-telegram/
-description: It's time to ditch Telegram. Join Matrix, the federated chat platform that actually respects you.
+description: Telegramを捨てるときです。ユーザが本当に大切にされるプラットフォームを想像してください。それを実現する分散チャットプラットフォーム、Matrixに参加しましょう。
 ---
 
-## Matrix vs. Telegram
+## MatrixとTelegramの比較 {#matrix-vs-telegram}
 
-Thank you for considering Matrix. We will start with why you should move from Telegram to Matrix, followed by comparisons of specific feature and some helpful tips.
+Matrixに興味をお持ちくださりありがとうございます。ここではまず、なぜDiscordからMatrixに移行すべきかを解説し、詳しい機能比較と役に立つヒントをご紹介します。
 
-## Why not Telegram?
+## なぜTelegramではダメなの？ {#why-not-telegram}
 
-In the scope of this guide, the key reasons to move from Telegram to Matrix are:
+このガイドの範疇では、TelegramからMatrixに移行すべき主な理由は、
 
-* **Lack of privacy for private communications** since the default option is Cloud chat, which is not end-to-end encrypted. Secure chat also comes with significant feature limitations, such as no portability across devices.
-* **Ads**, even if it's just for popular channels. Third-party clients are also not allowed to opt them out, albeit nobody knows how Telegram will enforce that restriction.
-* **Phone number requirement.**
-* Despite Telegram claiming to have minimal intervention on legal content, it nevertheless made **controversial decisions**, such as [shutting down Russian political bots](https://en.wikipedia.org/wiki/Telegram_(software)#2021_shutdown_of_Russian_political_bots). (Matrix, on the other hand, is decentralized, which makes censorship technically difficult.)
-* **Telegram servers are closed source**. (Says to defend against state censorship...?)
-* **Lack of control for private data and no guarantee on reliability**, as Telegram is centralized, not federated. See [here](../matrix-vs-al/#centralized-platforms).
+* **プライベートなコミュニケーションにおけるプライバシーの欠如**：デフォルトではクラウドチャットが使われ、これはエンドツーエンドで暗号化されていません。セキュアチャットにも、デバイスを跨いだ利用ができないなど、重大な機能制限が存在します。
+* **広告**：人気のチャンネルだけであるにせよ、広告が存在します。Telegramがこの制限をどうやって強制するかは誰も知りませんが、サードパーティ製のクライアントもオプトアウトすることはできません。
+* **電話番号が必須です。**
+* 適法なコンテンツへの介入は最小限であるとTelegramは主張しているにもかかわらず、[ロシアの政治的なボットの停止](https://en.wikipedia.org/wiki/Telegram_(software)#2021_shutdown_of_Russian_political_bots)のような**議論を呼ぶ決断**をしています。（一方でMatrixは、その非集権型という特徴から検閲が技術的に困難です。）
+* **Telegramサーバのソースは非公開です。**（国家からの検閲を防ぐためだと主張していますが…？）
+* **プライベートデータのコントロールや、信頼性の保証の欠如**：Telegramは中央集権型です。[ここ](../matrix-vs-al/#centralized-platforms)も参照してください。
 
-Despite recent studies, Telegram's use of its own MTProto protocol remains a debated subject, which will be left up to you.
+最近の調査にもかかわらず、Telegramが独自のMTProtoプロトコルを利用している事実は依然として議論の的になっています。これをどう判断するかはあなた次第です。
 
-## Feature comparison
+## 機能比較 {#feature-comparison}
 
-| Feature | Telegram | Matrix |
-| ------- | -------- | ------ |
+| 機能 | Telegram | Matrix |
+| ---- | -------- | ------ |
 | **Registration** | Requires phone number. | **Phone number is usually optional.** Depending on homeserver, **email is commonly required**. There is usually no human check after registration. |
 | **Username** | Users are identified by phone number or username (if set up, 5\~32 alphanumeric characters) to fellow users, and user IDs (around 9\~10 digits) for programming purposes. A display name can be added (no limit). | Users are identified by their MXID (eg. `@alice:example.com`), composed of the username (must be ASCII characters, upper case letters are not allowed) and the server name (not exceeding 255 characters when combined, including the introducing at symbol and the colon separating the parts). A display name can be optionally added (up to ~65200 bytes)[^2]. |
 | Avatar | Static or animated; limit unknown. Can be zoomed; the returned avatar has a maximum definition of 640x640. | **See "Attachments" for limits.** Can be zoomed (at least in Element/SchildiChat), in which case the avatar will be shown in the uploaded definition. Animated avatars are supported and will be rendered (at least in Element/SchildiChat). |
@@ -51,15 +51,15 @@ Despite recent studies, Telegram's use of its own MTProto protocol remains a deb
 | Size limits of group chats | Up to 100k members in groups, unlimited in one-to-many channels. | No artificial limits, albeit current implementations do not perform well with rooms having more than a few tens of thousands of members and a few dozens of homeservers. | 
 | Disabled and deleted account handling | Disabling an account is reversible until one year after disabling. Accounts that do not login for a year get automatically deleted. Messages from deleted accounts survive for one more year from deletion. | Disabling an account is usually irreversible. Messages from disabled accounts are not sent to further users and servers. Rooms created by disabled accounts stay. |
 | Ads | Popular channels now carry ads that you cannot opt out. | It is technically possible for a homeserver to insert ads, but **there are no known occurrences**. |
-| **Network access** | **IPv4 supported, [IPv6 broken](https://flameeyes.blog/2017/08/06/ipv6-horror-story-telegram/)**.  | ***Most if not all homeservers participating in the public federation have IPv4 connectivity but IPv6 connectivity varies from homeserver to homeserver.**. |
+| **Network access** | **IPv4 supported, [IPv6 broken](https://flameeyes.blog/2017/08/06/ipv6-horror-story-telegram/)**.  | **Most if not all homeservers participating in the public federation have IPv4 connectivity but IPv6 connectivity varies from homeserver to homeserver.**. |
 
 
-## Helpful Tips
+## 役立つヒント {#helpful-tips}
 
-There is a [bridge](https://t2bot.io/telegram) that allows you to connect a Telegram group with a Matrix room.
+TelegramグループとMatrixルームを接続できる[ブリッジ](https://t2bot.io/telegram)が存在します。
 
-## Footnotes
+## 脚注 {#footnotes}
 
-[^1]: Enabling encryption is irreversible for security reasons. Note that it is pointless to enable encryption in a public room, with one exception: the case you want to have a persistent cryptographic trail of who read the messages. Furthermore, enabling encryption means users will not see messages before their invitation (if applicable) or their entry.
+[^1]: 暗号化の設定はセキュリティ上の理由から不可逆です。公開ルームで暗号化を設定することに意味はないことに注意してください。唯一の例外は、誰がメッセージを読んだかの記録を暗号学的に残す必要がある場合です。さらに暗号化の設定により、ルームへの招待を受けたか参加した時点より前のメッセージにユーザがアクセスできなくなります。
 
-[^2]: Limited by Matrix event size limits. The current event size limit is specified to be 65536 bytes. Formatted message size limit assuming the formatted body takes approximately twice as much as plain text body.
+[^2]: Matrixのイベントのサイズ制限によるものです。現在の上限は65536バイトです。フォーマット済みメッセージのサイズ制限は、本文がプレーンテキストのおおよそ2倍のサイズになるだろうという想定に基づいています。

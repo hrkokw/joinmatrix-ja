@@ -1,123 +1,124 @@
 ---
-title: Matrix vs. Guilded
+title: MatrixとGuildedの比較
 layout: page-two-col
 nav: false
 parent: guide
 permalink: guide/matrix-vs-guilded/
-description: It's time to ditch Guilded. Imagine a place where users are actually respected. Join Matrix, the federated chat platform that does exactly that.
+description: Guildedを捨てるときです。ユーザが本当に大切にされるプラットフォームを想像してください。それを実現する分散チャットプラットフォーム、Matrixに参加しましょう。
 ---
 
-## Matrix vs. Guilded
+## Matrix vs. Guilded {#matrix-vs-guilded}
 
-Thank you for considering Matrix. Many Discord users have migrated to Guilded after their accounts or communities have been shut down, but this is not recommended, explained below.
+Matrixに興味をお持ちくださりありがとうございます。多くのGuildedユーザが、アカウントやコミュニティの停止を受けたことでGuildedへの乗り換えを進めています。しかしこれは以下で説明するように、おすすめできる対応ではありません。
 
-Matrix has been a popular alternative to Guilded, but many people still don't get the why. We will start with why you should move from Guilded to Matrix, followed by comparisons of specific feature and some helpful tips. But before we do that, let's start with...
+MatrixはGuildedの代わりとして人気があります。しかし多くの人がその理由をまだ理解できていません。ここではまず、なぜGuildedからMatrixに移行すべきかを解説し、詳しい機能比較と役に立つヒントをご紹介します。しかしその前に、この話からはじめましょう…
 
-## A Discussion on the Proper Definition of "Server"
+## 「サーバ」という用語の妥当な定義に関する議論 {#a-discussion-on-the-proper-definition-of-server}
 
-Recall the computing [definition](https://en.wiktionary.org/wiki/server#Noun) of the word "server":
+コンピュータ分野における「サーバ」という単語の定義を改めて見てみましょう。
 
-> 1. A program that provides services to other programs or devices, either in the same computer or over a computer network.
+> 1. A program that provides services to other programs or devices, either in the same computer or over a computer network.  
+> （同一のコンピュータ内もしくはコンピュータネットワーク経由で、他のプログラムもしくはデバイスにサービスを提供するためのプログラム。）
 >
-> 2. A computer dedicated to running such programs.
+> 2. A computer dedicated to running such programs.  
+> （そのようなプログラムを実行するための専用のコンピュータ。）
 
-The definitions can hold true for a server for a multiplayer game (eg. Minecraft), a server reserved for a group of people for communication (eg. Mumble & TeamSpeak), and a server where Guilded bots are being operated from. In each case, the server software (such as the Minecraft server jar file) meets definition #1, whereas the server infrastructure (eg. VPS) meets definition #2.
+マルチプレイヤーゲーム（たとえばMinecraft）に使われるサーバ、特定のグループのメンバーがコミュニケーションするために割り当てられるサーバ（たとえばMumbleやTeamSpeak）、そしてGuildedのボットが運用されているサーバは、いずれも前述の定義に適合します。いずれの場合も、サーバプログラム（たとえばMinecraftサーバのjarファイル）は定義の1に、サーバインフラ（たとえばVPS）は定義の2に適合します。
 
-But that's not the case for a Guilded "server": it's just some data, together with data of other "servers," resting on Guilded's computational servers. A Guilded "server" is not a program on its own, nor has any computational infrastructure been dedicated to any specific "server," thus violating both definitions. Presumably to attract gamers who often utilizes the correct "server" concept, Guilded attempts to equate it to a chat group, muddying the waters for the definition of this technical term. (Hence Guilded refers to "servers" as *teams* in API documentations.)
+しかしこれはGuildedの「サーバ」には当てはまりません。それはただのデータに過ぎず、他の「サーバ」のデータと一緒に、Guildedの（コンピュータという意味での）サーバに保管されています。Guildedの「サーバ」はそれ自身プログラムではなく、どの「サーバ」にも専用の計算インフラが割り当てらるわけではありませんので、前述の定義のいずれにも反します。 おそらく、正しい意味での「サーバ」のイメージになじみのあるゲーマーたちの目をひきたいがために、Guildedはこの技術用語の定義を汚してまで、単なるチャットグループを指す用語として使いはじめたのでしょう（だからこそGuildedはAPIドキュメントでは「サーバ」を*チーム*と呼び分けているのです）。
 
-### What about Matrix?
+### Matrixではどうなの？ {#what-about-matrix}
 
-In Matrix, a *homeserver* is a server, in that it meets both definitions: Dedicated infrastructures (definition #2) running [a server software](../#set-up-your-own-homeserver-or-join-an-existing-homeserver) (definition #1). Furthermore, these homeservers, while operated independently of each other and not under the control of a single entity, communicate (transmitting messages and such) with each other using an agreed-upon protocol, thereby keeping the Matrix platform alive. Platforms that use such structure, such as Matrix, [fediverse](https://fediverse.party/en/fediverse) and email, are called federated platforms.
+Matrixでは、*ホームサーバ*はサーバです。[サーバプログラムを実行するための](../#set-up-your-own-homeserver-or-join-an-existing-homeserver)（定義1）専用のインフラ（定義2）ですので、両方の定義に適合します。さらにこれらのホームサーバは、単一の存在のコントロール下にあるわけではなく個別に運用されている一方で、あらかじめ合意されたプロトコルに基づいて互いにコミュニケーション（メッセージなどの送受信）を行なうことで、Matrixプラットフォームを形成しています。このような構造を持つMatrixや[fediverse](https://fediverse.party/en/fediverse)、Eメールのようなプラットフォームは、連合型プラットフォームと呼ばれます。
 
-## Why not Guilded?
+## なぜGuildedではダメなの？ {#why-not-guilded}
 
-In the scope of this guide, the key reasons to move from Guilded to Matrix are:
+このガイドが扱う範囲において、GuildedからMatrixに移行すべき主な理由は、
 
-* **Lack of privacy for private communications**, as private conversations are not only unencrypted, but also actively scanned.
-* **Closed source**, thus cannot be independently inspected.
-* **Lack of control for private data and no guarantee on reliability**, as Guilded is centralized, not federated. See [here](../matrix-vs-al/#centralized-platforms).
-* **Client-server API has serious performance issues**. This is verified by Guilded, has not been resolved despite several attempts. A Guilded channel causes ten times as much data to be retrieved as a similar Matrix room does.
-* **Guilded did not allow deleting user accounts until recently**. Prior to June 2021, it was not possible to delete Guilded user accounts; they instead advised to just stop using Guilded.
-* **Guilded is owned by Roblox**.
- 
-[Matrix addresses all of the above](../#why-matrix).
+* **プライベートなコミュニケーションにおけるプライバシーの欠如**：プライベートな会話は暗号化されていないだけでなく、積極的に検閲されています。
+* **ソースが非公開**：独立した第三者による監査を行なうことができません。
+* **プライベートデータのコントロールや、信頼性の保証の欠如**：Guildedは中央集権型です。[ここ](../matrix-vs-al/#centralized-platforms)も参照してください。
+* **クライアント・サーバAPIの深刻な性能問題**：これはGuilded自身が認めています。過去に複数回解決が試みられていますが、未だに解決されていません。Guildedのチャンネルでは、同様のMatrixのルームと比較して10倍のデータを取得する必要があります。
+* **最近までGuildedはアカウントの削除を認めていませんでした。**：2021年6月以前、Guildedではユーザアカウントを削除することができませんでした。それについての公式からのアドバイスは、Guildedの使用をただやめることでした。
+* **GuildedはRobloxが所有しています。**
 
-### Special Note
+[以上のすべての問題に対して、Matrixは解決策を持っています](../#why-matrix)。
 
-Matrix uses free software for its server and client softwares.
+### 特記事項 {#special-note}
 
-## Terminologies
+Matrixはそのサーバーとクライアントにフリーソフトウェアを利用します。
 
-### Channel & DMs vs. Room
+## 用語集 {#terminologies}
 
-In Guilded, a place that allows sending text messages is called a channel (if belongs to a "server") or a DM.
+### チャンネル、DMとルーム {#channel--dms-vs-room}
 
-In Matrix, a place that allows sending text messages is called a room.
+Guildedでは、テキストメッセージがやり取りできる場のことをチャンネル（「サーバ」に属する場合）もしくはDMと呼びます。
 
-### "Server" vs. Space
+Matrixでは、テキストメッセージがやり取りできる場のことをルームと呼びます。
 
-In Guilded, text channels that are not DMs must be associated with a "server." Thus a "server" can be understood as a collection of channels that share certain settings.
+### 「サーバ」とスペース {#server-vs-space}
 
-In Matrix, rooms *can* be included in a Space. A Space can be used in similar fashion to a Discord "server" (controlled by the admins of the constituent rooms) or a "server" folder (controlled by anyone). A Space may also include another Space. Rooms do not share settings with Spaces, although rooms can require Space membership for joining.
+Guildedでは、DM以外のテキストチャンネルは「サーバ」に属さねばなりません。このように、「サーバ」は特定の設定を共有するチャンネルの集合体であると理解できます。
 
-## Feature comparison
+Matrixでは、ルームはスペースに属する*ことができます*。スペースはGuildedにおける「サーバ」（属するルームの管理者らが管理）もしくは「サーバ」フォルダ（任意のユーザが管理）と似た用途で利用できます。スペースは別のスペースを含むこともできます。ルームはスペースと設定を共有することはありません。ただしルームは、スペースへの参加をルームへの参加条件とすることもできます。
 
-Note that Matrix does not (and cannot, due to its decentralized nature) paywall features.
+## 機能比較 {#feature-comparison}
 
-| Feature | Guilded | Matrix |
-| ------- | ------- | ------ |
-| **Registration** | Requires email. | Depending on homeserver (especially if you're running your own), **email may be optional**, and phone number is usually optional. There is no *automated* human check after registration. |
-| Price | Free. | Free for [most homeservers](../../servers) (but please consider donating to them). Hosting a private homeserver may also incur cost (could be [free](https://matrix.org/docs/guides/free-small-matrix-server)). Note that paying (not donation) only affects where your data is hosted and (to a much lesser degree) server performance; it has no effect on features. |
-| **Username** | Users are identified by display name (maximum 32 characters) to fellow users, and user UUIDs for programming purposes. | Users are identified by their MXID (eg. `@alice:example.com`), composed of the username (must be ASCII characters, upper case letters are not allowed) and the server name (not exceeding 255 characters when combined, including the introducing at symbol and the colon separating the parts). A display name can be optionally added (up to ~65200 bytes)[^7]. |
-| Avatar | Static, maximum 25 MB. Can be zoomed. | **See "Attachments" for limits.** Can be zoomed (at least in Element/SchildiChat), in which case the avatar will be shown in the uploaded definition. Animated avatars are **supported**. |
-| Profile description and background | **Supported**. | Not supported currently, will be supported using profile rooms. |
-| Profile status | **Supported**. Guilded even has a custom status generator. | Effectively not supported[^1]. |
-| Nicknames[^2] | **Not supported**. | **Supported** (`/myroomnick`). Up to ~65200 bytes. |
-| Forum channels | Supported. | Not supported. |
-| Media-only channels | Supported. | Not supported. |
-| Specific avatars[^2] | **Not supported**. | [**Supported**](../features/#attachments) (`/myroomavatar`). See "Attachments" for limits. |
-| 2FA | Email or TOTP. | Not required for login, but required (QR code, emoji verification, or Security Key) for viewing past encrypted messages. |
-| **Text messages** | Maximum 36608 characters (main body section can have up to 4000 characters, the rest has to be placed in the embed cards). Markdown to fellow users, JSON-based WML-like formatting internally. | **Up to ~65200 bytes (up to ~40770 bytes if a formatted message with plain text fallback sent).[^7] [Supports Markdown and HTML.](../features/#text)** |
-| Attachments | Maximum 200 MB (25 MB for still images), limited to multimedia and document filetypes[^9]. | **Maximum 50~100 MB, no artificial file type limitations** (for most homeservers; customizable if you run your own homeserver). |
-| Reactions | Only emotes (Unicode or custom ones). | Unicode emotes and [text](../features/#reactions). |
-| Stickers | **Not supported**. | **Unlimited with setup.** See [here](../features/#stickers). |
-| Public read receipts | Not supported. | **Supported.** |
-| **Direct messages** | Not encrypted. | **Encrypted by default**, including VoIP. |
-| Starting a DM | Depending on privacy settings of the recipient. Friendship and/or mutual "servers" may be required by the recipient. | Initiating a DM solely requires the recipient to accept the request[^3]. Users can leave DMs anytime they wish. |
-| **Group chats** | A channel is associated with a "server." You can only join 20 "servers". | A room is standalone, but can be optionally included and associated with a Space, which is just a room linking to other rooms. You can join **unlimited** amount of rooms. |
-| VoIP in groups | Supported. | Limited Support via integration with Jitsi. Expected to be replaced by a better solution during 2022. |
-| Organizing chats | Channels in a "server" can only be organized by the "server" owner and moderators with "manage channels" permission, in a many to one fashion into categories and groups, and cannot be moved to another "server" or group once created. | Rooms can be included within an unlimited amount of Spaces. Spaces may also include other Spaces (similar to Guilded's channel categories and groups). |
-| Group chat privacy | You may deny new members from reading messages prior to them being invited / joining. Private threads are only visible to their own members and group/team members with "moderator access" permission to that channel. Teams can choose to make their chat history public, with per-channel granularity. | You may deny new members from reading messages prior to them being invited / joining. You may also allow or deny guest access (such as [Matrix Static](http://view.matrix.org/)) from reading messages. You may also enable encryption[^4]. |
-| Publicity | Team URLs are first come first served, however, unused names are reclaimed so often. Teams are searchable by name unless explicitly disabled. | Each homeserver has a room directory which anyone in that homeserver may publish to. Room aliases are usually first come, first served. |
-| Invite | Through generating invite or application links, or through shareable addresses. | Through directly inviting users, or through shareable [addresses](../features/#promotion). |
-| Permissions in group chats | Single-owner, up to 255 roles. How long did it take for you to learn role hierarchy? A "server" can only be shut down by its owner, and that affects everyone. Members cannot demote their own permissions. Roles of a member are reset when a member leaves hence do not survive rejoin. | Up to 2^54 power levels (-2^53 to 2^53-1, however I highly doubt you will *ever* reach that limit), with minimal permissions. A user acquires a permission if their power level is equal to or higher than the power level required for the specific permission. Rooms are not owned by any user or server, hence cannot usually forcibly be shut down without coordination. Members can demote their own permissions. Power levels of members survive leave and rejoin. |
-| Size limits of group chats | No artificial limits, albeit current implementation behaves badly past approximately ten thousand members. | No artificial limits, albeit current implementations do not perform well with rooms having more than a few tens of thousands of members and a few dozens of homeservers. | 
-| Bans | Bans are only visible to "server" moderators. One can also see their own ban when they attempt to join a "server", but not the ban reason. | Bans are public to all members, along with the reasons. |
-| Disabled and deleted account handling | Deleting an account is irreversible. Messages sent to a "server" from deleted accounts stay unless explicitly removed by somebody else. User name and user settings from deleted accounts are removed. "Servers" owned by accounts deleted by T&S are automatically shut down. "Servers" owned by a manually deleted account is not possible to exist as the account delete API has a precondition of no "server" ownership at the time of the request. |  Disabling an account is usually irreversible. Users can cause their messages to be forgotten while disabling their account: in that case, their messages are not sent to further users and servers. Rooms created by disabled accounts stay. |
-| **Running a bot** | No public API yet, self-botting seems to be tolerated. | You can run bots on any user accounts[^5] [^6]. Selfbotting is permitted (but be nice). |
-| **Network access** | **IPv4 and IPv6 supported.** | **Most if not all homeservers participating in the public federation have IPv4 connectivity but IPv6 connectivity varies from homeserver to homeserver.** |
+Matrixは一部の機能にペイウォールを設ける（課金を要求する）ことはありません（非集権型という性質上、そもそも不可能です）。
 
+| 機能 | Guilded | Matrix |
+| ---- | ------- | ------ |
+| **登録** | Eメールアドレスが必要。 | ホームサーバによって異なる（特に自分で運営している場合）。**Eメールアドレスは任意の場合がある**上、電話番号は大抵の場合必須でない。登録後に*自動の*アカウント検査は行なわれない。 |
+| 利用料金 | 無料。 | [ほとんどのホームサーバ](../../servers)で無料（ただし寄付をぜひ検討してください）。プライベートのホームサーバを運営するにはコストがかかる場合がある（無料で可能な[場合もある](https://matrix.org/docs/guides/free-small-matrix-server)）。料金の支払い（寄付でなく）は、あなたのデータがホストされる場所とサーバ性能だけに関係し、利用できる機能に違いはないことに注意。 |
+| **ユーザ名** | ユーザはディスプレイネーム（最大32文字）によって識別される。これとは別に、プログラミング用途としてユーザUUIDが存在する。 | ユーザはMXID（たとえば`@alice:example.com`）で識別される。MXIDはユーザ名（ASCII文字で大文字は許されない）とサーバ名で構成される（先頭の記号と区切り文字のコロンを含め、全体で255文字まで）。ディスプレイネームを任意で追加可能（最大65,200バイト）。[^7] |
+| アバター | 最大25MBの静止画。ズーム可能。| **添付ファイルの制限に従う。**（少なくともElementとSchildiChatでは）ズームが可能で、アップロードされたときのオリジナル解像度で表示される。アニメーション付きのアバター画像も**サポートしている**。 |
+| プロフィールの説明と背景の設定 | **サポートしている。** | 現在のところは未サポート。将来プロフィールルームとしてサポートされる予定。 |
+| プロフィールステータス | **サポートしている。**Guildedではカスタムステータスの作成も可能。 | 事実上サポートされていない。[^1] |
+| ニックネーム[^2] | **サポートしていない。** | **サポートしている**（`/myroomnick`）。最大65,200バイト。 |
+| フォーラムチャンネル | サポートしている。 | サポートしていない。 |
+| メディアオンリーチャンネル | サポートしている。 | サポートしていない。 |
+| 特定のアバター[^2] | **サポートしていない。** | [**サポートしている**](../features/#attachments)（`/myroomavatar`）。各種制限は添付ファイルに従う。 |
+| 2要素認証 | Eメール、もしくはTOTP。 | ログインには不要。ただし過去の暗号化されたメッセージを読むためには特殊な認証（QRコード、絵文字列の比較、セキュリティキー）が必要。 |
+| **テキストメッセージ** | 最大36,608文字（メインの本文には4,000文字まで、残りはエンベッドカードに含める必要がある）。ユーザ向けにはMarkdownをサポートし、内部的にはJSONベースのWMLに似たフォーマットを使用する。 | **最大65,200バイト（フォーマット済みメッセージと、あわせて予備のプレーンテキストを送信する場合は、最大40,770バイト）。[^7] [MarkdownとHTMLをサポート](../features/#text)。** |
+| 添付ファイル | 最大200MB（静止画の場合は25MB）。マルチメディアとドキュメントのファイルのみ。[^9] | **最大50〜100MBで、ファイル形式による制限は存在しない**（ほとんどのサーバで。自分でホームサーバを運営している場合はカスタマイズ可能）。 |
+| リアクション | エモート（ユニコードもしくはカスタムされたもの）のみ。 | ユニコードのエモート、もしくは[テキスト](../features/#reactions)。 |
+| ステッカー | **サポートしていない。** | **設定により無制限。**[ここ](../features/#stickers)を参照。 |
+| パブリックな既読通知 | サポートしていない。 | **サポートしている。** |
+| **ダイレクトメッセージ** | 暗号化されない。 | VoIPも含め**デフォルトで暗号化される**。 |
+| DMの開始 | 受信側のプライバシー設定による。互いに「フレンド」になっているか、特定の同じ「サーバ」に属していることが必要な可能性がある。 | ユーザが申請を承認[^3]しさえすればDMを開始可能。また、いつでもDMを退出可能。 |
+| **グループチャット** | チャンネルは「サーバ」に属している。参加可能な「サーバ」は最大20まで。 | ルームは独立しているが、スペースに紐づけることも可能。参加できるルームの数は**無制限**。 |
+| グループでのVoIP | サポートしている。 | Jitsiの統合による限定的サポート。2022年中の改善が期待される。 |
+| チャットの整理 | 「サーバ」内のチャンネルは、「サーバ」の所有者か「チャンネル管理」の権限を持つモデレータのみが、多対一スタイルでカテゴリーもしくはグループに整理が可能。他の「サーバ」へ移動することは不可能。 | ルームは無制限のスペースに入れることができる。スペースを別のスペースに入れることも可能（Guildedのチャンネルカテゴリと同様）。 |
+| グループチャットのプライバシー | 新メンバーが招待、参加した以前のメッセージを読むことを拒否できる。プライベートスレッドは、そのスレッドメンバーか、「モデレータアクセス」の権限を持つグループ・チームメンバーのみ閲覧可能。 | 新メンバーが招待、参加した以前のメッセージを読むことを禁止できる。またゲストアクセス（[Matrix Static](http://view.matrix.org/)のような）の可否を設定することもできる。暗号化の設定[^4]も可能。 |
+| 広報 | チームURLは先着順で提供されるが、利用されていない名前は頻繁に回収される。チームは明示的に無効に設定されない限り、名前で検索可能。 | ホームサーバはそれぞれルームディレクトリを持ち、ホームサーバのユーザが掲載可能。 |
+| 招待 | 招待リンクかアプリケーションリンクの生成、もしくは共有可能アドレスを使用。 | ユーザを直接招待するか、共有可能な[アドレス](../features/#promotion)を使用する。 |
+| グループチャットの権限 | 一人の所有者に、最大255のロール。ロール階層を学ぶのにどれだけの時間がかかりましたか？サーバは所有者のみによってシャットダウンでき、全員に影響する。メンバーは自身の権限を下げることはできない。メンバーが退出するとロールはリセットされ、再参加しても復旧されない。 | 最大2^54段階のパワーレベル（-2^53から2^53-1、ただしこの制限に達する可能性は非常に考え辛い）。ある権限に必要とされるパワーレベル以上をユーザが持っているかで、権限が判断される。ルームは特定のユーザやサーバに所有されるものではなく、調整なしに一方的にシャットダウンすることは不可能。メンバーは自身の権限を下げることが可能。メンバーのパワーレベルは退出と再参加を経ても維持される。 |
+| グループチャットのサイズ制限 | 人為的な制限はない。ただし現在の実装ではメンバーが1万人を超えるとパフォーマンスに悪影響がある。 | 人為的な制限はない。ただし数万人のメンバーと数十のホームサーバが関わる規模のルームでは、現在の実装ではパフォーマンスが芳しくない。 |
+| バン | バンの状況は「サーバ」のモデレータのみ確認できる。ユーザは「サーバ」への参加時に自身がバンされているかを知ることができるが、理由は知り得ない。 | バンの状況はメンバー全員が知ることができ、理由も公開される。 |
+| 無効化もしくは削除されたアカウントの扱い | アカウントの削除は不可逆。削除されたアカウントから「サーバ」に送信されたメッセージは、他の誰かが明示的に削除しない限り残り続ける。削除されたアカウントのユーザ名とユーザ設定は削除される。T&Sによりシャットダウンされたアカウントが所有していた「サーバ」は自動的に停止される。APIへのリクエスト時点で「サーバ」を所有していないことがアカウント削除の条件であるため、ユーザ自身が削除したアカウントが「サーバ」を所有している状況は起こり得ない。 | アカウントの無効化は大抵不可逆。ユーザはアカウントを無効化している間、自身のメッセージを隠すことができる。このときメッセージは他のユーザやサーバに送信されない。無効化されたアカウントによって作成されたルームはそのまま残る。 |
+| **ボットの運用** | 公開APIはまだ存在しない。セルフボットは許容される傾向にある。 | どのユーザアカウントでもボットの運用が可能。[^5] [^6]セルフボットも可能（ただし十分に配慮すること）。 |
+| **ネットワークアクセス** | **IPv4、IPv6ともにサポートしている。** | **連合に参加しているホームサーバのほとんどはIPv4に対応しているが、IPv6の接続性を持つかはホームサーバごとに異なる。** |
 
-## Helpful Tips
+## 役立つヒント {#helpful-tips}
 
-* Your user colour is chosen by a hash function (varies by app) that takes in your MXID.
+* あなたのアカウントの色は、MXIDのハッシュ値（利用する関数はアプリにより異なります）に応じて設定されます。
 
-## Footnotes
+## 脚注 {#footnotes}
 
-[^1]: Element and SchildiChat has status available as a lab feature, but it is only visible to those who you have a DM with. Statuses are not encrypted.
+[^1]: ElementとSchildiChatではステータスが実験的機能として提供されていますが、DMの相手のみに表示されます。ステータスは暗号化されません。
 
-[^2]: For Guilded "servers" and for Matrix rooms.
+[^2]: Guildedでは「サーバ」、Matrixではルームです。
 
-[^3]: Note that Matrix has no concept of "friends" or "contacts" per se, although the DM list can serve the same purpose. However, user-based contact ignoring exists on Matrix, using two different methods. The former method prevents any and all messages from reaching the recipient, and the latter method using policy rooms hides them client-side by interpreting an ignore list. The latter method is currently only available in Element as a labs feature.
+[^3]: Matrixに「フレンド」や「連絡先」という概念は存在しないことに注意してください（DMリストを同じ目的で利用することはできます）。しかし、Matrixではユーザのブロックを2種類の方法で行なうことができます。一つはあらゆるすべてのメッセージが受信者に届くことを防ぐ方法で、もう一つはポリシールームを無視リストとして解釈し、クライアントサイドで隠す方法です。後者は現在のところElementの実験的機能としてのみ提供されています。
 
-[^4]: Enabling encryption is irreversible for security reasons. Note that it is pointless to enable encryption in a public room, with one exception: the case you want to have a persistent cryptographic trail of who read the messages. Furthermore, enabling encryption means users will not see messages before their invitation (if applicable) or their entry.
+[^4]: 暗号化の設定はセキュリティ上の理由から不可逆です。公開ルームで暗号化を設定することに意味はないことに注意してください。唯一の例外は、誰がメッセージを読んだかの記録を暗号学的に残す必要がある場合です。さらに暗号化の設定により、ルームへの招待を受けたか参加した時点より前のメッセージにユーザがアクセスできなくなります。
 
-[^5]: Matrix has no distinction between user and bot accounts (nor is there any dependency between the two). Unless specifically exempted by the homeserver (not needed in most cases), bots have the same ratelimit as other users. In Element and SchildiChat, the user token of an account is available by accessing "User Settings" then "Help & About." When running an autonomous bot, please be courteous and indicate to others (in username or display name) that the account is a bot. Bots that want to control other user accounts need to create an application service, which needs to be approved by an administrator of the homeserver that the bot is using.
+[^5]: Matrixではユーザとボットのアカウントに区別はありません（またそれらの間にいかなる従属関係もありません）。ホームサーバによって特に設定がされていない場合（ほとんどのケースで不必要です）、ボットは他のユーザと同じレートリミットを持ちます。ElementとSchildiChatでは、アカウントのユーザトークンは「設定」の「ヘルプ」から入手することができます。自律型ボットを運用する際は、礼儀正しくあることを心がけ、（ユーザ名かディスプレイネームで）ボットであることが他のユーザにわかるようにしてください。他のユーザアカウントをコントロールするようなボットは、アプリケーションサービスを作成した上で、ボットが利用するホームサーバの管理者から承認を受ける必要があります。
 
-[^6]: If your app/bot is good, then [matrix.org would love to hear from you (with the potential possibility of featuring you on their blog)!](https://matrix.to/#/#thisweekinmatrix:matrix.org)
+[^6]: あなたのアプリやボットが興味深いものでしたら、[matrix.orgにぜひ連絡をください（もしかしたらブログで紹介されるかもしれません）](https://matrix.to/#/#thisweekinmatrix:matrix.org)。
 
-[^7]: Limited by Matrix event size limits. The current event size limit is specified to be 65536 bytes. Formatted message size limit assuming the formatted body takes approximately twice as much as plain text body.
+[^7]: Matrixのイベントのサイズ制限によるものです。現在の上限は65,536バイトです。フォーマット済みメッセージのサイズ制限は、本文がプレーンテキストのおおよそ2倍のサイズになるだろうという想定に基づいています。
 
-[^8]: Most Matrix servers are known to keep the pre-redaction content of the event for a week, while immediately sending the redaction instruction to their fellow users. Again, redactions are basically a free-for-all matter.
+[^8]: ほとんどのMatrixサーバは、リダクション指示を関係するユーザに即座に送信する一方で、リダクション前の内容を1週間程度保持することが知られています。また繰り返しになりますが、リダクションは基本的に自由参加のプロセスです。
 
-[^9]: The client and the server rejects upload when you attempt to upload a disallowed file type.
+[^9]: クライアントとサーバは、許可されていない形式のファイルをアップロードしようとするとこれを拒否します。

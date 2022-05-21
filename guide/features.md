@@ -1,46 +1,47 @@
 ---
-title: More Features of Matrix
+title: Matrixの特徴についてもっと詳しく
 layout: page-two-col
 nav: false
 parent: guide
 permalink: guide/features/
-description: A guide that details various features of Matrix, the federated chat platform that actually respects you.
+description: あなたを大切にする分散チャットプラットフォーム、Matrixのさまざまな特徴について。
 ---
 
-## More Features of Matrix
+## Matrixの特徴についてもっと詳しく {#more-features-of-matrix}
 
-Now that you have aced the [basics](..), let's talk about the intricate details of various features of Matrix. The guide assumes that you have done some preliminary discovery of features and that you are here for specifics that may not be too intuitive.
+もう[基本](..)は押さえられたと思いますので、Matrixのさまざまな特徴に関して込み入ったお話をしましょう。
+あなたがある程度の下調べをしているだろうこと、その上であまり直感的でない特徴について知りたいと思ってこのガイドをお読みになっているという前提で話を進めていきます。
 
-## All about chatting
+## チャットについてのすべて {#all-about-chatting}
 
 <div class="flash flash-warn">
-  <strong>IMPORTANT!</strong> You cannot change your Matrix user name. Choose it wisely.
+  <strong>重要！</strong> Matrixのユーザ名を後から変更することはできません。よく考えてから決めましょう。
 </div>
 
 
-### Messages
+### メッセージ {#messages}
 
 <div class="flash flash-warn"><ul>
-  <li>If a message has been edited, <b>all</b> of its edits, <b>plus</b> the original message, must be deleted to fully remove its content!</li>
-  <li>Due to a spec defect, initial revision of a message can only be removed if the message is removed altogether. Subsequent revisions can be removed on their own.</li>
-  <li>If a message has been replied to, <b>all</b> of its replies, <b>plus</b> the original message, must be deleted to fully remove its content!</li>
-  <li>Note that anyone who could read the message may still record its content before deletion. (For unencrypted messages, this includes the homeserver operators.) This applies to virtually <i>any</i> instant messaging platforms in existence, so you still need to be careful of what you say.</li>
-  <li>If a user annoys you, you can ignore them. <a href="https://github.com/vector-im/element-web/issues/12394">Careful not to ignore yourself!</a></li>
+  <li>投稿後に編集されたメッセージは、オリジナルのメッセージに加えて<b>すべての<b>編集内容を削除しないと、完全に削除したことにはなりません。</li>
+  <li>仕様の欠陥によって、メッセージの最初のリビジョン（編集版）はオリジナルと一緒にしか削除できません。その後に続くリビジョンは個別に削除できます。</li>
+  <li>リプライがついたメッセージは、オリジナルのメッセージに加えて<b>すべての</b>リプライが削除されないと、完全に削除したことにはなりません。</li>
+  <li>あなたのメッセージを読むことができる人は、メッセージが削除される前にコピーを取っているかもしれません。（さらにメッセージが暗号化されていない場合、ホームサーバの運営者もそれが可能です。）これは事実上<i>あらゆる</i>インスタントメッセージプラットフォームに当てはまりますので、あなたが発言する内容にはいつも注意しましょう。</li>
+  <li>迷惑行為をするようなユーザがいれば、あなたの側で無視設定をすることができます。間違って<a href="https://github.com/vector-im/element-web/issues/12394">自分を無視しないように！</a></li>
 </ul></div>
 
-#### Text
+#### テキスト {#text}
 
-Without prefixing a message with `/html`, Matrix supports basic markdown, as in everything in the [CommonMark spec](https://commonmark.org/help/). The changes are:
+メッセージの冒頭に`/html`と書かない限り、MatrixはMarkdownによるマークアップをサポートしています。[CommonMark仕様](https://commonmark.org/help/)のすべてに対応していますが、
 
-* For embedding images, the link must be an [MXC URI](#attachments), not an HTTP/S URL. This is required by Matrix specification to prevent remote homeservers from creating IP trackers to track users of multiple homeservers.
-* Language syntax highlighting in code blocks is supported - simply specify the language on the same line after the first three backticks.
+* 画像を貼り付ける場合、リンクはHTTP/SのURLではなく[MXC URI](#attachments)でなければなりません。これはMatrixの仕様で定められていて、仕込まれたIPトラッカーでユーザがトラッキングされることを防ぐための制限です。
+* コードブロックの書式ハイライトがサポートされています。最初の3つのバッククオートの直後に言語を指定してください。
 
-Aside from the above:
+さらにこれらに加えて、
 
-* For strikethrough, Element and SchildiChat use `<del>text</del>` (without `/html`), while FluffyChat uses `~~text~~`.
-* For underline, Element and SchildiChat use `<u>text</u>` (also without `/html`), while FluffyChat uses `__text__`.
-  * Note that the above differences only exist in composing a message, and both clients render existing messages in the same way.
-* For spoilers...
+* 打ち消し線は、ElementとSchildiChatでは`<del>テキスト</del>`（`/html`はなし）、FluffyChatでは`~~テキスト~~`を使ってください。
+* 下線は、ElementとSchildiChatでは`<u>テキスト</u>`（ここでも`/html`はなし）、FluffyChatでは`__テキスト__`です。
+  * これらの違いはメッセージを書くときだけのものです。どちらのクライアントも投稿されたメッセージは同じように表示します。
+* ネタバレを隠すには、
   * On Element and SchildiChat, you must prefix the message with `/html`, and then insert one of the following lines of code at the position you desire, so it will hide the `spoiler content` and, optionally, show the `reason` alongside it. Note that if you want the entire message to be a spoiler and without inserting a reason, you can just prefix a message with `/spoiler` without writing HTML.
   ```html
   <span data-mx-spoiler="reason">spoiler content</span> # with reason
@@ -58,7 +59,7 @@ And, about slash commands on Element and SchildiChat on PC related to text messa
   * The two commands above can be combined using `/rainbowme`.
 * Prefixing your message with `/shrug`, `/tableflip`, `/unflip` and `/lenny` will place the corresponding ASCII emote at the **beginning** of the message content. (This differs from Discord, where the emote is placed at the end.)
 
-#### Attachments
+#### Attachments {#attachments}
 
 You can upload files onto messages. The size limit varies by the homeserver you're on, but most homeservers have it between 50 and 100 MB. There are no restrictions for file types, allowing some apps to offer the ability to record and send voice messages.
 
@@ -85,7 +86,7 @@ The attachment can be accessed on the internet by replacing the `mxc://` prefix 
   It is possible to use "custom emojis/emotes" in text messages by embedding the emote: simply adjust the image, upload it in an unencrypted room, get its MXC URI, and place the embedding code in messages. Furthermore, FluffyChat allows you to assign a <code>:shortcode:</code> to custom emotes so that they can be entered like normal emotes: Go to user settings, then "Conversations", then emoji settings. Note that embed GIFs will not animate.
 </div>
 
-#### Stickers
+#### Stickers {#stickers}
 
 Currently, support for stickers across Matrix is somewhat inconsistent. Note that stickers sent from either app are visible to both apps.
 
@@ -94,20 +95,20 @@ Currently, support for stickers across Matrix is somewhat inconsistent. Note tha
 
 See [here](https://1hiking.github.io/posts/2021/09/matrix-stickers/) if you want more details.
 
-### Reactions
+### Reactions {#reactions}
 
 You may react to any message with any unicode emoji or any plaintext content[^2]. The latter is available...
 
 * On FluffyChat, by replying to a message and entering the desired text prefixed with `/react` in the composer;
 * On SchildiChat, by clicking the reaction picker for a message, entering the desired text in the search box, and then choosing "React with (text)."
 
-### Voice/Video calling
+### Voice/Video calling {#voicevideo-calling}
 
 Voice/video calling is currently only supported for private messages (rooms with only 2 participants).
 
 Currently, if you try to start a call in a room with more than 2 participants, a [Jitsi Meet](https://meet.jit.si) (not part of Matrix) [widget](#integrations) will be displayed for all users as a temporary solution. However, work is underway to allow native voice/video calling for groups, which hopefully will be enabled [by early 2022](https://matrix.org/blog/2021/12/22/the-mega-matrix-holiday-special-2021#native-matrix-videovoip-conferencing).
 
-## All about bridges
+## All about bridges {#all-about-bridges}
 
 Matrix prides itself in technical interoperability, i.e. ability to work with other platforms. Therefore, Matrix allows you to connect your chats to another platform.
 
@@ -117,7 +118,7 @@ Note that encryption is **not** supported on most bridges. Furthermore, the foll
  Some bridges offer the possibility to bridge an account from another platform onto Matrix (known as puppeting). However, it is often against the ToS of the platform to do so (as interoperability is antithetical to centralized "walled garden" approaches) and may result in loss of account. Furthermore, it may damage the encryption mechanisms of the platform, as messages must be decrypted first before re-encryption. Lastly, the bridge operator can see your login credentials (not an issue if you're hosting the bridges yourself). You have been warned.
 </div>
 
-### Discord
+### Discord {#discord}
 
 To bridge a Matrix room with a Discord channel, you can install [matrix-appservice-discord](https://github.com/Half-Shot/matrix-appservice-discord) if you're running your own homeserver[^3], or set up one of the free public bridges otherwise:
 
@@ -127,7 +128,7 @@ To bridge a Matrix room with a Discord channel, you can install [matrix-appservi
 
 Matrix users will show up as webhooks on Discord, and Discord users will show up as standard users on Matrix (but you cannot DM them). There is no puppeting.
 
-### Telegram
+### Telegram {#telegram}
 
 To bridge a Matrix room with a Telegram group chat, you can install [mautrix telegram](https://github.com/mautrix/telegram) if you're running your own homeserver, or set up one of the free public bridges otherwise:
 
@@ -138,7 +139,7 @@ To bridge a Matrix room with a Telegram group chat, you can install [mautrix tel
 
 When a Matrix room is bridged with a Telegram group, Matrix users will be represented by the bridging bot on Telegram, while Telegram users will show up as standard users on Matrix (but you cannot DM them). When you log into a Telegram account on a bridge, you may use it to control your own account such that you may interact with the whole of Telegram from Matrix.
 
-### Slack
+### Slack {#slack}
 
 To bridge a Matrix room with a Slack channel, do the following on Element or SchildiChat on PC:
 
@@ -146,7 +147,7 @@ To bridge a Matrix room with a Slack channel, do the following on Element or Sch
 2. "Add widgets, bridges & bots"
 3. Navigate to "Slack bridge" and follow the instructions.
 
-### IRC
+### IRC {#irc}
 
 You can join any IRC channel on [these networks](https://matrix-org.github.io/matrix-appservice-irc/latest/bridged_networks) directly from Matrix. Matrix users will show up in their display name, suffixed with `[m]`.
 
@@ -154,11 +155,11 @@ You can join any IRC channel on [these networks](https://matrix-org.github.io/ma
   You <i>can</i> register the nickname, but your NickServ password would be visible to your homeserver as encryption is not supported for bridges, so do so at your own risk.
 </div>
 
-### XMPP
+### XMPP {#xmpp}
 
 You can join any XMPP MUC on any instance directly from Matrix, using the Bifrost bridge provided by [matrix.org](https://github.com/matrix-org/matrix-bifrost/wiki/Address-syntax) or [aria-net.org](https://aria-net.org/SitePages/Portal/Bridges.aspx).
 
-### Other
+### Other {#other}
 
 Matrix supports many other platforms, but such bridges generally require setup. If you want to bridge those platforms, or if you have performance requirements that cannot be met by existing public bridges, you may either:
 
@@ -175,11 +176,11 @@ Matrix supports many other platforms, but such bridges generally require setup. 
   * [Element One](https://element.io/element-one) (WhatsApp, Signal, Telegram)
   * [Beeper](https://www.beeper.com/) (Many platforms; has waitlist)
 
-## All about rooms
+## All about rooms {#all-about-rooms}
 
 Because FluffyChat's room management capabilities are somewhat limited by design, this guide will base this section upon Element and SchildiChat on PC.
 
-### Promotion
+### Promotion {#promotion}
 
 If you want to promote a public room, you can publish public addresses and/or place it on your homeserver's [room directory](../#what-rooms-can-i-join).
 
@@ -196,7 +197,7 @@ Steps 1 to 3 can be done by anyone, whereas step 4 by 6 requires the user to hav
 
 A public address also allows you to [link the room from a webpage](https://matrix.to/).
 
-### Moderation
+### Moderation {#moderation}
 
 See [the official guide](https://matrix.org/docs/guides/moderation#moderating-rooms) (just the linked section).
 
@@ -221,7 +222,7 @@ See [the official guide](https://matrix.org/docs/guides/moderation#moderating-ro
   You <a href="https://github.com/matrix-org/mjolnir/issues/165">cannot</a> selfhost <a href="https://github.com/matrix-org/mjolnir">mjolnir</a> without permission to go over ratelimit for the homeserver the bot is on. This means, that you may selfhost it if you run your own homeserver, or consult your homeserver operators otherwise (they may be hosting it already).
 </div>
 
-### Integrations
+### Integrations {#integrations}
 
 Integrations in Matrix include widgets and bots.
 
@@ -231,7 +232,7 @@ Bots perform automated actions (like sending messages). [maubot](https://github.
 
 [Bridges](#all-about-bridges) are also bots, but some bridges need to create new accounts to serve as puppets, which should only be operated on a homeserver that you own or otherwise have permission to run such bots on.
 
-## Footnotes
+## Footnotes {#footnotes}
 
 [^1]: Similar to the eponymous command in Minecraft.
 

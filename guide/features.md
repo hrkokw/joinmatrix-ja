@@ -42,13 +42,13 @@ description: あなたを大切にする分散チャットプラットフォー�
 * 下線は、ElementとSchildiChatでは`<u>テキスト</u>`（ここでも`/html`はなし）、FluffyChatでは`__テキスト__`です。
   * これらの違いはメッセージを書くときだけのものです。どちらのクライアントも投稿されたメッセージは同じように表示します。
 * ネタバレを隠すには、
-  * On Element and SchildiChat, you must prefix the message with `/html`, and then insert one of the following lines of code at the position you desire, so it will hide the `spoiler content` and, optionally, show the `reason` alongside it. Note that if you want the entire message to be a spoiler and without inserting a reason, you can just prefix a message with `/spoiler` without writing HTML.
+  * ElementとSchildiChatでは、メッセージを`/html`から書きはじめて、好きな位置に以下のいずれかの行を追加します。これによって`ネタバレの内容`を隠し、一つめの場合は代わりに`理由`を表示することができます。理由なしにメッセージ全体をネタバレの内容にしたい場合は、`/html`の代わりに`/spoiler`でメッセージを書きはじめるだけでOKです。
   ```html
-  <span data-mx-spoiler="reason">spoiler content</span> # with reason
-  <span data-mx-spoiler>spoiler content</span> # without
+  <span data-mx-spoiler="理由">ネタバレの内容</span> # 理由あり
+  <span data-mx-spoiler>ネタバレの内容</span> # 理由なし
   ```
-  * On FluffyChat, you can achieve the same using `||reason|spoiler content||`.
-* Tables are only supported on HTML (see below).
+  * FluffyChatでは、`||理由|ネタバレの内容||`で同じことが実現できます。
+* テーブル（表）はHTMLでのみ実現できます（後述）。
 
 And, about slash commands on Element and SchildiChat on PC related to text messages:
 

@@ -38,11 +38,11 @@ description: あなたを大切にする分散チャットプラットフォー�
 
 さらにこれらに加えて、
 
-* 打ち消し線は、ElementとSchildiChatでは`<del>テキスト</del>`（`/html`はなし）、FluffyChatでは`~~テキスト~~`を使ってください。
-* 下線は、ElementとSchildiChatでは`<u>テキスト</u>`（ここでも`/html`はなし）、FluffyChatでは`__テキスト__`です。
+* 打ち消し線は、Element・SchildiChatでは`<del>テキスト</del>`（`/html`はなし）、FluffyChatでは`~~テキスト~~`を使ってください。
+* 下線は、Element・SchildiChatでは`<u>テキスト</u>`（ここでも`/html`はなし）、FluffyChatでは`__テキスト__`です。
   * これらの違いはメッセージを書くときだけのものです。どちらのクライアントも投稿されたメッセージは同じように表示します。
 * ネタバレを隠すには、
-  * ElementとSchildiChatでは、メッセージを`/html`から書きはじめて、好きな位置に以下のいずれかの行を追加します。これによって`ネタバレの内容`を隠し、一つめの場合は代わりに`理由`を表示することができます。理由なしにメッセージ全体をネタバレの内容にしたい場合は、`/html`の代わりに`/spoiler`でメッセージを書きはじめるだけでOKです。
+  * Element・SchildiChatでは、メッセージを`/html`から書きはじめて、好きな位置に以下のいずれかの行を追加します。これによって`ネタバレの内容`を隠し、一つめの場合は代わりに`理由`を表示することができます。理由なしにメッセージ全体をネタバレの内容にしたい場合は、`/html`の代わりに`/spoiler`でメッセージを書きはじめるだけでOKです。
   ```html
   <span data-mx-spoiler="理由">ネタバレの内容</span> # 理由あり
   <span data-mx-spoiler>ネタバレの内容</span> # 理由なし
@@ -50,65 +50,65 @@ description: あなたを大切にする分散チャットプラットフォー�
   * FluffyChatでは、`||理由|ネタバレの内容||`で同じことが実現できます。
 * テーブル（表）はHTMLでのみ実現できます（後述）。
 
-And, about slash commands on Element and SchildiChat on PC related to text messages:
+そして、PC版Element・SchildiChatのテキスト関連のスラッシュコマンドについて、
 
-* Matrix also supports [these HTML tags](https://spec.matrix.org/v1.1/client-server-api/#mroommessage-msgtypes) if you prefix a message with `/html`.
-* Prefixing your message with one of the following commands will trigger the corresponding visual effect for all Element/SchildiChat users on PC who are currently focused on the room: `/confetti`, `/fireworks`, `/rainfall`, `/snowfall` and `/spaceinvaders`. The effect will only be triggered once for these users only.
-* Prefixing your message with `/me` will cause your message to start with `*` followed by your display name[^1].
-* Prefixing your message with `/rainbow` will make the text appear in rainbow colours.
-  * The two commands above can be combined using `/rainbowme`.
-* Prefixing your message with `/shrug`, `/tableflip`, `/unflip` and `/lenny` will place the corresponding ASCII emote at the **beginning** of the message content. (This differs from Discord, where the emote is placed at the end.)
+* メッセージを`/html`で書きはじめると、Matrixは[これらのHTMLタグ](https://spec.matrix.org/v1.1/client-server-api/#mroommessage-msgtypes)をサポートします。
+* 以下のスラッシュコマンドをメッセージ冒頭に置くことで、そのルームにPC版Element・SchildiChatでアクセスしているユーザに対してエフェクトを表示することができます：`/confetti`（紙吹雪）、`/fireworks`（花火）、`/rainfall`（雨）、`/snowfall`（雪）、`/spaceinvaders`（スペース・インベーダー）。これらのエフェクトは各ユーザに一度だけ表示されます。
+* `/me`ではじめると、メッセージが`*`と表示名ではじまります[^1]。
+* `/rainbow`ではじめると、テキストが虹色で表示されます。
+  * 上記の2コマンドは、`/rainbowme`で組み合わせることができます。
+* `/shrug`（肩をすくめる）、`/tableflip`（ちゃぶ台返し）、`/unflip`（ちゃぶ台戻し）、`/lenny`（&#x1F60F）は、それぞれ対応するASCIIアートをメッセージの**冒頭に**表示します。（Discordでは末尾に表示されますが、それとは異なります。）
 
-#### Attachments {#attachments}
+#### 添付ファイル {#attachments}
 
-You can upload files onto messages. The size limit varies by the homeserver you're on, but most homeservers have it between 50 and 100 MB. There are no restrictions for file types, allowing some apps to offer the ability to record and send voice messages.
+メッセージにはファイルを添付することができます。サイズ制限はあなたが利用しているホームサーバによって異なりますが、ほとんどのホームサーバでは50〜100MBであることが多いです。ファイル形式の制限はなく、アプリによっては音声を録音して送ることもできます。
 
-All files you upload onto Matrix are assigned an [MXC URI](https://spec.matrix.org/v1.1/client-server-api/#matrix-content-mxc-uris), which you can use for referencing to the corresponding file. The MXC URI can be retrieved with the following steps:
+Matrixにアップロードされたファイルには必ず[MXC URI](https://spec.matrix.org/v1.1/client-server-api/#matrix-content-mxc-uris)が割り当てられ、そのファイルを指し示すのに使うことができます。MXC URIは以下の手順で確認することができます。
 
-1. Find the message.
-2. On Element and SchildiChat on PC, hover over the message and click the three dots. On FluffyChat, long press the message and click the three dots on the top.
-3. "View Source."
-4. Under the `content` JSON object, locate the `url` attribute. The URI the starts with `mxc://` is the MXC URI.
+1. メッセージを探します。
+2. PC版Element・SchildiChatでは、メッセージにカーソルを持っていき三点メニューをクリックします。FluffyChatでは、メッセージを長押しして先頭に表示される三点メニューをクリックします。
+3. "View Source"（ソースを表示）を選択します。
+4. `content`（内容）に表示されるJSONオブジェクトから、`url`属性を探します。この`mxc://`ではじまるURIがMXC URIです。
 
-If the attachment is an image, the URI allows you to do the following, at least on Element and SchildiChat:
+添付ファイルが画像である場合、少なくともElement・SchildiChatではMXC URIを使って以下のことができます。
 
-* Change your avatar for the current room using `/myroomavatar mxc://...`
-* Embed the image on text messages by inserting `![alt text](mxc://...)` (You can also use `<img>` tags under `/html`)
+* `/myroomavatar mxc://...`で、現在のルームでのあなたのアバターを変更することができます。
+* `![説明テキスト](mxc://...)`でメッセージに画像を貼り付けることができます（`/html`の場合は`<img>`タグで同じことができます）。
 
-![Embedding an image](../../assets/images/embed.png)
+![画像の貼り付け](../../assets/images/embed.png)
 
-The attachment can be accessed on the internet by replacing the `mxc://` prefix with `https://$SERVER/_matrix/media/r0/download/`, where `$SERVER` is the domain of *any* homeserver (it does not need to be in the room).
+添付ファイルは、MXC URIの`mxc://`の部分を`https://$SERVER/_matrix/media/r0/download/`に置き換えると、たとえば普通のWebブラウザなどでアクセスすることができます。このとき`$SERVER`は*いかなる*ホームサーバのドメインでも構いません（ルームに参加している必要もありません）。
 
 <div class="flash flash-warn">
-  The attachments themselves can only be deleted by the homeserver operator, and until then, they are visible to the public. This means, especially, that deleting a message will <b>NOT</b> delete its attachments! (However, attachments uploaded in an encrypted room are visible to the public in the encrypted form, where only its intended recipients have the keys to decrypt it.)
+  添付ファイルはホームサーバの運営者だけが削除でき、それまではインターネット上に公開された状態にあります。つまり、メッセージを削除したらその添付ファイルも自動的に削除される、ということは<b>ありません！</b>。（ただし暗号化が有効なルームにアップロードされたファイルは、暗号化された状態で公開されます。このため正当な鍵を持っている人だけが元の内容を見ることができます。）
 </div>
 <div class="flash">
-  It is possible to use "custom emojis/emotes" in text messages by embedding the emote: simply adjust the image, upload it in an unencrypted room, get its MXC URI, and place the embedding code in messages. Furthermore, FluffyChat allows you to assign a <code>:shortcode:</code> to custom emotes so that they can be entered like normal emotes: Go to user settings, then "Conversations", then emoji settings. Note that embed GIFs will not animate.
+  画像を用意して暗号化されていないルームにアップロードし、MXC URIを確認してメッセージに貼り付けるという方法で、オリジナルの絵文字やエモートを使うことができます。さらにFluffyChatでは、オリジナルのエモートに<code>:名前:</code>を割り当てることができ、普通のエモートと同じように使うことができます。ユーザ設定から"Conversations"（会話）の絵文字設定を確認してください。GIFを添付してもアニメーションはしないことに注意してください。
 </div>
 
-#### Stickers {#stickers}
+#### ステッカー {#stickers}
 
-Currently, support for stickers across Matrix is somewhat inconsistent. Note that stickers sent from either app are visible to both apps.
+現在のところ、Matrixにおけるステッカーのサポートは一貫していません。どちらかのアプリから送られたステッカーは両方のアプリで見ることができます。
 
-* For Element and SchildiChat, stickers are offered by integration managers. If you have used [the config](../#pc-and-mobile) provided by this guide, the [Dimension integration manager](https://dimension.t2bot.io) allows you to create your own sticker packs.
-* For FluffyChat, stickers are offered by rooms, some of them are collected in the [`#stickers-and-emojis:pixie.town`](https://matrix.to/#/#stickers-and-emojis:pixie.town) Space. To get stickers or custom emotes in a room, press the room name, expand settings, and open emoji settings. Then, open the desired sticker or emote pack and enable them as you wish.
+* Element・SchildiChatでは、ステッカーはインテグレーションマネージャによって提供されます。このガイドの[設定](../#pc-and-mobile)を使うと、[Dimension integration manager](https://dimension.t2bot.io)で独自のステッカーパックを作ることができます。
+* FluffyChatでは、ステッカーはルームから提供されます。そのうちいくつかは[`#stickers-and-emojis:pixie.town`](https://matrix.to/#/#stickers-and-emojis:pixie.town)スペースにまとめられています。ルームにステッカーやカスタムエモートを追加するには、ルーム名をクリックし、設定から絵文字設定を開いて、好きなステッカーやエモートパックを有効化してください。
 
-See [here](https://1hiking.github.io/posts/2021/09/matrix-stickers/) if you want more details.
+より詳しく知りたい場合は[ここ](https://1hiking.github.io/posts/2021/09/matrix-stickers/)を参照してください。
 
-### Reactions {#reactions}
+### リアクション {#reactions}
 
-You may react to any message with any unicode emoji or any plaintext content[^2]. The latter is available...
+あらゆるメッセージに、Unicode絵文字かテキスト[^2]でリアクションすることができます。後者を使うには、
 
-* On FluffyChat, by replying to a message and entering the desired text prefixed with `/react` in the composer;
-* On SchildiChat, by clicking the reaction picker for a message, entering the desired text in the search box, and then choosing "React with (text)."
+* FluffyChatではメッセージへの返信モードに入り、`/react`のあとにテキストを入力します。
+* SchildiChatではメッセージへのリアクション選択を呼び出し、検索欄にテキストを入力して"React with (テキスト)"を選択します。
 
-### Voice/Video calling {#voicevideo-calling}
+### 音声・ビデオ通話 {#voicevideo-calling}
 
-Voice/video calling is currently only supported for private messages (rooms with only 2 participants).
+音声・ビデオ通話は現在のところプライベートメッセージ（参加者が2人だけのルーム）だけでサポートされています。
 
-Currently, if you try to start a call in a room with more than 2 participants, a [Jitsi Meet](https://meet.jit.si) (not part of Matrix) [widget](#integrations) will be displayed for all users as a temporary solution. However, work is underway to allow native voice/video calling for groups, which hopefully will be enabled [by early 2022](https://matrix.org/blog/2021/12/22/the-mega-matrix-holiday-special-2021#native-matrix-videovoip-conferencing).
+現在、3人以上が参加しているルームで通話を開始しようとすると、一時的な回避策として[Jitsi Meet](https://meet.jit.si)（Matrixの一部ではありません）の[ウィジェット](#integrations)が表示されます。しかしMatrixネイティブのグループ通話を実現する取り組みが進んでいて、[2022年初頭まで](https://matrix.org/blog/2021/12/22/the-mega-matrix-holiday-special-2021#native-matrix-videovoip-conferencing)に実現することが期待されています。
 
-## All about bridges {#all-about-bridges}
+## ブリッジについてのすべて {#all-about-bridges}
 
 Matrix prides itself in technical interoperability, i.e. ability to work with other platforms. Therefore, Matrix allows you to connect your chats to another platform.
 

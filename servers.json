@@ -12,7 +12,7 @@
         "reg_method": "In-house Element",
         "reg_link": "https://im.0wnz.at/element-web/",
         "software": "Synapse",
-        "version": "1.58.1"
+        "version": "1.59.1"
     },
     {
         "name": "activism.international",
@@ -58,6 +58,21 @@
         "reg_link": null,
         "software": "Synapse",
         "version": "1.57.0"
+    },
+    {
+        "name": "archoslinux.cz",
+        "domain": "archoslinux.cz",
+        "info": "https://mastodon.arch-linux.cz/@archoslinuxcz/108264768051310006",
+        "jurisdiction": "Czech Republic (Germany)",
+        "tos": null,
+        "privacy": null,
+        "open": true,
+        "remarks": "In Czech; accessory",
+        "antifeature": null,
+        "reg_method": "In-house Element",
+        "reg_link": "https://element.archoslinux.cz/",
+        "software": "Synapse",
+        "version": "1.59.1"
     },
     {
         "name": "arcticfoxes.net",
@@ -522,7 +537,7 @@
         "reg_method": "In-house Element",
         "reg_link": "https://webchat.freitrix.de/#/register",
         "software": "Synapse",
-        "version": "1.58.1"
+        "version": "1.59.1"
     },
     {
         "name": "fulda.social",
@@ -583,6 +598,21 @@
         "reg_link": "https://www.ggc-project.de/en/matrix/register/form.php",
         "software": "Synapse",
         "version": "1.57.0"
+    },
+    {
+        "name": "glasgow.social",
+        "domain": "glasgow.social",
+        "info": "https://opensource.glasgow.social/matrix",
+        "jurisdiction": "UK",
+        "tos": null,
+        "privacy": null,
+        "open": true,
+        "remarks": "Regional tech collective",
+        "antifeature": null,
+        "reg_method": null,
+        "reg_link": null,
+        "software": "Synapse",
+        "version": "1.49.2"
     },
     {
         "name": "grin.hu",
@@ -717,7 +747,7 @@
         "reg_method": "In-house Element",
         "reg_link": "https://element.magaya.org",
         "software": "Synapse",
-        "version": "1.57.1"
+        "version": "1.59.1"
     },
     {
         "name": "magdeburg.jetzt",
@@ -747,7 +777,7 @@
         "reg_method": "In-house Element",
         "reg_link": "https://element.mailstation.de/",
         "software": "Synapse",
-        "version": "1.58.0"
+        "version": "1.59.1"
     },
     {
         "name": "mandragot.org",
@@ -1182,7 +1212,7 @@
         "reg_method": "In-house Element",
         "reg_link": "https://chat.techsaviours.org/",
         "software": "Synapse",
-        "version": "1.57.0"
+        "version": "1.59.1"
     },
     {
         "name": "tedomum.net",
@@ -1243,21 +1273,6 @@
         "reg_link": "https://element.trygve.me/",
         "software": "Synapse",
         "version": "1.58.1"
-    },
-    {
-        "name": "ungleich.ch",
-        "domain": "ungleich.ch",
-        "info": "https://ungleich.ch/u/projects/open-chat/",
-        "jurisdiction": "Switzerland",
-        "tos": null,
-        "privacy": "https://ungleich.ch/u/projects/privacy-policy/",
-        "open": true,
-        "remarks": "Hosting provider",
-        "antifeature": null,
-        "reg_method": "SSO",
-        "reg_link": "https://account.ungleich.ch/",
-        "software": "Synapse",
-        "version": "1.47.0"
     },
     {
         "name": "unredacted.org",
